@@ -97,7 +97,7 @@ export default function Home() {
           <p className="text-gray-500 text-center mb-10">Click any category to explore the tools</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat) => (
-              <div key={cat.slug} className={`border rounded-xl p-6 ${cat.color} hover:shadow-md transition-shadow cursor-pointer`}>
+              <Link key={cat.slug} href={`/${cat.slug}`} className={`border rounded-xl p-6 ${cat.color} hover:shadow-md transition-shadow cursor-pointer block`}>
                 <div className="flex items-center gap-3 mb-3">
                   <div className={`w-10 h-10 rounded-lg ${cat.iconBg} flex items-center justify-center text-xl`}>
                     {cat.icon}
@@ -113,7 +113,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
