@@ -7,6 +7,11 @@ const tools = [
   { name: "EMI Calculator", description: "Calculate loan EMI, interest and total payment", href: "/calculators/emi" },
 ];
 
+export const metadata = {
+  title: "Free Online Calculators — Percentage, BMI, EMI, Age",
+  description: "Free online calculators — percentage, BMI, EMI loan calculator, age calculator and more. No signup required.",
+};
+
 export default function Calculators() {
   return (
     <main className="min-h-screen bg-white">

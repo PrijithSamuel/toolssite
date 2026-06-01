@@ -7,6 +7,11 @@ const tools = [
   { name: "Convert Format", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format" },
 ];
 
+export const metadata = {
+  title: "Free Image Tools — Compress, Resize, Convert Images",
+  description: "Free online image tools — compress, resize, convert format and convert to PDF. No signup required.",
+};
+
 export default function ImageTools() {
   return (
     <main className="min-h-screen bg-white">

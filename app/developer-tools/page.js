@@ -6,6 +6,11 @@ const tools = [
   { name: "QR Code Generator", description: "Generate QR codes for any text or URL", href: "/developer-tools/qr-code" },
   { name: "Regex Tester", description: "Test and debug regular expressions instantly", href: "/developer-tools/regex-tester" },
 ];
+export const metadata = {
+  title: "Free Developer Tools — JSON Formatter, Regex Tester, QR Code",
+  description: "Free online developer tools — JSON formatter, regex tester, QR code generator, password generator and more. No signup required.",
+};
+
 export default function DeveloperTools() {
   return (
     <main className="min-h-screen bg-white">

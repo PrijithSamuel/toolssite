@@ -7,6 +7,11 @@ const tools = [
   { name: "Image Converter", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format" },
 ];
 
+export const metadata = {
+  title: "Free Online Converters — Unit, Currency, Color, Image",
+  description: "Free online converters — unit converter, currency converter, color converter and image converter. No signup required.",
+};
+
 export default function Converters() {
   return (
     <main className="min-h-screen bg-white">

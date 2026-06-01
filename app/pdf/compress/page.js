@@ -4,6 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { PDFDocument } from "pdf-lib";
 
+export const metadata = {
+  title: "Compress PDF Free — Reduce PDF File Size Online",
+  description: "Compress PDF files online for free. Reduce PDF file size without losing quality. No signup, no watermark.",
+};
+
 export default function CompressPDF() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);

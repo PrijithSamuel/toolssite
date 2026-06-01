@@ -7,6 +7,11 @@ const tools = [
   { name: "PDF to Text", description: "Extract text content from any PDF file", href: "/pdf/pdf-to-text" },
 ];
 
+export const metadata = {
+  title: "Free PDF Tools — Compress, Merge, Split PDF, PDF to Word",
+  description: "Free online PDF tools. Compress, merge, split PDF files and extract text. No signup, no watermark, no limits.",
+};
+
 export default function PDFTools() {
   return (
     <main className="min-h-screen bg-white">

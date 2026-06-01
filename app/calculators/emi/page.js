@@ -3,6 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "EMI Calculator — Calculate Loan EMI Online Free",
+  description: "Calculate your loan EMI, total interest and payment breakdown instantly. Free EMI calculator, no signup required.",
+};
+
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");

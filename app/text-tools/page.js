@@ -7,6 +7,11 @@ const tools = [
   { name: "Remove Duplicates", description: "Remove duplicate lines from text", href: "/text-tools/remove-duplicates" },
 ];
 
+export const metadata = {
+  title: "Free Text Tools — Word Counter, Case Converter, Text Reverser",
+  description: "Free online text tools — word counter, case converter, text reverser, remove duplicates and more. No signup required.",
+};
+
 export default function TextTools() {
   return (
     <main className="min-h-screen bg-white">

@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { PDFDocument } from "pdf-lib";
+export const metadata = {
+  title: "Merge PDF Free — Combine PDF Files Online",
+  description: "Merge multiple PDF files into one online for free. No signup, no watermark, no file size limit.",
+};
 
 export default function MergePDF() {
   const [files, setFiles] = useState([]);
