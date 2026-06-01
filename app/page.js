@@ -65,7 +65,7 @@ export default function Home() {
       <header className="border-b border-gray-100 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
-            <span className="text-xl font-bold text-gray-900">ToolsKit</span>
+            <span className="text-xl font-bold text-gray-900">QuikToolkit</span>
             <span className="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Free</span>
           </div>
           <nav className="flex gap-6 text-sm text-gray-500">
