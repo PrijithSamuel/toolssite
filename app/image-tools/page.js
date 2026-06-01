@@ -4,6 +4,7 @@ const tools = [
   { name: "Image Compressor", description: "Compress JPG and PNG images without losing quality", href: "/image-tools/compress" },
   { name: "Image Resizer", description: "Resize images to any dimension instantly", href: "/image-tools/resize" },
   { name: "Image to PDF", description: "Convert images to PDF in one click", href: "/image-tools/image-to-pdf" },
+  { name: "Convert Format", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format" },
 ];
 
 export default function ImageTools() {

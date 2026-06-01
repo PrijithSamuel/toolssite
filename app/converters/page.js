@@ -4,6 +4,7 @@ const tools = [
   { name: "Unit Converter", description: "Convert length, weight, temperature, speed and more", href: "/converters/unit" },
   { name: "Currency Converter", description: "Convert between world currencies instantly", href: "/converters/currency" },
   { name: "Color Converter", description: "Convert HEX, RGB, HSL color codes", href: "/converters/color" },
+  { name: "Image Converter", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format" },
 ];
 
 export default function Converters() {

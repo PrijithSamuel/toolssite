@@ -4,8 +4,8 @@ const tools = [
   { name: "Password Generator", description: "Generate strong, secure passwords instantly", href: "/developer-tools/password-generator" },
   { name: "JSON Formatter", description: "Format and validate JSON data instantly", href: "/developer-tools/json-formatter" },
   { name: "QR Code Generator", description: "Generate QR codes for any text or URL", href: "/developer-tools/qr-code" },
+  { name: "Regex Tester", description: "Test and debug regular expressions instantly", href: "/developer-tools/regex-tester" },
 ];
-
 export default function DeveloperTools() {
   return (
     <main className="min-h-screen bg-white">
