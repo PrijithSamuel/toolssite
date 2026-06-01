@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://toolssite-kappa.vercel.app";
+  const baseUrl = "https://www.quiktoolkit.com";
 
   const routes = [
     "",
