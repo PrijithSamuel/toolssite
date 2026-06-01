@@ -7,7 +7,7 @@ const categories = [
     icon: "📄",
     color: "bg-red-50 border-red-200",
     iconBg: "bg-red-100",
-    tools: ["PDF to Word", "Compress PDF", "Merge PDF", "Split PDF"],
+    tools: ["PDF to Text", "Compress PDF", "Merge PDF", "Split PDF"],
     slug: "pdf",
   },
   {
@@ -48,7 +48,7 @@ const categories = [
   },
   {
     name: "Developer Tools",
-    description: "JSON formatter, Base64, regex tester",
+    description: "JSON formatter, QR code, regex tester and more",
     icon: "⚙️",
     color: "bg-gray-50 border-gray-200",
     iconBg: "bg-gray-100",
