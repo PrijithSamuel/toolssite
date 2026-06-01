@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 import Script from "next/script";
 export const metadata = {
+  verification: {
+    google: "JN0BZX3kmEEjMBhPNDdMjhDRGYsE_VZCxfnlepr3sRs",
+  },
   title: {
     default: "ToolsKit — Free Online Tools, No Signup Required",
     template: "%s | ToolsKit",
