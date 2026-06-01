@@ -52,7 +52,7 @@ const categories = [
     icon: "⚙️",
     color: "bg-gray-50 border-gray-200",
     iconBg: "bg-gray-100",
-    tools: ["JSON Formatter", "Base64 Encoder", "Regex Tester", "Password Generator"],
+    tools: ["JSON Formatter", "QR Code Generator", "Regex Tester", "Password Generator"],
     slug: "developer-tools",
   },
 ];

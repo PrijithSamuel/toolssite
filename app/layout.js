@@ -17,9 +17,9 @@ export const metadata = {
     google: "JN0BZX3kmEEjMBhPNDdMjhDRGYsE_VZCxfnlepr3sRs",
   },
   title: {
-    default: "ToolsKit — Free Online Tools, No Signup Required",
-    template: "%s | ToolsKit",
-  },
+  default: "QuikToolkit — Free Online Tools, No Signup Required",
+  template: "%s | QuikToolkit",
+},
   description: "Free online tools — PDF converter, calculators, image tools, unit converter and more. No signup, no limits, works in your browser.",
   keywords: ["free online tools", "PDF converter", "image compressor", "unit converter", "calculator", "no signup"],
   authors: [{ name: "ToolsKit" }],
@@ -27,7 +27,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://toolssite-kappa.vercel.app",
+    url: "https://www.quiktoolkit.com",
     siteName: "ToolsKit",
     title: "ToolsKit — Free Online Tools, No Signup Required",
     description: "Free online tools — PDF converter, calculators, image tools and more. No signup, no limits.",
