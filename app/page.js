@@ -121,7 +121,12 @@ export default function Home() {
 
       {/* Footer */}
       <footer id="about" className="border-t border-gray-100 px-6 py-8 text-center text-sm text-gray-400">
-        <p>ToolsKit — Free online tools for everyone. No signup, no limits.</p>
+        <p className="mb-3">QuikToolkit — Free online tools for everyone. No signup, no limits.</p>
+        <div className="flex justify-center gap-6">
+          <a href="/privacy-policy" className="hover:text-gray-600">Privacy Policy</a>
+          <a href="/terms" className="hover:text-gray-600">Terms of Service</a>
+          <a href="mailto:contact@quiktoolkit.com" className="hover:text-gray-600">Contact</a>
+        </div>
       </footer>
 
     </main>
