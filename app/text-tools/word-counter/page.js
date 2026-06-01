@@ -2,10 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Free Word Counter — Count Words, Characters, Sentences",
-  description: "Count words, characters, sentences and paragraphs instantly. Free online word counter, no signup required.",
-};
+
 
 export default function WordCounter() {
   const [text, setText] = useState("");
