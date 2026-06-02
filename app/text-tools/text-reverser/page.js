@@ -1,44 +1,36 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function TextReverser() {
   const [text, setText] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState("");
 
   const reversed = text.split("").reverse().join("");
   const reversedWords = text.split(" ").reverse().join(" ");
   const reversedLines = text.split("\n").reverse().join("\n");
 
-  function handleCopy(val) {
+  function handleCopy(val, label) {
     navigator.clipboard.writeText(val);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopied(label);
+    setTimeout(() => setCopied(""), 2000);
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/text-tools" className="text-gray-400 hover:text-gray-600 text-sm">Text Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Text Reverser</span>
-        </div>
-      </header>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Text Tools", href: "/text-tools" }, { label: "Text Reverser" }]} />
 
-      <div className="max-w-4xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Text Reverser</h1>
-          <p className="text-gray-500">Reverse characters, words or lines instantly. Free, no signup required.</p>
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Text Reverser</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Reverse characters, words or lines instantly. Free, no signup required.</p>
         </div>
 
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Your text</label>
+        <div style={{ marginBottom: "16px" }}>
           <textarea
-            className="w-full h-40 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-gray-200"
+            style={{ width: "100%", height: "140px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px", fontSize: "14px", color: "#374151", lineHeight: "1.6", resize: "none", outline: "none", background: "white", fontFamily: "inherit" }}
             placeholder="Type or paste your text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -46,38 +38,36 @@ export default function TextReverser() {
         </div>
 
         {text && (
-          <div className="space-y-4">
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {[
               { label: "Reversed Characters", value: reversed },
               { label: "Reversed Words", value: reversedWords },
               { label: "Reversed Lines", value: reversedLines },
             ].map((item) => (
-              <div key={item.label} className="border border-gray-100 rounded-xl p-4 bg-gray-50">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{item.label}</span>
-                  <button
-                    type="button"
-                    onClick={() => handleCopy(item.value)}
-                    className="text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg"
-                  >
-                    {copied ? "Copied!" : "Copy"}
+              <div key={item.label} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "14px 16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                  <span style={{ fontSize: "12px", fontWeight: "500", color: "#6366F1" }}>{item.label}</span>
+                  <button type="button" onClick={() => handleCopy(item.value, item.label)}
+                    style={{ fontSize: "12px", color: "#6B7280", background: "#EEF2FF", border: "0.5px solid #C7D2FE", padding: "3px 10px", borderRadius: "6px", cursor: "pointer" }}>
+                    {copied === item.label ? "Copied!" : "Copy"}
                   </button>
                 </div>
-                <p className="text-sm text-gray-800 break-all">{item.value}</p>
+                <p style={{ fontSize: "13px", color: "#374151", wordBreak: "break-all", margin: 0 }}>{item.value}</p>
               </div>
             ))}
           </div>
         )}
 
-        <div className="mt-8 bg-yellow-50 border border-yellow-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-yellow-900 mb-2">How to use</h2>
-          <ul className="text-sm text-yellow-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Type or paste your text in the box above</li>
             <li>• Results appear instantly in 3 formats</li>
-            <li>• Click Copy to copy any result</li>
+            <li>• Click Copy next to any result</li>
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

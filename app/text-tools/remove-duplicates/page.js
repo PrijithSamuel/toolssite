@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function RemoveDuplicates() {
   const [text, setText] = useState("");
@@ -34,99 +35,66 @@ export default function RemoveDuplicates() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/text-tools" className="text-gray-400 hover:text-gray-600 text-sm">Text Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Remove Duplicates</span>
-        </div>
-      </header>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Text Tools", href: "/text-tools" }, { label: "Remove Duplicates" }]} />
 
-      <div className="max-w-4xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Remove Duplicate Lines</h1>
-          <p className="text-gray-500">Remove duplicate lines from any text instantly. Free, no signup required.</p>
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Remove Duplicate Lines</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Remove duplicate lines from any text instantly. Free, no signup required.</p>
         </div>
 
-        {/* Options */}
-        <div className="flex gap-6 mb-4">
-          <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={caseSensitive}
-              onChange={(e) => setCaseSensitive(e.target.checked)}
-              className="rounded"
-            />
-            Case sensitive
-          </label>
-          <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={trimLines}
-              onChange={(e) => setTrimLines(e.target.checked)}
-              className="rounded"
-            />
-            Trim whitespace
-          </label>
+        <div style={{ display: "flex", gap: "20px", marginBottom: "14px" }}>
+          {[["caseSensitive", "Case sensitive", caseSensitive, setCaseSensitive], ["trimLines", "Trim whitespace", trimLines, setTrimLines]].map(([id, label, val, setVal]) => (
+            <label key={id} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#4B5563", cursor: "pointer" }}>
+              <input type="checkbox" checked={val} onChange={(e) => setVal(e.target.checked)} />
+              {label}
+            </label>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Input */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-sm font-medium text-gray-700">Input</label>
-              {originalCount > 0 && (
-                <span className="text-xs text-gray-400">{originalCount} lines</span>
-              )}
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+              <span style={{ fontSize: "12px", fontWeight: "500", color: "#6366F1" }}>Input</span>
+              {originalCount > 0 && <span style={{ fontSize: "12px", color: "#9CA3AF" }}>{originalCount} lines</span>}
             </div>
             <textarea
-              className="w-full h-72 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder={"apple\nbanana\napple\norange\nbanana"}
+              style={{ width: "100%", height: "280px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "14px", fontSize: "13px", color: "#374151", lineHeight: "1.6", resize: "none", outline: "none", background: "white", fontFamily: "inherit" }}
+              placeholder={"apple\nbanana\napple\norange"}
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
           </div>
-
-          {/* Output */}
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-sm font-medium text-gray-700">Output</label>
-              <div className="flex items-center gap-3">
-                {removedCount > 0 && (
-                  <span className="text-xs text-red-500">{removedCount} duplicates removed</span>
-                )}
-                {result && (
-                  <button
-                    type="button"
-                    onClick={handleCopy}
-                    className="text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg"
-                  >
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
-                )}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+              <span style={{ fontSize: "12px", fontWeight: "500", color: "#6366F1" }}>Output</span>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                {removedCount > 0 && <span style={{ fontSize: "12px", color: "#DC2626" }}>{removedCount} removed</span>}
+                {result && <button type="button" onClick={handleCopy}
+                  style={{ fontSize: "12px", color: "#6B7280", background: "#EEF2FF", border: "0.5px solid #C7D2FE", padding: "3px 10px", borderRadius: "6px", cursor: "pointer" }}>
+                  {copied ? "Copied!" : "Copy"}
+                </button>}
               </div>
             </div>
             <textarea
-              className="w-full h-72 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm leading-relaxed resize-none bg-gray-50 focus:outline-none"
-              readOnly
-              value={result}
+              style={{ width: "100%", height: "280px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "14px", fontSize: "13px", color: "#374151", lineHeight: "1.6", resize: "none", outline: "none", background: "#F9FAFB", fontFamily: "inherit" }}
+              readOnly value={result}
               placeholder="Unique lines will appear here..."
             />
           </div>
         </div>
 
-        <div className="mt-8 bg-yellow-50 border border-yellow-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-yellow-900 mb-2">How to use</h2>
-          <ul className="text-sm text-yellow-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Paste your lines of text on the left</li>
             <li>• Duplicates are removed instantly on the right</li>
             <li>• Toggle case sensitivity and whitespace trimming as needed</li>
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
