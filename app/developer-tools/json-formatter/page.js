@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function JSONFormatter() {
   const [input, setInput] = useState("");
@@ -9,147 +10,68 @@ export default function JSONFormatter() {
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
-  function format() {
-    try {
-      const parsed = JSON.parse(input);
-      setOutput(JSON.stringify(parsed, null, 2));
-      setError("");
-    } catch (e) {
-      setError(e.message);
-      setOutput("");
-    }
-  }
+  function format() { try { const parsed = JSON.parse(input); setOutput(JSON.stringify(parsed, null, 2)); setError(""); } catch (e) { setError(e.message); setOutput(""); } }
+  function minify() { try { const parsed = JSON.parse(input); setOutput(JSON.stringify(parsed)); setError(""); } catch (e) { setError(e.message); setOutput(""); } }
+  function validate() { try { JSON.parse(input); setError("✓ Valid JSON"); setOutput(""); } catch (e) { setError(e.message); setOutput(""); } }
+  function handleCopy() { navigator.clipboard.writeText(output); setCopied(true); setTimeout(() => setCopied(false), 2000); }
+  function handleClear() { setInput(""); setOutput(""); setError(""); }
 
-  function minify() {
-    try {
-      const parsed = JSON.parse(input);
-      setOutput(JSON.stringify(parsed));
-      setError("");
-    } catch (e) {
-      setError(e.message);
-      setOutput("");
-    }
-  }
-
-  function validate() {
-    try {
-      JSON.parse(input);
-      setError("✓ Valid JSON");
-      setOutput("");
-    } catch (e) {
-      setError(e.message);
-      setOutput("");
-    }
-  }
-
-  function handleCopy() {
-    navigator.clipboard.writeText(output);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }
-
-  function handleClear() {
-    setInput("");
-    setOutput("");
-    setError("");
-  }
-
-  const isValidError = error.startsWith("✓");
+  const isValid = error.startsWith("✓");
+  const btnStyle = (variant) => ({
+    padding: "10px 18px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer", border: "none",
+    background: variant === "primary" ? "#4F46E5" : variant === "danger" ? "#FEE2E2" : "white",
+    color: variant === "primary" ? "white" : variant === "danger" ? "#DC2626" : "#4B5563",
+    ...(variant === "secondary" ? { border: "0.5px solid #C7D2FE" } : {}),
+  });
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/developer-tools" className="text-gray-400 hover:text-gray-600 text-sm">Developer Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">JSON Formatter</span>
-        </div>
-      </header>
-
-      <div className="max-w-5xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">JSON Formatter</h1>
-          <p className="text-gray-500">Format, minify and validate JSON instantly. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Developer Tools", href: "/developer-tools" }, { label: "JSON Formatter" }]} />
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>JSON Formatter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Format, minify and validate JSON instantly. Free, no signup required.</p>
         </div>
 
-        {/* Action buttons */}
-        <div className="flex gap-3 mb-4 flex-wrap">
-          <button type="button" onClick={format}
-            className="px-5 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-700">
-            Format / Beautify
-          </button>
-          <button type="button" onClick={minify}
-            className="px-5 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50">
-            Minify
-          </button>
-          <button type="button" onClick={validate}
-            className="px-5 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50">
-            Validate
-          </button>
-          <button type="button" onClick={handleClear}
-            className="px-5 py-2 bg-white border border-red-200 text-red-500 rounded-lg text-sm font-medium hover:bg-red-50">
-            Clear
-          </button>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "14px", flexWrap: "wrap" }}>
+          <button type="button" onClick={format} style={btnStyle("primary")}>Format / Beautify</button>
+          <button type="button" onClick={minify} style={btnStyle("secondary")}>Minify</button>
+          <button type="button" onClick={validate} style={btnStyle("secondary")}>Validate</button>
+          <button type="button" onClick={handleClear} style={btnStyle("danger")}>Clear</button>
         </div>
 
-        {/* Error / success message */}
         {error && (
-          <div className={`mb-4 px-4 py-3 rounded-lg text-sm font-medium ${
-            isValidError
-              ? "bg-green-50 border border-green-200 text-green-700"
-              : "bg-red-50 border border-red-200 text-red-700"
-          }`}>
+          <div style={{ marginBottom: "14px", padding: "12px 16px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", background: isValid ? "#D1FAE5" : "#FEE2E2", color: isValid ? "#065F46" : "#DC2626", border: `0.5px solid ${isValid ? "#A7F3D0" : "#FECACA"}` }}>
             {error}
           </div>
         )}
 
-        {/* Editor panels */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-sm font-medium text-gray-700">Input JSON</label>
-              <span className="text-xs text-gray-400">{input.length} chars</span>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+              <label style={{ fontSize: "12px", fontWeight: "500", color: "#6366F1" }}>Input JSON</label>
+              <span style={{ fontSize: "11px", color: "#9CA3AF" }}>{input.length} chars</span>
             </div>
-            <textarea
-              className="w-full h-96 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm font-mono leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder='Paste your JSON here e.g. {"name":"John","age":30}'
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              spellCheck={false}
-            />
+            <textarea value={input} onChange={(e) => setInput(e.target.value)} spellCheck={false}
+              placeholder={'Paste your JSON here e.g. {"name":"John","age":30}'}
+              style={{ width: "100%", height: "380px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "14px", fontSize: "13px", fontFamily: "monospace", lineHeight: "1.6", resize: "none", outline: "none", background: "white", color: "#374151" }} />
           </div>
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-sm font-medium text-gray-700">Output</label>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+              <label style={{ fontSize: "12px", fontWeight: "500", color: "#6366F1" }}>Output</label>
               {output && (
                 <button type="button" onClick={handleCopy}
-                  className="text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg">
+                  style={{ fontSize: "11px", color: "#6B7280", background: "#EEF2FF", border: "0.5px solid #C7D2FE", padding: "2px 10px", borderRadius: "5px", cursor: "pointer" }}>
                   {copied ? "Copied!" : "Copy"}
                 </button>
               )}
             </div>
-            <textarea
-              className="w-full h-96 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm font-mono leading-relaxed resize-none bg-gray-50 focus:outline-none"
-              readOnly
-              value={output}
-              placeholder="Formatted JSON will appear here..."
-              spellCheck={false}
-            />
+            <textarea readOnly value={output} spellCheck={false} placeholder="Formatted JSON will appear here..."
+              style={{ width: "100%", height: "380px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "14px", fontSize: "13px", fontFamily: "monospace", lineHeight: "1.6", resize: "none", outline: "none", background: "#F9FAFB", color: "#374151" }} />
           </div>
         </div>
-
-        <div className="mt-8 bg-gray-50 border border-gray-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-gray-900 mb-2">How to use</h2>
-          <ul className="text-sm text-gray-600 space-y-1">
-            <li>• Paste your JSON in the left panel</li>
-            <li>• Click Format to beautify with proper indentation</li>
-            <li>• Click Minify to compress into one line</li>
-            <li>• Click Validate to check if your JSON is valid</li>
-          </ul>
-        </div>
       </div>
+      <Footer />
     </main>
   );
 }
