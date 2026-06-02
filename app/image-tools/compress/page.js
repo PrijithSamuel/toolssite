@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import imageCompression from "browser-image-compression";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function ImageCompressor() {
   const [original, setOriginal] = useState(null);
@@ -21,17 +22,10 @@ export default function ImageCompressor() {
     if (!original) return;
     setLoading(true);
     try {
-      const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 1920,
-        useWebWorker: true,
-        initialQuality: quality,
-      };
+      const options = { maxSizeMB: 1, maxWidthOrHeight: 1920, useWebWorker: true, initialQuality: quality };
       const result = await imageCompression(original.file, options);
       setCompressed({ file: result, url: URL.createObjectURL(result) });
-    } catch (e) {
-      alert("Error compressing image: " + e.message);
-    }
+    } catch (e) { alert("Error compressing image: " + e.message); }
     setLoading(false);
   }
 
@@ -43,119 +37,76 @@ export default function ImageCompressor() {
     link.click();
   }
 
-  function formatSize(bytes) {
-    if (bytes < 1024) return bytes + " B";
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
-    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
-  }
-
-  const savings = compressed
-    ? Math.round((1 - compressed.file.size / original.file.size) * 100)
-    : 0;
+  function formatSize(bytes) { if (bytes < 1024) return bytes + " B"; if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB"; return (bytes / (1024 * 1024)).toFixed(2) + " MB"; }
+  const savings = compressed ? Math.round((1 - compressed.file.size / original.file.size) * 100) : 0;
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/image-tools" className="text-gray-400 hover:text-gray-600 text-sm">Image Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Image Compressor</span>
-        </div>
-      </header>
-
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Compressor</h1>
-          <p className="text-gray-500">Compress JPG and PNG images without losing quality. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Image Tools", href: "/image-tools" }, { label: "Image Compressor" }]} />
+      <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Compressor</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Compress JPG and PNG images without losing quality. Free, no signup required.</p>
         </div>
 
-        {/* Upload area */}
-        <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center mb-6 hover:border-gray-300 transition-colors">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleFile}
-            className="hidden"
-            id="file-input"
-          />
-          <label htmlFor="file-input" className="cursor-pointer">
-            <div className="text-4xl mb-3">🖼️</div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Click to upload an image</p>
-            <p className="text-xs text-gray-400">JPG, PNG, WebP supported</p>
+        <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
+          <input type="file" accept="image/*" onChange={handleFile} className="hidden" id="file-input" />
+          <label htmlFor="file-input" style={{ cursor: "pointer" }}>
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>🖼️</div>
+            <p style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>Click to upload an image</p>
+            <p style={{ fontSize: "12px", color: "#9CA3AF" }}>JPG, PNG, WebP supported</p>
           </label>
         </div>
 
         {original && (
-          <div className="space-y-6">
-            {/* Quality slider */}
-            <div className="bg-purple-50 border border-purple-100 rounded-xl p-5">
-              <div className="flex justify-between text-sm mb-2">
-                <span className="font-medium text-gray-700">Quality</span>
-                <span className="text-gray-500">{Math.round(quality * 100)}%</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px", marginBottom: "8px" }}>
+                <span style={{ fontWeight: "500", color: "#1E1B4B" }}>Quality</span>
+                <span style={{ color: "#6366F1" }}>{Math.round(quality * 100)}%</span>
               </div>
-              <input
-                type="range"
-                min="0.1"
-                max="1"
-                step="0.1"
-                value={quality}
-                onChange={(e) => setQuality(parseFloat(e.target.value))}
-                className="w-full accent-purple-600"
-              />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>Smaller file</span>
-                <span>Better quality</span>
+              <input type="range" min="0.1" max="1" step="0.1" value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: "100%", accentColor: "#4F46E5" }} />
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#9CA3AF", marginTop: "4px" }}>
+                <span>Smaller file</span><span>Better quality</span>
               </div>
             </div>
 
-            {/* Compress button */}
-            <button
-              type="button"
-              onClick={compress}
-              disabled={loading}
-              className="w-full bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-700 transition-colors disabled:opacity-50"
-            >
+            <button type="button" onClick={compress} disabled={loading}
+              style={{ width: "100%", background: "#4F46E5", color: "white", border: "none", padding: "14px", borderRadius: "12px", fontSize: "14px", fontWeight: "500", cursor: "pointer", opacity: loading ? 0.6 : 1 }}>
               {loading ? "Compressing..." : "Compress Image"}
             </button>
 
-            {/* Before / After */}
-            <div className="grid grid-cols-2 gap-4">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
               <div>
-                <div className="flex justify-between text-xs text-gray-500 mb-2">
-                  <span className="font-medium">Original</span>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#6B7280", marginBottom: "6px" }}>
+                  <span style={{ fontWeight: "500" }}>Original</span>
                   <span>{formatSize(original.file.size)}</span>
                 </div>
-                <img src={original.url} alt="Original" className="w-full rounded-xl border border-gray-100 object-cover" />
+                <img src={original.url} alt="Original" style={{ width: "100%", borderRadius: "10px", border: "0.5px solid #E0E7FF" }} />
               </div>
               <div>
-                <div className="flex justify-between text-xs text-gray-500 mb-2">
-                  <span className="font-medium">Compressed</span>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#6B7280", marginBottom: "6px" }}>
+                  <span style={{ fontWeight: "500" }}>Compressed</span>
                   <span>{compressed ? formatSize(compressed.file.size) : "—"}</span>
                 </div>
                 {compressed ? (
-                  <img src={compressed.url} alt="Compressed" className="w-full rounded-xl border border-gray-100 object-cover" />
+                  <img src={compressed.url} alt="Compressed" style={{ width: "100%", borderRadius: "10px", border: "0.5px solid #E0E7FF" }} />
                 ) : (
-                  <div className="w-full aspect-square bg-gray-50 rounded-xl border border-dashed border-gray-200 flex items-center justify-center">
-                    <p className="text-xs text-gray-400">Compressed image here</p>
+                  <div style={{ width: "100%", aspectRatio: "1", background: "#F9FAFB", borderRadius: "10px", border: "2px dashed #E0E7FF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <p style={{ fontSize: "12px", color: "#9CA3AF" }}>Result here</p>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Savings + download */}
             {compressed && (
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-center justify-between">
+              <div style={{ background: "#D1FAE5", border: "0.5px solid #A7F3D0", borderRadius: "10px", padding: "14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <div className="text-sm font-semibold text-green-700">🎉 {savings}% smaller!</div>
-                  <div className="text-xs text-green-600">{formatSize(original.file.size)} → {formatSize(compressed.file.size)}</div>
+                  <p style={{ fontSize: "13px", fontWeight: "500", color: "#065F46" }}>🎉 {savings}% smaller!</p>
+                  <p style={{ fontSize: "12px", color: "#059669" }}>{formatSize(original.file.size)} → {formatSize(compressed.file.size)}</p>
                 </div>
-                <button
-                  type="button"
-                  onClick={download}
-                  className="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-green-700"
-                >
+                <button type="button" onClick={download}
+                  style={{ background: "#4F46E5", color: "white", border: "none", padding: "10px 20px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer" }}>
                   Download
                 </button>
               </div>
@@ -163,9 +114,9 @@ export default function ImageCompressor() {
           </div>
         )}
 
-        <div className="mt-8 bg-purple-50 border border-purple-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-purple-900 mb-2">How to use</h2>
-          <ul className="text-sm text-purple-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Upload any JPG, PNG or WebP image</li>
             <li>• Adjust quality slider as needed</li>
             <li>• Click Compress and see before/after comparison</li>
@@ -173,6 +124,7 @@ export default function ImageCompressor() {
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

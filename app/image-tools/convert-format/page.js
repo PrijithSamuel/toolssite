@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function ConvertFormat() {
   const [file, setFile] = useState(null);
@@ -14,9 +15,7 @@ export default function ConvertFormat() {
   function handleFile(e) {
     const f = e.target.files[0];
     if (!f) return;
-    setFile(f);
-    setPreview(URL.createObjectURL(f));
-    setConverted(null);
+    setFile(f); setPreview(URL.createObjectURL(f)); setConverted(null);
   }
 
   function convert() {
@@ -25,16 +24,9 @@ export default function ConvertFormat() {
     const img = new Image();
     img.onload = () => {
       const canvas = document.createElement("canvas");
-      canvas.width = img.width;
-      canvas.height = img.height;
+      canvas.width = img.width; canvas.height = img.height;
       const ctx = canvas.getContext("2d");
-
-      // white background for jpg
-      if (format === "jpeg") {
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-
+      if (format === "jpeg") { ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, canvas.width, canvas.height); }
       ctx.drawImage(img, 0, 0);
       const mimeType = format === "jpeg" ? "image/jpeg" : format === "png" ? "image/png" : "image/webp";
       const dataUrl = canvas.toDataURL(mimeType, quality);
@@ -48,119 +40,78 @@ export default function ConvertFormat() {
     if (!converted || !file) return;
     const link = document.createElement("a");
     link.href = converted.dataUrl;
-    const baseName = file.name.replace(/\.[^.]+$/, "");
-    link.download = `${baseName}.${format}`;
+    link.download = file.name.replace(/\.[^.]+$/, "") + "." + format;
     link.click();
   }
 
   const formats = [
     { id: "png", label: "PNG", desc: "Lossless, supports transparency" },
     { id: "jpeg", label: "JPG", desc: "Smaller size, no transparency" },
-    { id: "webp", label: "WebP", desc: "Modern format, best compression" },
+    { id: "webp", label: "WebP", desc: "Modern, best compression" },
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/image-tools" className="text-gray-400 hover:text-gray-600 text-sm">Image Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Convert Format</span>
-        </div>
-      </header>
-
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Format Converter</h1>
-          <p className="text-gray-500">Convert images between JPG, PNG and WebP. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Image Tools", href: "/image-tools" }, { label: "Convert Format" }]} />
+      <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Format Converter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert images between JPG, PNG and WebP. Free, no signup required.</p>
         </div>
 
-        {/* Upload */}
-        <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center mb-6 hover:border-gray-300 transition-colors">
+        <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept="image/*" onChange={handleFile} className="hidden" id="format-input" />
-          <label htmlFor="format-input" className="cursor-pointer">
-            <div className="text-4xl mb-3">🔄</div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Click to upload an image</p>
-            <p className="text-xs text-gray-400">JPG, PNG, WebP supported</p>
+          <label htmlFor="format-input" style={{ cursor: "pointer" }}>
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>🔄</div>
+            <p style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>Click to upload an image</p>
+            <p style={{ fontSize: "12px", color: "#9CA3AF" }}>JPG, PNG, WebP supported</p>
           </label>
         </div>
 
         {file && (
-          <div className="space-y-5">
-
-            {/* Preview */}
-            <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
-              <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">Original — {file.name}</p>
-              <img src={preview} alt="Original" className="max-h-48 rounded-lg object-contain mx-auto" />
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "14px" }}>
+              <p style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", marginBottom: "8px" }}>ORIGINAL</p>
+              <img src={preview} alt="Original" style={{ maxHeight: "160px", borderRadius: "8px", objectFit: "contain", margin: "0 auto", display: "block" }} />
             </div>
 
-            {/* Format selection */}
-            <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 space-y-4">
-              <p className="text-sm font-medium text-gray-700">Convert to</p>
-              <div className="grid grid-cols-3 gap-3">
+            <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px" }}>
+              <p style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "12px" }}>Convert to</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", marginBottom: format !== "png" ? "16px" : "0" }}>
                 {formats.map((f) => (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => setFormat(f.id)}
-                    className={`p-3 rounded-xl border text-left transition-colors ${
-                      format === f.id
-                        ? "bg-purple-600 text-white border-purple-600"
-                        : "bg-white border-gray-200 hover:bg-gray-50"
-                    }`}
-                  >
-                    <div className={`font-bold text-sm ${format === f.id ? "text-white" : "text-gray-900"}`}>{f.label}</div>
-                    <div className={`text-xs mt-0.5 ${format === f.id ? "text-purple-200" : "text-gray-400"}`}>{f.desc}</div>
+                  <button key={f.id} type="button" onClick={() => setFormat(f.id)}
+                    style={{ padding: "12px", borderRadius: "10px", border: "none", cursor: "pointer", textAlign: "left", background: format === f.id ? "#4F46E5" : "white" }}>
+                    <div style={{ fontSize: "14px", fontWeight: "500", color: format === f.id ? "white" : "#1E1B4B" }}>{f.label}</div>
+                    <div style={{ fontSize: "11px", marginTop: "2px", color: format === f.id ? "rgba(255,255,255,0.75)" : "#9CA3AF" }}>{f.desc}</div>
                   </button>
                 ))}
               </div>
-
-              {/* Quality slider — only for jpg and webp */}
               {format !== "png" && (
                 <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="font-medium text-gray-700">Quality</span>
-                    <span className="text-gray-500">{Math.round(quality * 100)}%</span>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px", marginBottom: "6px" }}>
+                    <span style={{ fontWeight: "500", color: "#1E1B4B" }}>Quality</span>
+                    <span style={{ color: "#6366F1" }}>{Math.round(quality * 100)}%</span>
                   </div>
-                  <input
-                    type="range"
-                    min="0.1"
-                    max="1"
-                    step="0.05"
-                    value={quality}
-                    onChange={(e) => setQuality(parseFloat(e.target.value))}
-                    className="w-full accent-purple-600"
-                  />
+                  <input type="range" min="0.1" max="1" step="0.05" value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: "100%", accentColor: "#4F46E5" }} />
                 </div>
               )}
             </div>
 
-            {/* Convert button */}
-            <button
-              type="button"
-              onClick={convert}
-              disabled={loading}
-              className="w-full bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-700 transition-colors disabled:opacity-50"
-            >
+            <button type="button" onClick={convert} disabled={loading}
+              style={{ width: "100%", background: "#4F46E5", color: "white", border: "none", padding: "14px", borderRadius: "12px", fontSize: "14px", fontWeight: "500", cursor: "pointer", opacity: loading ? 0.6 : 1 }}>
               {loading ? "Converting..." : `Convert to ${format.toUpperCase()}`}
             </button>
 
-            {/* Result */}
             {converted && (
-              <div className="space-y-3">
-                <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">Converted — {format.toUpperCase()}</p>
-                  <img src={converted.dataUrl} alt="Converted" className="max-h-48 rounded-lg object-contain mx-auto" />
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "14px" }}>
+                  <p style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", marginBottom: "8px" }}>CONVERTED — {format.toUpperCase()}</p>
+                  <img src={converted.dataUrl} alt="Converted" style={{ maxHeight: "160px", borderRadius: "8px", objectFit: "contain", margin: "0 auto", display: "block" }} />
                 </div>
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-center justify-between">
-                  <p className="text-sm font-semibold text-green-700">✓ Converted to {format.toUpperCase()} successfully</p>
-                  <button
-                    type="button"
-                    onClick={download}
-                    className="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-green-700"
-                  >
+                <div style={{ background: "#D1FAE5", border: "0.5px solid #A7F3D0", borderRadius: "10px", padding: "14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <p style={{ fontSize: "13px", fontWeight: "500", color: "#065F46" }}>✓ Converted to {format.toUpperCase()}</p>
+                  <button type="button" onClick={download}
+                    style={{ background: "#4F46E5", color: "white", border: "none", padding: "10px 20px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer" }}>
                     Download
                   </button>
                 </div>
@@ -169,9 +120,9 @@ export default function ConvertFormat() {
           </div>
         )}
 
-        <div className="mt-8 bg-purple-50 border border-purple-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-purple-900 mb-2">How to use</h2>
-          <ul className="text-sm text-purple-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Upload any JPG, PNG or WebP image</li>
             <li>• Select the output format</li>
             <li>• Adjust quality if needed</li>
@@ -179,6 +130,7 @@ export default function ConvertFormat() {
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
