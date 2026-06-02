@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroSearch from "./components/HeroSearch";
 
 export const metadata = {
   title: "QuikToolkit — Free Online Tools, No Signup Required",
@@ -12,7 +13,7 @@ const categories = [
     iconBg: "#FEE2E2",
     count: 4,
     slug: "pdf",
-    tools: ["Merge PDF", "Split PDF", "Compress PDF", "PDF to Text"],
+    tools: ["PDF to Text", "Compress PDF", "Merge PDF", "Split PDF"],
   },
   {
     name: "Calculators",
@@ -20,7 +21,7 @@ const categories = [
     iconBg: "#DBEAFE",
     count: 4,
     slug: "calculators",
-    tools: ["Percentage", "EMI Calculator", "BMI Calculator", "Age Calculator"],
+    tools: ["Percentage Calculator", "EMI Calculator", "BMI Calculator", "Age Calculator"],
   },
   {
     name: "Converters",
@@ -72,28 +73,23 @@ export default function Home() {
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
 
       {/* Navigation */}
-      <nav style={{ background: "#4F46E5", borderBottom: "none" }}>
+      <nav style={{ background: "#4F46E5" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "56px" }}>
-          {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "32px", textDecoration: "none" }}>
             <div style={{ width: "30px", height: "30px", background: "rgba(255,255,255,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>🛠️</div>
             <span style={{ fontSize: "16px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
           </Link>
-
-          {/* Nav links */}
-          <div style={{ display: "flex", flex: 1, gap: "0" }}>
+          <div style={{ display: "flex", flex: 1 }}>
             {categories.map((cat) => (
-              <Link key={cat.slug} href={`/${cat.slug}`} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.8)", textDecoration: "none", borderBottom: "2px solid transparent", whiteSpace: "nowrap" }}>
+              <Link key={cat.slug} href={`/${cat.slug}`} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
                 {cat.name.replace(" Tools", "").replace("Developer", "Dev")}
               </Link>
             ))}
           </div>
-
-          {/* Search */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", width: "190px" }}>
-            <span style={{ fontSize: "14px" }}>🔍</span>
+          <Link href="/search" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", textDecoration: "none", width: "180px" }}>
+            <span style={{ fontSize: "13px" }}>🔍</span>
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>Search tools...</span>
-          </div>
+          </Link>
         </div>
       </nav>
 
@@ -110,18 +106,7 @@ export default function Home() {
             PDF, calculators, image tools, converters and more. Works entirely in your browser.
           </p>
 
-          {/* Search bar */}
-          <div style={{ display: "flex", alignItems: "center", background: "white", borderRadius: "12px", maxWidth: "500px", margin: "0 auto 24px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
-            <span style={{ padding: "0 10px 0 16px", fontSize: "18px" }}>🔍</span>
-            <input
-              type="text"
-              placeholder="Search 50+ tools — try 'PDF merge' or 'BMI'..."
-              style={{ flex: 1, border: "none", outline: "none", fontSize: "13px", padding: "14px 0", background: "transparent", color: "#374151" }}
-            />
-            <button style={{ background: "#4F46E5", color: "white", border: "none", padding: "10px 20px", fontSize: "13px", fontWeight: "500", cursor: "pointer", margin: "6px", borderRadius: "8px" }}>
-              Search
-            </button>
-          </div>
+          <HeroSearch />
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
@@ -141,6 +126,7 @@ export default function Home() {
         {/* Popular tools */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
           <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Most popular tools</h2>
+          <Link href="/search" style={{ fontSize: "13px", color: "#4F46E5", textDecoration: "none", fontWeight: "500" }}>See all →</Link>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px", marginBottom: "36px" }}>
           {popularTools.map((tool) => (

@@ -12,7 +12,6 @@ const navLinks = [
 export default function Header({ breadcrumbs = [] }) {
   return (
     <>
-      {/* Main nav */}
       <nav style={{ background: "#4F46E5" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "56px" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "32px", textDecoration: "none" }}>
@@ -26,14 +25,13 @@ export default function Header({ breadcrumbs = [] }) {
               </Link>
             ))}
           </div>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", textDecoration: "none" }}>
-            <span style={{ fontSize: "13px" }}>🏠</span>
-            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.85)" }}>Home</span>
+          <Link href="/search" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", textDecoration: "none", width: "180px" }}>
+            <span style={{ fontSize: "13px" }}>🔍</span>
+            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>Search tools...</span>
           </Link>
         </div>
       </nav>
 
-      {/* Breadcrumb */}
       {breadcrumbs.length > 0 && (
         <div style={{ background: "#EEF2FF", borderBottom: "0.5px solid #C7D2FE", padding: "8px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", alignItems: "center", gap: "6px" }}>
