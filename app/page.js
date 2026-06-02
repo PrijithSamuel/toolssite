@@ -19,17 +19,17 @@ const categories = [
     name: "Calculators",
     icon: "🧮",
     iconBg: "#DBEAFE",
-    count: 4,
+    count: 8,
     slug: "calculators",
-    tools: ["Percentage Calculator", "EMI Calculator", "BMI Calculator", "Age Calculator"],
+    tools: ["Tip Calculator", "Discount Calculator", "GPA Calculator", "Scientific"],
   },
   {
     name: "Converters",
     icon: "🔄",
     iconBg: "#D1FAE5",
-    count: 4,
+    count: 6,
     slug: "converters",
-    tools: ["Unit Converter", "Currency Converter", "Color Converter", "Image Format"],
+    tools: ["Unit Converter", "Time Zone", "Number Base", "Color Converter"],
   },
   {
   name: "Text Tools",
@@ -51,9 +51,9 @@ const categories = [
     name: "Developer Tools",
     icon: "⚙️",
     iconBg: "#F1F5F9",
-    count: 4,
+    count: 7,
     slug: "developer-tools",
-    tools: ["JSON Formatter", "QR Code Generator", "Regex Tester", "Password Generator"],
+    tools: ["JSON Formatter", "Base64 Encoder", "Markdown Previewer", "URL Encoder"],
   },
 ];
 

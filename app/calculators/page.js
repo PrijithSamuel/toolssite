@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Online Calculators — Percentage, BMI, EMI, Age",
-  description: "Free online calculators — percentage, BMI, EMI loan calculator, age calculator and more. No signup required.",
+  title: "Free Online Calculators — Tip, Discount, GPA, BMI, EMI, Scientific",
+  description: "Free online calculators — tip, discount, GPA, scientific, percentage, BMI, EMI, age calculator and more. No signup required.",
 };
 
 const tools = [
@@ -12,6 +12,10 @@ const tools = [
   { name: "EMI Calculator", description: "Calculate loan EMI, interest and total payment", href: "/calculators/emi", icon: "🏦" },
   { name: "BMI Calculator", description: "Calculate your Body Mass Index instantly", href: "/calculators/bmi", icon: "⚖️" },
   { name: "Age Calculator", description: "Calculate exact age from date of birth", href: "/calculators/age", icon: "🎂" },
+  { name: "Tip Calculator", description: "Calculate tip and split the bill between people", href: "/calculators/tip", icon: "🍽️" },
+  { name: "Discount Calculator", description: "Find final price and savings after a discount", href: "/calculators/discount", icon: "🏷️" },
+  { name: "Scientific Calculator", description: "Full calculator with sin, cos, log, sqrt and more", href: "/calculators/scientific", icon: "🔬" },
+  { name: "GPA Calculator", description: "Calculate GPA from course grades and credit hours", href: "/calculators/gpa", icon: "🎓" },
 ];
 
 export default function Calculators() {

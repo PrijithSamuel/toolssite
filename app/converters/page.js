@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Online Converters — Unit, Currency, Color, Image",
-  description: "Free online converters — unit converter, currency converter, color converter and image converter. No signup required.",
+  title: "Free Online Converters — Unit, Currency, Timezone, Number Base",
+  description: "Free online converters — unit converter, currency converter, time zone converter, number base converter, color converter and more. No signup required.",
 };
 
 const tools = [
@@ -12,6 +12,8 @@ const tools = [
   { name: "Currency Converter", description: "Convert between 20 world currencies instantly", href: "/converters/currency", icon: "💱" },
   { name: "Color Converter", description: "Convert HEX, RGB, HSL color codes", href: "/converters/color", icon: "🎨" },
   { name: "Image Converter", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format", icon: "🖼️" },
+  { name: "Time Zone Converter", description: "Convert date and time between world time zones", href: "/converters/timezone", icon: "🌐" },
+  { name: "Number Base Converter", description: "Convert numbers between Binary, Octal, Decimal, Hex", href: "/converters/number-base", icon: "🔢" },
 ];
 
 export default function Converters() {

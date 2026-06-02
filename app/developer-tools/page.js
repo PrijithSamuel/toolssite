@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Developer Tools — JSON Formatter, Regex Tester, QR Code",
-  description: "Free online developer tools — JSON formatter, regex tester, QR code generator, password generator and more. No signup required.",
+  title: "Free Developer Tools — JSON, Base64, Regex, Markdown, URL Encoder",
+  description: "Free online developer tools — JSON formatter, Base64 encoder, regex tester, markdown previewer, URL encoder and more. No signup required.",
 };
 
 const tools = [
@@ -12,6 +12,9 @@ const tools = [
   { name: "QR Code Generator", description: "Generate QR codes for any text or URL", href: "/developer-tools/qr-code", icon: "📱" },
   { name: "Regex Tester", description: "Test and debug regular expressions instantly", href: "/developer-tools/regex-tester", icon: "🔍" },
   { name: "Password Generator", description: "Generate strong, secure passwords instantly", href: "/developer-tools/password-generator", icon: "🔑" },
+  { name: "Base64 Encoder/Decoder", description: "Encode text to Base64 or decode Base64 strings", href: "/developer-tools/base64", icon: "🔐" },
+  { name: "URL Encoder/Decoder", description: "Encode or decode URL percent-encoded strings", href: "/developer-tools/url-encoder", icon: "🔗" },
+  { name: "Markdown Previewer", description: "Write Markdown and see a live HTML preview", href: "/developer-tools/markdown", icon: "📝" },
 ];
 
 export default function DeveloperTools() {

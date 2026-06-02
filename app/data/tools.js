@@ -10,11 +10,17 @@ const tools = [
   { name: "EMI Calculator", description: "Calculate loan EMI, interest and total payment", href: "/calculators/emi", category: "Calculators", icon: "🏦", badge: "Popular" },
   { name: "BMI Calculator", description: "Calculate your Body Mass Index instantly", href: "/calculators/bmi", category: "Calculators", icon: "⚖️", badge: "Popular" },
   { name: "Age Calculator", description: "Calculate exact age from date of birth", href: "/calculators/age", category: "Calculators", icon: "🎂", badge: "" },
+  { name: "Tip Calculator", description: "Calculate tip and split the bill between people", href: "/calculators/tip", category: "Calculators", icon: "🍽️", badge: "New" },
+  { name: "Discount Calculator", description: "Find final price and savings after a discount", href: "/calculators/discount", category: "Calculators", icon: "🏷️", badge: "New" },
+  { name: "Scientific Calculator", description: "Full calculator with sin, cos, log, sqrt and more", href: "/calculators/scientific", category: "Calculators", icon: "🔬", badge: "New" },
+  { name: "GPA Calculator", description: "Calculate GPA from course grades and credit hours", href: "/calculators/gpa", category: "Calculators", icon: "🎓", badge: "New" },
 
   // Converters
   { name: "Unit Converter", description: "Convert length, weight, temperature, speed and more", href: "/converters/unit", category: "Converters", icon: "📏", badge: "Popular" },
   { name: "Currency Converter", description: "Convert between 20 world currencies instantly", href: "/converters/currency", category: "Converters", icon: "💱", badge: "" },
   { name: "Color Converter", description: "Convert HEX, RGB, HSL color codes", href: "/converters/color", category: "Converters", icon: "🎨", badge: "" },
+  { name: "Time Zone Converter", description: "Convert date and time between world time zones", href: "/converters/timezone", category: "Converters", icon: "🌐", badge: "New" },
+  { name: "Number Base Converter", description: "Convert numbers between Binary, Octal, Decimal, Hex", href: "/converters/number-base", category: "Converters", icon: "🔢", badge: "New" },
 
   // Text Tools
   { name: "Word Counter", description: "Count words, characters, sentences and paragraphs", href: "/text-tools/word-counter", category: "Text Tools", icon: "✍️", badge: "Popular" },
@@ -22,9 +28,9 @@ const tools = [
   { name: "Text Reverser", description: "Reverse characters, words or lines instantly", href: "/text-tools/text-reverser", category: "Text Tools", icon: "🔁", badge: "" },
   { name: "Remove Duplicates", description: "Remove duplicate lines from any text", href: "/text-tools/remove-duplicates", category: "Text Tools", icon: "🗑️", badge: "" },
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for designs and mockups", href: "/text-tools/lorem-ipsum", category: "Text Tools", icon: "📄", badge: "New" },
-{ name: "Text to Slug", description: "Convert text to URL-friendly slug instantly", href: "/text-tools/text-to-slug", category: "Text Tools", icon: "🔗", badge: "New" },
-{ name: "Line Counter", description: "Count lines and get detailed line statistics", href: "/text-tools/line-counter", category: "Text Tools", icon: "🔢", badge: "New" },
-{ name: "Sort Lines", description: "Sort lines alphabetically, by length or randomly", href: "/text-tools/sort-lines", category: "Text Tools", icon: "↕️", badge: "New" },
+  { name: "Text to Slug", description: "Convert text to URL-friendly slug instantly", href: "/text-tools/text-to-slug", category: "Text Tools", icon: "🔗", badge: "New" },
+  { name: "Line Counter", description: "Count lines and get detailed line statistics", href: "/text-tools/line-counter", category: "Text Tools", icon: "🔢", badge: "New" },
+  { name: "Sort Lines", description: "Sort lines alphabetically, by length or randomly", href: "/text-tools/sort-lines", category: "Text Tools", icon: "↕️", badge: "New" },
 
   // Image Tools
   { name: "Image Compressor", description: "Compress JPG and PNG images without losing quality", href: "/image-tools/compress", category: "Image Tools", icon: "🗜️", badge: "Hot" },
@@ -37,6 +43,9 @@ const tools = [
   { name: "QR Code Generator", description: "Generate QR codes for any text or URL", href: "/developer-tools/qr-code", category: "Developer Tools", icon: "📱", badge: "New" },
   { name: "Regex Tester", description: "Test and debug regular expressions instantly", href: "/developer-tools/regex-tester", category: "Developer Tools", icon: "🔍", badge: "" },
   { name: "Password Generator", description: "Generate strong, secure passwords instantly", href: "/developer-tools/password-generator", category: "Developer Tools", icon: "🔑", badge: "New" },
+  { name: "Base64 Encoder/Decoder", description: "Encode text to Base64 or decode Base64 strings", href: "/developer-tools/base64", category: "Developer Tools", icon: "🔐", badge: "New" },
+  { name: "URL Encoder/Decoder", description: "Encode or decode URL percent-encoded strings", href: "/developer-tools/url-encoder", category: "Developer Tools", icon: "🔗", badge: "New" },
+  { name: "Markdown Previewer", description: "Write Markdown and see a live HTML preview", href: "/developer-tools/markdown", category: "Developer Tools", icon: "📝", badge: "New" },
 ];
 
 export default tools;
