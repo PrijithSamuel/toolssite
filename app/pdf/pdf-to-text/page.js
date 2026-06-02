@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function PDFToText() {
   const [file, setFile] = useState(null);
@@ -9,12 +10,7 @@ export default function PDFToText() {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  async function handleFile(e) {
-    const f = e.target.files[0];
-    if (!f) return;
-    setFile(f);
-    setText("");
-  }
+  async function handleFile(e) { const f = e.target.files[0]; if (!f) return; setFile(f); setText(""); }
 
   async function extract() {
     if (!file) return;
@@ -22,42 +18,28 @@ export default function PDFToText() {
     try {
       const arrayBuffer = await file.arrayBuffer();
       const url = URL.createObjectURL(new Blob([arrayBuffer], { type: "application/pdf" }));
-
       await new Promise((resolve, reject) => {
         if (window.pdfjsLib) { resolve(); return; }
         const script = document.createElement("script");
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
-        script.onload = resolve;
-        script.onerror = reject;
+        script.onload = resolve; script.onerror = reject;
         document.head.appendChild(script);
       });
-
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
       const pdf = await window.pdfjsLib.getDocument(url).promise;
       let fullText = "";
-
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const content = await page.getTextContent();
         const pageText = content.items.map((item) => item.str).join(" ");
         fullText += `--- Page ${i} ---\n${pageText}\n\n`;
       }
-
       setText(fullText || "No text found. This may be a scanned image-based PDF.");
-    } catch (e) {
-      setText("Error extracting text: " + e.message);
-    }
+    } catch (e) { setText("Error extracting text: " + e.message); }
     setLoading(false);
   }
 
-  function handleCopy() {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }
-
+  function handleCopy() { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); }
   function downloadTxt() {
     const blob = new Blob([text], { type: "text/plain" });
     const link = document.createElement("a");
@@ -67,84 +49,64 @@ export default function PDFToText() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/pdf" className="text-gray-400 hover:text-gray-600 text-sm">PDF Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">PDF to Text</span>
-        </div>
-      </header>
-
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">PDF to Text</h1>
-          <p className="text-gray-500">Extract text content from any PDF file instantly. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "PDF to Text" }]} />
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>PDF to Text</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Extract text content from any PDF file instantly. Free, no signup required.</p>
         </div>
 
-        {/* Upload */}
-        <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center mb-6 hover:border-gray-300 transition-colors">
+        <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" onChange={handleFile} className="hidden" id="pdftext-input" />
-          <label htmlFor="pdftext-input" className="cursor-pointer">
-            <div className="text-4xl mb-3">📝</div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Click to upload a PDF</p>
-            <p className="text-xs text-gray-400">Works on text-based PDFs. Scanned PDFs need OCR.</p>
+          <label htmlFor="pdftext-input" style={{ cursor: "pointer" }}>
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>📝</div>
+            <p style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>Click to upload a PDF</p>
+            <p style={{ fontSize: "12px", color: "#9CA3AF" }}>Works on text-based PDFs. Scanned PDFs need OCR.</p>
           </label>
         </div>
 
         {file && (
-          <div className="space-y-5">
-            {/* File info */}
-            <div className="bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 flex items-center gap-3">
-              <span className="text-xl">📄</span>
-              <div className="flex-1">
-                <p className="text-sm font-medium text-gray-700">{file.name}</p>
-                <p className="text-xs text-gray-400">{(file.size / 1024).toFixed(1)} KB</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "12px" }}>
+              <span style={{ fontSize: "20px" }}>📄</span>
+              <div style={{ flex: 1 }}>
+                <p style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B" }}>{file.name}</p>
+                <p style={{ fontSize: "11px", color: "#9CA3AF" }}>{(file.size / 1024).toFixed(1)} KB</p>
               </div>
             </div>
 
-            {/* Extract button */}
-            <button
-              type="button"
-              onClick={extract}
-              disabled={loading}
-              className="w-full bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-700 transition-colors disabled:opacity-50"
-            >
+            <button type="button" onClick={extract} disabled={loading}
+              style={{ width: "100%", background: "#4F46E5", color: "white", border: "none", padding: "14px", borderRadius: "12px", fontSize: "14px", fontWeight: "500", cursor: "pointer", opacity: loading ? 0.6 : 1 }}>
               {loading ? "Extracting text..." : "Extract Text"}
             </button>
 
-            {/* Result */}
             {text && (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium text-gray-700">Extracted Text</p>
-                  <div className="flex gap-2">
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <p style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B" }}>Extracted Text</p>
+                  <div style={{ display: "flex", gap: "8px" }}>
                     <button type="button" onClick={handleCopy}
-                      className="text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg">
+                      style={{ fontSize: "12px", color: "#6B7280", background: "#EEF2FF", border: "0.5px solid #C7D2FE", padding: "4px 12px", borderRadius: "6px", cursor: "pointer" }}>
                       {copied ? "Copied!" : "Copy"}
                     </button>
                     <button type="button" onClick={downloadTxt}
-                      className="text-xs text-white bg-gray-900 hover:bg-gray-700 px-3 py-1 rounded-lg">
+                      style={{ fontSize: "12px", color: "white", background: "#4F46E5", border: "none", padding: "4px 12px", borderRadius: "6px", cursor: "pointer" }}>
                       Download .txt
                     </button>
                   </div>
                 </div>
-                <textarea
-                  readOnly
-                  value={text}
-                  className="w-full h-96 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm font-mono leading-relaxed resize-none bg-gray-50 focus:outline-none"
-                />
-                <p className="text-xs text-gray-400">{text.split(/\s+/).filter(Boolean).length} words extracted</p>
+                <textarea readOnly value={text}
+                  style={{ width: "100%", height: "300px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "14px", fontSize: "13px", fontFamily: "monospace", lineHeight: "1.6", resize: "none", outline: "none", background: "white", color: "#374151" }} />
+                <p style={{ fontSize: "12px", color: "#9CA3AF" }}>{text.split(/\s+/).filter(Boolean).length} words extracted</p>
               </div>
             )}
           </div>
         )}
 
-        <div className="mt-8 bg-red-50 border border-red-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-red-900 mb-2">How to use</h2>
-          <ul className="text-sm text-red-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Upload any text-based PDF</li>
             <li>• Click Extract Text</li>
             <li>• Copy or download as .txt file</li>
@@ -152,6 +114,7 @@ export default function PDFToText() {
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

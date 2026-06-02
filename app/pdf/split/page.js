@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { PDFDocument } from "pdf-lib";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function SplitPDF() {
   const [file, setFile] = useState(null);
@@ -44,9 +45,7 @@ export default function SplitPDF() {
       const bytes = await file.arrayBuffer();
       const srcPdf = await PDFDocument.load(bytes);
       const total = srcPdf.getPageCount();
-
       if (mode === "all") {
-        // extract each page as separate PDF
         for (let i = 0; i < total; i++) {
           const newPdf = await PDFDocument.create();
           const [page] = await newPdf.copyPages(srcPdf, [i]);
@@ -60,7 +59,6 @@ export default function SplitPDF() {
           await new Promise(r => setTimeout(r, 300));
         }
       } else {
-        // extract specific pages
         const pages = parseRanges(pageRange, total);
         if (pages.length === 0) { alert("No valid pages found."); setLoading(false); return; }
         const newPdf = await PDFDocument.create();
@@ -74,119 +72,80 @@ export default function SplitPDF() {
         link.click();
       }
       setDone(true);
-    } catch (e) {
-      alert("Error splitting PDF: " + e.message);
-    }
+    } catch (e) { alert("Error splitting PDF: " + e.message); }
     setLoading(false);
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/pdf" className="text-gray-400 hover:text-gray-600 text-sm">PDF Tools</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Split PDF</span>
-        </div>
-      </header>
-
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Split PDF</h1>
-          <p className="text-gray-500">Split a PDF into separate pages or extract specific pages. Free, no signup.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Split PDF" }]} />
+      <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Split PDF</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Split a PDF into separate pages or extract specific pages. Free, no signup.</p>
         </div>
 
-        {/* Upload */}
-        <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center mb-6 hover:border-gray-300 transition-colors">
+        <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" onChange={handleFile} className="hidden" id="split-input" />
-          <label htmlFor="split-input" className="cursor-pointer">
-            <div className="text-4xl mb-3">✂️</div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Click to upload a PDF</p>
-            <p className="text-xs text-gray-400">One PDF file at a time</p>
+          <label htmlFor="split-input" style={{ cursor: "pointer" }}>
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>✂️</div>
+            <p style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>Click to upload a PDF</p>
+            <p style={{ fontSize: "12px", color: "#9CA3AF" }}>One PDF file at a time</p>
           </label>
         </div>
 
         {file && (
-          <div className="space-y-5">
-            {/* File info */}
-            <div className="bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 flex items-center gap-3">
-              <span className="text-xl">📄</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "12px" }}>
+              <span style={{ fontSize: "20px" }}>📄</span>
               <div>
-                <p className="text-sm font-medium text-gray-700">{file.name}</p>
-                <p className="text-xs text-gray-400">{pageCount} pages</p>
+                <p style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B" }}>{file.name}</p>
+                <p style={{ fontSize: "11px", color: "#9CA3AF" }}>{pageCount} pages</p>
               </div>
             </div>
 
-            {/* Mode */}
-            <div className="bg-red-50 border border-red-100 rounded-xl p-5 space-y-4">
-              <p className="text-sm font-medium text-gray-700">Split mode</p>
-              <div className="flex gap-3 flex-wrap">
-                {[
-                  { id: "all", label: "Extract all pages separately" },
-                  { id: "range", label: "Extract specific pages" },
-                ].map((m) => (
-                  <button
-                    key={m.id}
-                    type="button"
-                    onClick={() => setMode(m.id)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
-                      mode === m.id
-                        ? "bg-red-600 text-white border-red-600"
-                        : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
-                    }`}
-                  >
-                    {m.label}
+            <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px" }}>
+              <p style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "12px" }}>Split mode</p>
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: mode === "range" ? "12px" : "0" }}>
+                {[["all", "Extract all pages separately"], ["range", "Extract specific pages"]].map(([id, label]) => (
+                  <button key={id} type="button" onClick={() => setMode(id)}
+                    style={{ padding: "8px 16px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer", border: mode === id ? "none" : "0.5px solid #C7D2FE", background: mode === id ? "#4F46E5" : "white", color: mode === id ? "white" : "#4B5563" }}>
+                    {label}
                   </button>
                 ))}
               </div>
-
               {mode === "range" && (
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">
-                    Page numbers (e.g. 1,3,5-8)
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. 1,3,5-8"
-                    value={pageRange}
-                    onChange={(e) => setPageRange(e.target.value)}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-200"
-                  />
-                  <p className="text-xs text-gray-400 mt-1">Total pages: {pageCount}</p>
+                  <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>Page numbers (e.g. 1,3,5-8) — Total: {pageCount}</label>
+                  <input type="text" placeholder="e.g. 1,3,5-8" value={pageRange} onChange={(e) => setPageRange(e.target.value)}
+                    style={{ width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" }} />
                 </div>
               )}
             </div>
 
-            {/* Split button */}
-            <button
-              type="button"
-              onClick={split}
-              disabled={loading}
-              className="w-full bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-700 transition-colors disabled:opacity-50"
-            >
+            <button type="button" onClick={split} disabled={loading}
+              style={{ width: "100%", background: "#4F46E5", color: "white", border: "none", padding: "14px", borderRadius: "12px", fontSize: "14px", fontWeight: "500", cursor: "pointer", opacity: loading ? 0.6 : 1 }}>
               {loading ? "Splitting..." : "Split PDF"}
             </button>
 
             {done && (
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                <p className="text-sm font-semibold text-green-700">✓ PDF split and downloaded successfully!</p>
+              <div style={{ background: "#D1FAE5", border: "0.5px solid #A7F3D0", borderRadius: "10px", padding: "14px", textAlign: "center" }}>
+                <p style={{ fontSize: "13px", fontWeight: "500", color: "#065F46" }}>✓ PDF split and downloaded successfully!</p>
               </div>
             )}
           </div>
         )}
 
-        <div className="mt-8 bg-red-50 border border-red-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-red-900 mb-2">How to use</h2>
-          <ul className="text-sm text-red-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Upload a PDF file</li>
             <li>• Choose to split all pages or extract specific ones</li>
             <li>• For specific pages use format: 1,3,5-8</li>
-            <li>• Click Split — pages download automatically</li>
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
