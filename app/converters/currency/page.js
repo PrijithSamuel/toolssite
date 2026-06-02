@@ -1,29 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const rates = {
-  USD: 1,
-  EUR: 0.92,
-  GBP: 0.79,
-  INR: 83.12,
-  AUD: 1.53,
-  CAD: 1.36,
-  SGD: 1.34,
-  AED: 3.67,
-  JPY: 149.50,
-  CHF: 0.90,
-  CNY: 7.24,
-  MYR: 4.72,
-  NZD: 1.63,
-  HKD: 7.82,
-  SAR: 3.75,
-  KWD: 0.31,
-  QAR: 3.64,
-  THB: 35.12,
-  ZAR: 18.63,
-  MXN: 17.15,
+  USD: 1, EUR: 0.92, GBP: 0.79, INR: 83.12, AUD: 1.53,
+  CAD: 1.36, SGD: 1.34, AED: 3.67, JPY: 149.50, CHF: 0.90,
+  CNY: 7.24, MYR: 4.72, NZD: 1.63, HKD: 7.82, SAR: 3.75,
+  KWD: 0.31, QAR: 3.64, THB: 35.12, ZAR: 18.63, MXN: 17.15,
 };
 
 const flags = {
@@ -55,110 +40,57 @@ export default function CurrencyConverter() {
   }
 
   const result = convert(amount, from, to);
-
-  function swap() {
-    setFrom(to);
-    setTo(from);
-  }
-
+  function swap() { setFrom(to); setTo(from); }
   const currencies = Object.keys(rates);
+  const selectStyle = { width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" };
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/converters" className="text-gray-400 hover:text-gray-600 text-sm">Converters</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Currency Converter</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Currency Converter</h1>
-          <p className="text-gray-500">Convert between 20 world currencies. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Converters", href: "/converters" }, { label: "Currency Converter" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Currency Converter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert between 20 world currencies. Free, no signup required.</p>
         </div>
 
-        <div className="bg-green-50 border border-green-100 rounded-xl p-6 space-y-4">
-          {/* Amount */}
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>
           <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Amount</label>
-            <input
-              type="number"
-              placeholder="Enter amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-            />
+            <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>AMOUNT</label>
+            <input type="number" placeholder="Enter amount" value={amount} onChange={(e) => setAmount(e.target.value)} style={selectStyle} />
           </div>
-
-          {/* From / Swap / To */}
-          <div className="flex items-end gap-3">
-            <div className="flex-1">
-              <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">From</label>
-              <select
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-              >
-                {currencies.map((c) => (
-                  <option key={c} value={c}>{flags[c]} {c} — {names[c]}</option>
-                ))}
+          <div style={{ display: "flex", alignItems: "flex-end", gap: "10px" }}>
+            <div style={{ flex: 1 }}>
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>FROM</label>
+              <select value={from} onChange={(e) => setFrom(e.target.value)} style={selectStyle}>
+                {currencies.map((c) => <option key={c} value={c}>{flags[c]} {c} — {names[c]}</option>)}
               </select>
             </div>
-            <button
-              type="button"
-              onClick={swap}
-              className="mb-0.5 px-3 py-2 border border-gray-200 rounded-lg bg-white text-gray-500 hover:bg-gray-50 text-lg"
-            >
+            <button type="button" onClick={swap}
+              style={{ padding: "10px 14px", border: "0.5px solid #C7D2FE", borderRadius: "8px", background: "white", cursor: "pointer", fontSize: "18px", marginBottom: "1px" }}>
               ⇄
             </button>
-            <div className="flex-1">
-              <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">To</label>
-              <select
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-              >
-                {currencies.map((c) => (
-                  <option key={c} value={c}>{flags[c]} {c} — {names[c]}</option>
-                ))}
+            <div style={{ flex: 1 }}>
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>TO</label>
+              <select value={to} onChange={(e) => setTo(e.target.value)} style={selectStyle}>
+                {currencies.map((c) => <option key={c} value={c}>{flags[c]} {c} — {names[c]}</option>)}
               </select>
             </div>
           </div>
-
-          {/* Result */}
           {result && (
-            <div className="bg-white border border-green-200 rounded-xl p-5 text-center">
-              <div className="text-xs text-gray-400 mb-1">
-                {amount} {names[from]} =
-              </div>
-              <div className="text-4xl font-bold text-green-600">
-                {flags[to]} {result}
-              </div>
-              <div className="text-sm text-gray-500 mt-1">{names[to]}</div>
-              <div className="text-xs text-gray-400 mt-3">
-                1 {from} = {convert(1, from, to)} {to}
-              </div>
+            <div style={{ background: "white", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", color: "#9CA3AF", marginBottom: "6px" }}>{amount} {names[from]} =</div>
+              <div style={{ fontSize: "40px", fontWeight: "500", color: "#4F46E5" }}>{flags[to]} {result}</div>
+              <div style={{ fontSize: "14px", color: "#6B7280", marginTop: "4px" }}>{names[to]}</div>
+              <div style={{ fontSize: "12px", color: "#9CA3AF", marginTop: "8px" }}>1 {from} = {convert(1, from, to)} {to}</div>
             </div>
           )}
         </div>
 
-        <div className="mt-4 bg-yellow-50 border border-yellow-100 rounded-xl p-4">
-          <p className="text-xs text-yellow-700">⚠️ Rates are approximate and for reference only. For live rates check your bank or a financial service.</p>
-        </div>
-
-        <div className="mt-6 bg-green-50 border border-green-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-green-900 mb-2">How to use</h2>
-          <ul className="text-sm text-green-700 space-y-1">
-            <li>• Enter an amount and select currencies</li>
-            <li>• Result updates instantly as you type</li>
-            <li>• Use ⇄ to swap currencies quickly</li>
-          </ul>
+        <div style={{ marginTop: "12px", background: "#FEF9C3", border: "0.5px solid #FDE68A", borderRadius: "10px", padding: "12px 16px" }}>
+          <p style={{ fontSize: "12px", color: "#713F12" }}>⚠️ Rates are approximate and for reference only. Check your bank for live rates.</p>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

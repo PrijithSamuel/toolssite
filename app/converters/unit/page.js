@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const categories = {
   Length: {
@@ -12,10 +13,7 @@ const categories = {
     units: ["Kilogram", "Gram", "Pound", "Ounce", "Ton", "Milligram"],
     toBase: { Kilogram: 1, Gram: 0.001, Pound: 0.453592, Ounce: 0.0283495, Ton: 1000, Milligram: 0.000001 },
   },
-  Temperature: {
-    units: ["Celsius", "Fahrenheit", "Kelvin"],
-    toBase: {},
-  },
+  Temperature: { units: ["Celsius", "Fahrenheit", "Kelvin"], toBase: {} },
   Speed: {
     units: ["km/h", "mph", "m/s", "Knot"],
     toBase: { "km/h": 1, mph: 1.60934, "m/s": 3.6, Knot: 1.852 },
@@ -49,9 +47,7 @@ export default function UnitConverter() {
   function getResult() {
     const val = parseFloat(value);
     if (isNaN(val)) return "";
-    if (category === "Temperature") {
-      return convertTemp(val, from, to).toFixed(4).replace(/\.?0+$/, "");
-    }
+    if (category === "Temperature") return convertTemp(val, from, to).toFixed(4).replace(/\.?0+$/, "");
     const base = val * categories[category].toBase[from];
     return (base / categories[category].toBase[to]).toFixed(6).replace(/\.?0+$/, "");
   }
@@ -64,103 +60,64 @@ export default function UnitConverter() {
   }
 
   const result = getResult();
+  const selectStyle = { width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" };
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/converters" className="text-gray-400 hover:text-gray-600 text-sm">Converters</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Unit Converter</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Unit Converter</h1>
-          <p className="text-gray-500">Convert length, weight, temperature, speed and more. Free, no signup.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Converters", href: "/converters" }, { label: "Unit Converter" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Unit Converter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert length, weight, temperature, speed and more. Free, no signup.</p>
         </div>
 
-        {/* Category tabs */}
-        <div className="flex gap-2 flex-wrap mb-8">
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
           {Object.keys(categories).map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => handleCategoryChange(cat)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
-                category === cat
-                  ? "bg-green-600 text-white border-green-600"
-                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
-              }`}
-            >
+            <button key={cat} type="button" onClick={() => handleCategoryChange(cat)}
+              style={{ padding: "7px 14px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer", border: category === cat ? "none" : "0.5px solid #C7D2FE", background: category === cat ? "#4F46E5" : "white", color: category === cat ? "white" : "#4B5563" }}>
               {cat}
             </button>
           ))}
         </div>
 
-        <div className="bg-green-50 border border-green-100 rounded-xl p-6 space-y-4">
-          {/* From/To selectors */}
-          <div className="grid grid-cols-2 gap-4">
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">From</label>
-              <select
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-              >
-                {categories[category].units.map((u) => (
-                  <option key={u}>{u}</option>
-                ))}
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>FROM</label>
+              <select value={from} onChange={(e) => setFrom(e.target.value)} style={selectStyle}>
+                {categories[category].units.map((u) => <option key={u}>{u}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">To</label>
-              <select
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-              >
-                {categories[category].units.map((u) => (
-                  <option key={u}>{u}</option>
-                ))}
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>TO</label>
+              <select value={to} onChange={(e) => setTo(e.target.value)} style={selectStyle}>
+                {categories[category].units.map((u) => <option key={u}>{u}</option>)}
               </select>
             </div>
           </div>
-
-          {/* Input */}
           <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Value</label>
-            <input
-              type="number"
-              placeholder={`Enter value in ${from}`}
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-200"
-            />
+            <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>VALUE</label>
+            <input type="number" placeholder={`Enter value in ${from}`} value={value} onChange={(e) => setValue(e.target.value)} style={selectStyle} />
           </div>
-
-          {/* Result */}
           {result !== "" && (
-            <div className="bg-white border border-green-200 rounded-xl p-5 text-center">
-              <div className="text-xs text-gray-400 mb-1">{value} {from} =</div>
-              <div className="text-4xl font-bold text-green-600">{result}</div>
-              <div className="text-sm text-gray-500 mt-1">{to}</div>
+            <div style={{ background: "white", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", color: "#9CA3AF", marginBottom: "6px" }}>{value} {from} =</div>
+              <div style={{ fontSize: "40px", fontWeight: "500", color: "#4F46E5" }}>{result}</div>
+              <div style={{ fontSize: "14px", color: "#6B7280", marginTop: "4px" }}>{to}</div>
             </div>
           )}
         </div>
 
-        <div className="mt-8 bg-green-50 border border-green-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-green-900 mb-2">How to use</h2>
-          <ul className="text-sm text-green-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Select a category (Length, Weight, Temperature etc.)</li>
             <li>• Choose the units to convert from and to</li>
             <li>• Enter a value — result appears instantly</li>
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

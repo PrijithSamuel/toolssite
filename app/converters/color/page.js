@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function hexToRgb(hex) {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -27,12 +28,10 @@ function rgbToHsl(r, g, b) {
   return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
 }
 
-function isValidHex(hex) {
-  return /^#[0-9A-Fa-f]{6}$/.test(hex);
-}
+function isValidHex(hex) { return /^#[0-9A-Fa-f]{6}$/.test(hex); }
 
 export default function ColorConverter() {
-  const [hex, setHex] = useState("#3b82f6");
+  const [hex, setHex] = useState("#4F46E5");
   const [copied, setCopied] = useState("");
 
   const validHex = isValidHex(hex);
@@ -45,72 +44,42 @@ export default function ColorConverter() {
     setTimeout(() => setCopied(""), 2000);
   }
 
-  const presets = [
-    "#ef4444", "#f97316", "#eab308", "#22c55e",
-    "#3b82f6", "#8b5cf6", "#ec4899", "#000000",
-    "#ffffff", "#6b7280", "#1e293b", "#f8fafc",
-  ];
+  const presets = ["#4F46E5", "#059669", "#DC2626", "#D97706", "#2563EB", "#7C3AED", "#EC4899", "#000000", "#ffffff", "#6B7280", "#1E1B4B", "#F5F3FF"];
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/converters" className="text-gray-400 hover:text-gray-600 text-sm">Converters</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Color Converter</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Color Converter</h1>
-          <p className="text-gray-500">Convert HEX colors to RGB and HSL instantly. Free, no signup.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Converters", href: "/converters" }, { label: "Color Converter" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Color Converter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert HEX colors to RGB and HSL instantly. Free, no signup.</p>
         </div>
 
-        {/* Color preview + input */}
-        <div className="bg-gray-50 border border-gray-100 rounded-xl p-6 mb-6">
-          <div
-            className="w-full h-32 rounded-xl mb-4 border border-gray-200 transition-colors"
-            style={{ backgroundColor: validHex ? hex : "#ffffff" }}
-          />
-          <div className="flex gap-3 items-center">
-            <input
-              type="color"
-              value={validHex ? hex : "#000000"}
-              onChange={(e) => setHex(e.target.value)}
-              className="w-12 h-10 rounded-lg border border-gray-200 cursor-pointer"
-            />
-            <input
-              type="text"
-              value={hex}
-              onChange={(e) => setHex(e.target.value)}
-              placeholder="#3b82f6"
-              className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-gray-200"
-            />
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
+          <div style={{ width: "100%", height: "100px", borderRadius: "10px", background: validHex ? hex : "#ffffff", border: "0.5px solid #C7D2FE", marginBottom: "16px" }} />
+          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <input type="color" value={validHex ? hex : "#000000"} onChange={(e) => setHex(e.target.value)}
+              style={{ width: "44px", height: "40px", borderRadius: "8px", border: "0.5px solid #C7D2FE", cursor: "pointer", padding: "2px" }} />
+            <input type="text" value={hex} onChange={(e) => setHex(e.target.value)} placeholder="#4F46E5"
+              style={{ flex: 1, border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", fontFamily: "monospace", outline: "none", background: "white", color: "#374151" }} />
           </div>
         </div>
 
-        {/* Results */}
         {validHex && rgb && hsl && (
-          <div className="space-y-3 mb-6">
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "16px" }}>
             {[
               { label: "HEX", value: hex.toUpperCase() },
               { label: "RGB", value: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` },
               { label: "HSL", value: `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)` },
               { label: "RGB Values", value: `R: ${rgb.r}  G: ${rgb.g}  B: ${rgb.b}` },
             ].map((item) => (
-              <div key={item.label} className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+              <div key={item.label} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wide mr-3">{item.label}</span>
-                  <span className="text-sm font-mono text-gray-800">{item.value}</span>
+                  <span style={{ fontSize: "11px", color: "#6366F1", fontWeight: "500", marginRight: "12px" }}>{item.label}</span>
+                  <span style={{ fontSize: "13px", fontFamily: "monospace", color: "#374151" }}>{item.value}</span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => handleCopy(item.value, item.label)}
-                  className="text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg"
-                >
+                <button type="button" onClick={() => handleCopy(item.value, item.label)}
+                  style={{ fontSize: "12px", color: "#6B7280", background: "#EEF2FF", border: "0.5px solid #C7D2FE", padding: "3px 10px", borderRadius: "6px", cursor: "pointer" }}>
                   {copied === item.label ? "Copied!" : "Copy"}
                 </button>
               </div>
@@ -118,35 +87,17 @@ export default function ColorConverter() {
           </div>
         )}
 
-        {/* Presets */}
         <div>
-          <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-3">Quick Presets</p>
-          <div className="flex flex-wrap gap-2">
+          <p style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", marginBottom: "8px" }}>QUICK PRESETS</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {presets.map((color) => (
-              <button
-                key={color}
-                type="button"
-                onClick={() => setHex(color)}
-                className="w-8 h-8 rounded-lg border-2 transition-transform hover:scale-110"
-                style={{
-                  backgroundColor: color,
-                  borderColor: hex === color ? "#3b82f6" : "#e5e7eb",
-                }}
-              />
+              <button key={color} type="button" onClick={() => setHex(color)}
+                style={{ width: "32px", height: "32px", borderRadius: "8px", background: color, border: hex === color ? "2px solid #4F46E5" : "0.5px solid #C7D2FE", cursor: "pointer" }} />
             ))}
           </div>
         </div>
-
-        <div className="mt-8 bg-green-50 border border-green-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-green-900 mb-2">How to use</h2>
-          <ul className="text-sm text-green-700 space-y-1">
-            <li>• Type a HEX code or use the color picker</li>
-            <li>• HEX, RGB and HSL values appear instantly</li>
-            <li>• Click Copy next to any format to copy it</li>
-            <li>• Use presets to quickly pick common colors</li>
-          </ul>
-        </div>
       </div>
+      <Footer />
     </main>
   );
 }
