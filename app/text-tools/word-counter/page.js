@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function WordCounter() {
   const [text, setText] = useState("");
@@ -15,29 +14,19 @@ export default function WordCounter() {
   const readingTime = Math.ceil(words / 200);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Text Tools", href: "/text-tools" }, { label: "Word Counter" }]} />
 
-      {/* Header */}
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm text-gray-500">Text Tools</span>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Word Counter</span>
-        </div>
-      </header>
-
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px 24px" }}>
 
         {/* Title */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Word Counter</h1>
-          <p className="text-gray-500">Count words, characters, sentences and paragraphs instantly. Free, no signup required.</p>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Word Counter</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Count words, characters, sentences and paragraphs instantly. Free, no signup required.</p>
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "10px", marginBottom: "20px" }}>
           {[
             { label: "Words", value: words },
             { label: "Characters", value: characters },
@@ -46,25 +35,26 @@ export default function WordCounter() {
             { label: "Paragraphs", value: paragraphs },
             { label: "Read Time", value: readingTime + " min" },
           ].map((stat) => (
-            <div key={stat.label} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-              <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-              <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
+            <div key={stat.label} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "14px 8px", textAlign: "center" }}>
+              <div style={{ fontSize: "22px", fontWeight: "500", color: "#4F46E5" }}>{stat.value}</div>
+              <div style={{ fontSize: "11px", color: "#9CA3AF", marginTop: "4px" }}>{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Textarea */}
-        <div className="relative">
+        <div style={{ position: "relative" }}>
           <textarea
-            className="w-full h-72 border border-gray-200 rounded-xl p-4 text-gray-800 text-sm leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-gray-200"
+            style={{ width: "100%", height: "280px", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px", fontSize: "14px", color: "#374151", lineHeight: "1.6", resize: "none", outline: "none", background: "white", fontFamily: "inherit" }}
             placeholder="Start typing or paste your text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
           {text && (
             <button
+              type="button"
               onClick={() => setText("")}
-              className="absolute top-3 right-3 text-xs text-gray-400 hover:text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-lg"
+              style={{ position: "absolute", top: "12px", right: "12px", fontSize: "12px", color: "#6B7280", background: "white", border: "0.5px solid #E0E7FF", padding: "4px 12px", borderRadius: "6px", cursor: "pointer" }}
             >
               Clear
             </button>
@@ -72,9 +62,9 @@ export default function WordCounter() {
         </div>
 
         {/* Tips */}
-        <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-blue-900 mb-2">How to use</h2>
-          <ul className="text-sm text-blue-700 space-y-1">
+        <div style={{ marginTop: "24px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <h2 style={{ fontSize: "13px", fontWeight: "500", color: "#1E1B4B", marginBottom: "8px" }}>How to use</h2>
+          <ul style={{ fontSize: "13px", color: "#4338CA", lineHeight: "1.8" }}>
             <li>• Type or paste any text in the box above</li>
             <li>• Stats update instantly as you type</li>
             <li>• Reading time is based on 200 words per minute</li>
@@ -82,6 +72,8 @@ export default function WordCounter() {
         </div>
 
       </div>
+
+      <Footer />
     </main>
   );
 }

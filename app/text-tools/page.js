@@ -1,39 +1,43 @@
 import Link from "next/link";
-
-const tools = [
-  { name: "Word Counter", description: "Count words, characters and sentences", href: "/text-tools/word-counter" },
-  { name: "Case Converter", description: "Convert text to UPPER, lower or Title Case", href: "/text-tools/case-converter" },
-  { name: "Text Reverser", description: "Reverse any text instantly", href: "/text-tools/text-reverser" },
-  { name: "Remove Duplicates", description: "Remove duplicate lines from text", href: "/text-tools/remove-duplicates" },
-];
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Free Text Tools — Word Counter, Case Converter, Text Reverser",
   description: "Free online text tools — word counter, case converter, text reverser, remove duplicates and more. No signup required.",
 };
 
+const tools = [
+  { name: "Word Counter", description: "Count words, characters, sentences and paragraphs", href: "/text-tools/word-counter", icon: "✍️" },
+  { name: "Case Converter", description: "Convert text to UPPER, lower or Title Case", href: "/text-tools/case-converter", icon: "🔤" },
+  { name: "Text Reverser", description: "Reverse any text instantly", href: "/text-tools/text-reverser", icon: "🔁" },
+  { name: "Remove Duplicates", description: "Remove duplicate lines from text", href: "/text-tools/remove-duplicates", icon: "🗑️" },
+];
+
 export default function TextTools() {
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Text Tools</span>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Text Tools" }]} />
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "28px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Text Tools</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online text tools — no signup required.</p>
         </div>
-      </header>
-      <div className="max-w-4xl mx-auto px-6 py-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Text Tools</h1>
-        <p className="text-gray-500 mb-8">Free online text tools — no signup required.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
-            <Link key={tool.href} href={tool.href} className="border border-yellow-200 bg-yellow-50 rounded-xl p-5 hover:shadow-md transition-shadow block">
-              <div className="font-semibold text-gray-900 mb-1">{tool.name}</div>
-              <div className="text-sm text-gray-500">{tool.description}</div>
+            <Link key={tool.href} href={tool.href} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#EEF2FF", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", flexShrink: 0 }}>
+                {tool.icon}
+              </div>
+              <div>
+                <div style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>{tool.name}</div>
+                <div style={{ fontSize: "13px", color: "#6B7280" }}>{tool.description}</div>
+              </div>
             </Link>
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
