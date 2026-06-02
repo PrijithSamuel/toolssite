@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
@@ -19,92 +18,41 @@ export default function EMICalculator() {
     const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     const totalPayment = emi * n;
     const totalInterest = totalPayment - p;
-    return {
-      emi: emi.toFixed(2),
-      totalPayment: totalPayment.toFixed(2),
-      totalInterest: totalInterest.toFixed(2),
-      months: n,
-    };
+    return { emi: emi.toFixed(2), totalPayment: totalPayment.toFixed(2), totalInterest: totalInterest.toFixed(2), months: n };
   }
 
   const result = calcEMI();
-
-  function fmt(num) {
-    return parseFloat(num).toLocaleString("en-IN", { maximumFractionDigits: 2 });
-  }
-
-  const interestPercent = result
-    ? ((parseFloat(result.totalInterest) / parseFloat(result.totalPayment)) * 100).toFixed(1)
-    : 0;
+  function fmt(num) { return parseFloat(num).toLocaleString("en-IN", { maximumFractionDigits: 2 }); }
+  const interestPercent = result ? ((parseFloat(result.totalInterest) / parseFloat(result.totalPayment)) * 100).toFixed(1) : 0;
   const principalPercent = result ? (100 - parseFloat(interestPercent)).toFixed(1) : 0;
+  const inputStyle = { width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" };
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/calculators" className="text-gray-400 hover:text-gray-600 text-sm">Calculators</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">EMI Calculator</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">EMI Calculator</h1>
-          <p className="text-gray-500">Calculate your loan EMI, total interest and payment breakdown instantly.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "EMI Calculator" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>EMI Calculator</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your loan EMI, total interest and payment breakdown instantly.</p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6 space-y-4">
-
-          {/* Principal */}
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount (₹)</label>
-            <input
-              type="number"
-              placeholder="e.g. 1000000"
-              value={principal}
-              onChange={(e) => setPrincipal(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white"
-            />
+            <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>Loan Amount (₹)</label>
+            <input type="number" placeholder="e.g. 1000000" value={principal} onChange={(e) => setPrincipal(e.target.value)} style={inputStyle} />
           </div>
-
-          {/* Interest rate */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
-            <input
-              type="number"
-              placeholder="e.g. 8.5"
-              value={rate}
-              onChange={(e) => setRate(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white"
-            />
+            <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>Annual Interest Rate (%)</label>
+            <input type="number" placeholder="e.g. 8.5" value={rate} onChange={(e) => setRate(e.target.value)} style={inputStyle} />
           </div>
-
-          {/* Tenure */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Loan Tenure</label>
-            <div className="flex gap-2">
-              <input
-                type="number"
-                placeholder={tenureType === "years" ? "e.g. 20" : "e.g. 240"}
-                value={tenure}
-                onChange={(e) => setTenure(e.target.value)}
-                className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white"
-              />
-              <div className="flex rounded-lg border border-gray-200 overflow-hidden">
+            <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>Loan Tenure</label>
+            <div style={{ display: "flex", gap: "8px" }}>
+              <input type="number" placeholder={tenureType === "years" ? "e.g. 20" : "e.g. 240"} value={tenure} onChange={(e) => setTenure(e.target.value)} style={{ ...inputStyle, flex: 1 }} />
+              <div style={{ display: "flex", border: "0.5px solid #C7D2FE", borderRadius: "8px", overflow: "hidden" }}>
                 {["years", "months"].map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    onClick={() => setTenureType(t)}
-                    className={`px-3 py-2 text-sm font-medium transition-colors capitalize ${
-                      tenureType === t
-                        ? "bg-blue-600 text-white"
-                        : "bg-white text-gray-600 hover:bg-gray-50"
-                    }`}
-                  >
+                  <button key={t} type="button" onClick={() => setTenureType(t)}
+                    style={{ padding: "10px 14px", fontSize: "13px", cursor: "pointer", border: "none", background: tenureType === t ? "#4F46E5" : "white", color: tenureType === t ? "white" : "#4B5563", textTransform: "capitalize" }}>
                     {t}
                   </button>
                 ))}
@@ -114,58 +62,41 @@ export default function EMICalculator() {
         </div>
 
         {result && (
-          <div className="space-y-4">
-            {/* EMI result */}
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-              <div className="text-xs text-gray-400 mb-1">Monthly EMI</div>
-              <div className="text-4xl font-bold text-green-600">₹{fmt(result.emi)}</div>
-              <div className="text-sm text-gray-500 mt-1">for {result.months} months</div>
+          <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div style={{ background: "#D1FAE5", border: "0.5px solid #A7F3D0", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", color: "#6B7280", marginBottom: "4px" }}>Monthly EMI</div>
+              <div style={{ fontSize: "40px", fontWeight: "500", color: "#059669" }}>₹{fmt(result.emi)}</div>
+              <div style={{ fontSize: "13px", color: "#065F46", marginTop: "4px" }}>for {result.months} months</div>
             </div>
-
-            {/* Breakdown */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 text-center">
-                <div className="text-xs text-gray-400 mb-1">Principal Amount</div>
-                <div className="text-xl font-bold text-gray-900">₹{fmt(principal)}</div>
-                <div className="text-xs text-gray-400 mt-1">{principalPercent}% of total</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+              <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "16px", textAlign: "center" }}>
+                <div style={{ fontSize: "11px", color: "#9CA3AF", marginBottom: "4px" }}>Principal</div>
+                <div style={{ fontSize: "20px", fontWeight: "500", color: "#1E1B4B" }}>₹{fmt(principal)}</div>
+                <div style={{ fontSize: "11px", color: "#9CA3AF", marginTop: "2px" }}>{principalPercent}% of total</div>
               </div>
-              <div className="bg-red-50 border border-red-100 rounded-xl p-4 text-center">
-                <div className="text-xs text-gray-400 mb-1">Total Interest</div>
-                <div className="text-xl font-bold text-red-600">₹{fmt(result.totalInterest)}</div>
-                <div className="text-xs text-gray-400 mt-1">{interestPercent}% of total</div>
+              <div style={{ background: "#FEE2E2", border: "0.5px solid #FECACA", borderRadius: "10px", padding: "16px", textAlign: "center" }}>
+                <div style={{ fontSize: "11px", color: "#9CA3AF", marginBottom: "4px" }}>Total Interest</div>
+                <div style={{ fontSize: "20px", fontWeight: "500", color: "#DC2626" }}>₹{fmt(result.totalInterest)}</div>
+                <div style={{ fontSize: "11px", color: "#9CA3AF", marginTop: "2px" }}>{interestPercent}% of total</div>
               </div>
             </div>
-
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
-              <div className="text-xs text-gray-400 mb-1">Total Payment</div>
-              <div className="text-2xl font-bold text-blue-600">₹{fmt(result.totalPayment)}</div>
+            <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "10px", padding: "16px", textAlign: "center" }}>
+              <div style={{ fontSize: "11px", color: "#9CA3AF", marginBottom: "4px" }}>Total Payment</div>
+              <div style={{ fontSize: "24px", fontWeight: "500", color: "#4F46E5" }}>₹{fmt(result.totalPayment)}</div>
             </div>
-
-            {/* Visual bar */}
             <div>
-              <div className="flex justify-between text-xs text-gray-400 mb-1">
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#9CA3AF", marginBottom: "4px" }}>
                 <span>Principal {principalPercent}%</span>
                 <span>Interest {interestPercent}%</span>
               </div>
-              <div className="h-4 rounded-full overflow-hidden bg-red-200">
-                <div
-                  className="h-full bg-green-500 rounded-full"
-                  style={{ width: `${principalPercent}%` }}
-                />
+              <div style={{ height: "8px", borderRadius: "4px", background: "#FEE2E2", overflow: "hidden" }}>
+                <div style={{ height: "100%", background: "#4F46E5", borderRadius: "4px", width: `${principalPercent}%` }} />
               </div>
             </div>
           </div>
         )}
-
-        <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-blue-900 mb-2">How to use</h2>
-          <ul className="text-sm text-blue-700 space-y-1">
-            <li>• Enter your loan amount, interest rate and tenure</li>
-            <li>• Monthly EMI and full breakdown appear instantly</li>
-            <li>• Switch between years and months for tenure</li>
-          </ul>
-        </div>
       </div>
+      <Footer />
     </main>
   );
 }

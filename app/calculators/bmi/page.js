@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function BMICalculator() {
   const [unit, setUnit] = useState("metric");
@@ -29,128 +30,80 @@ export default function BMICalculator() {
   function getCategory(bmi) {
     if (!bmi) return null;
     const b = parseFloat(bmi);
-    if (b < 18.5) return { label: "Underweight", color: "text-blue-600", bg: "bg-blue-50 border-blue-200" };
-    if (b < 25) return { label: "Normal weight", color: "text-green-600", bg: "bg-green-50 border-green-200" };
-    if (b < 30) return { label: "Overweight", color: "text-yellow-600", bg: "bg-yellow-50 border-yellow-200" };
-    return { label: "Obese", color: "text-red-600", bg: "bg-red-50 border-red-200" };
+    if (b < 18.5) return { label: "Underweight", color: "#2563EB", bg: "#DBEAFE" };
+    if (b < 25) return { label: "Normal weight", color: "#059669", bg: "#D1FAE5" };
+    if (b < 30) return { label: "Overweight", color: "#D97706", bg: "#FEF3C7" };
+    return { label: "Obese", color: "#DC2626", bg: "#FEE2E2" };
   }
 
   const category = getCategory(bmi);
+  const inputStyle = { width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" };
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/calculators" className="text-gray-400 hover:text-gray-600 text-sm">Calculators</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">BMI Calculator</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">BMI Calculator</h1>
-          <p className="text-gray-500">Calculate your Body Mass Index instantly. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "BMI Calculator" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>BMI Calculator</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your Body Mass Index instantly. Free, no signup required.</p>
         </div>
 
-        {/* Unit toggle */}
-        <div className="flex gap-2 mb-8">
+        <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
           {["metric", "imperial"].map((u) => (
-            <button
-              key={u}
-              type="button"
-              onClick={() => { setUnit(u); setHeight(""); setWeight(""); setHeightFt(""); setHeightIn(""); }}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors capitalize ${
-                unit === u
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
-              }`}
-            >
+            <button key={u} type="button" onClick={() => { setUnit(u); setHeight(""); setWeight(""); setHeightFt(""); setHeightIn(""); }}
+              style={{ padding: "8px 20px", borderRadius: "8px", fontSize: "13px", fontWeight: "500", cursor: "pointer", border: unit === u ? "none" : "0.5px solid #C7D2FE", background: unit === u ? "#4F46E5" : "white", color: unit === u ? "white" : "#4B5563", textTransform: "capitalize" }}>
               {u} {u === "metric" ? "(cm, kg)" : "(ft, lbs)"}
             </button>
           ))}
         </div>
 
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6">
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            {unit === "metric" ? (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
-                <input
-                  type="number"
-                  placeholder="e.g. 175"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                />
-              </div>
-            ) : (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Height</label>
-                <div className="flex gap-2">
-                  <input
-                    type="number"
-                    placeholder="ft"
-                    value={heightFt}
-                    onChange={(e) => setHeightFt(e.target.value)}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  />
-                  <input
-                    type="number"
-                    placeholder="in"
-                    value={heightIn}
-                    onChange={(e) => setHeightIn(e.target.value)}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  />
-                </div>
-              </div>
-            )}
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>
+                Height {unit === "metric" ? "(cm)" : ""}
+              </label>
+              {unit === "metric" ? (
+                <input type="number" placeholder="e.g. 175" value={height} onChange={(e) => setHeight(e.target.value)} style={inputStyle} />
+              ) : (
+                <div style={{ display: "flex", gap: "6px" }}>
+                  <input type="number" placeholder="ft" value={heightFt} onChange={(e) => setHeightFt(e.target.value)} style={{ ...inputStyle, width: "50%" }} />
+                  <input type="number" placeholder="in" value={heightIn} onChange={(e) => setHeightIn(e.target.value)} style={{ ...inputStyle, width: "50%" }} />
+                </div>
+              )}
+            </div>
+            <div>
+              <label style={{ fontSize: "12px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "6px" }}>
                 Weight ({unit === "metric" ? "kg" : "lbs"})
               </label>
-              <input
-                type="number"
-                placeholder={unit === "metric" ? "e.g. 70" : "e.g. 154"}
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
-              />
+              <input type="number" placeholder={unit === "metric" ? "e.g. 70" : "e.g. 154"} value={weight} onChange={(e) => setWeight(e.target.value)} style={inputStyle} />
             </div>
           </div>
 
           {bmi && category && (
-            <div className={`rounded-xl p-5 border text-center ${category.bg}`}>
-              <div className="text-xs text-gray-400 mb-1">Your BMI</div>
-              <div className={`text-5xl font-bold mb-2 ${category.color}`}>{bmi}</div>
-              <div className={`text-lg font-semibold ${category.color}`}>{category.label}</div>
+            <div style={{ background: category.bg, borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", color: "#9CA3AF", marginBottom: "4px" }}>Your BMI</div>
+              <div style={{ fontSize: "48px", fontWeight: "500", color: category.color, marginBottom: "4px" }}>{bmi}</div>
+              <div style={{ fontSize: "16px", fontWeight: "500", color: category.color }}>{category.label}</div>
             </div>
           )}
         </div>
 
-        {/* BMI ranges table */}
-        <div className="border border-gray-100 rounded-xl overflow-hidden">
-          <div className="bg-gray-50 px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">BMI Ranges</div>
-          {[
-            { range: "Below 18.5", label: "Underweight", color: "text-blue-600" },
-            { range: "18.5 – 24.9", label: "Normal weight", color: "text-green-600" },
-            { range: "25.0 – 29.9", label: "Overweight", color: "text-yellow-600" },
-            { range: "30.0 and above", label: "Obese", color: "text-red-600" },
-          ].map((row) => (
-            <div key={row.label} className="flex justify-between px-4 py-3 border-t border-gray-100 text-sm">
-              <span className="text-gray-600">{row.range}</span>
-              <span className={`font-medium ${row.color}`}>{row.label}</span>
+        <div style={{ marginTop: "12px", border: "0.5px solid #E0E7FF", borderRadius: "12px", overflow: "hidden" }}>
+          <div style={{ background: "#EEF2FF", padding: "10px 16px", fontSize: "11px", fontWeight: "500", color: "#6366F1", letterSpacing: "0.05em" }}>BMI RANGES</div>
+          {[["Below 18.5", "Underweight", "#2563EB"], ["18.5 – 24.9", "Normal weight", "#059669"], ["25.0 – 29.9", "Overweight", "#D97706"], ["30.0+", "Obese", "#DC2626"]].map(([range, label, color]) => (
+            <div key={label} style={{ display: "flex", justifyContent: "space-between", padding: "10px 16px", borderTop: "0.5px solid #E0E7FF", background: "white" }}>
+              <span style={{ fontSize: "13px", color: "#6B7280" }}>{range}</span>
+              <span style={{ fontSize: "13px", fontWeight: "500", color }}>{label}</span>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-blue-900 mb-2">Note</h2>
-          <p className="text-sm text-blue-700">BMI is a general indicator and does not account for muscle mass, age, or other health factors. Consult a doctor for a full health assessment.</p>
+        <div style={{ marginTop: "16px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
+          <p style={{ fontSize: "13px", color: "#4338CA" }}>BMI is a general indicator and does not account for muscle mass, age, or other health factors. Consult a doctor for a full health assessment.</p>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function AgeCalculator() {
   const [dob, setDob] = useState("");
@@ -21,10 +22,7 @@ export default function AgeCalculator() {
       const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
       days += prevMonth.getDate();
     }
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
+    if (months < 0) { years--; months += 12; }
 
     const totalDays = Math.floor((today - birth) / (1000 * 60 * 60 * 24));
     const totalWeeks = Math.floor(totalDays / 7);
@@ -41,82 +39,46 @@ export default function AgeCalculator() {
   const age = calcAge();
 
   return (
-    <main className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <Link href="/" className="text-gray-400 hover:text-gray-600 text-sm">← Home</Link>
-          <span className="text-gray-200">/</span>
-          <Link href="/calculators" className="text-gray-400 hover:text-gray-600 text-sm">Calculators</Link>
-          <span className="text-gray-200">/</span>
-          <span className="text-sm font-medium text-gray-900">Age Calculator</span>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Age Calculator</h1>
-          <p className="text-gray-500">Calculate your exact age in years, months, days and more. Free, no signup required.</p>
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "Age Calculator" }]} />
+      <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Age Calculator</h1>
+          <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your exact age in years, months, days and more.</p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Date of Birth</label>
-          <input
-            type="date"
-            value={dob}
-            onChange={(e) => setDob(e.target.value)}
-            max={new Date().toISOString().split("T")[0]}
-            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white"
-          />
+        <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
+          <label style={{ fontSize: "13px", color: "#6366F1", fontWeight: "500", display: "block", marginBottom: "8px" }}>Date of Birth</label>
+          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} max={new Date().toISOString().split("T")[0]}
+            style={{ width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" }} />
         </div>
 
         {age && (
-          <div className="space-y-4">
-            {/* Main result */}
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-              <div className="text-xs text-gray-400 mb-2">Your age</div>
-              <div className="text-4xl font-bold text-green-600 mb-1">
-                {age.years} <span className="text-2xl">years</span>
-              </div>
-              <div className="text-lg text-green-700">
-                {age.months} months and {age.days} days
-              </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ background: "#D1FAE5", border: "0.5px solid #A7F3D0", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+              <div style={{ fontSize: "12px", color: "#6B7280", marginBottom: "6px" }}>Your age</div>
+              <div style={{ fontSize: "40px", fontWeight: "500", color: "#059669" }}>{age.years} <span style={{ fontSize: "24px" }}>years</span></div>
+              <div style={{ fontSize: "16px", color: "#065F46", marginTop: "4px" }}>{age.months} months and {age.days} days</div>
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {[
-                { label: "Total Days", value: age.totalDays.toLocaleString() },
-                { label: "Total Weeks", value: age.totalWeeks.toLocaleString() },
-                { label: "Total Months", value: age.totalMonths.toLocaleString() },
-                { label: "Total Hours", value: age.totalHours.toLocaleString() },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-gray-50 border border-gray-100 rounded-xl p-4 text-center">
-                  <div className="text-xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
+              {[["Total Days", age.totalDays.toLocaleString()], ["Total Weeks", age.totalWeeks.toLocaleString()], ["Total Months", age.totalMonths.toLocaleString()], ["Total Hours", age.totalHours.toLocaleString()]].map(([label, value]) => (
+                <div key={label} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "10px", padding: "14px 8px", textAlign: "center" }}>
+                  <div style={{ fontSize: "18px", fontWeight: "500", color: "#4F46E5" }}>{value}</div>
+                  <div style={{ fontSize: "10px", color: "#9CA3AF", marginTop: "4px" }}>{label}</div>
                 </div>
               ))}
             </div>
 
-            {/* Next birthday */}
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
-              <div className="text-sm text-yellow-700">
-                {age.daysToNext === 0
-                  ? "🎂 Happy Birthday!"
-                  : `🎂 Next birthday in ${age.daysToNext} days`}
-              </div>
+            <div style={{ background: "#FEF9C3", border: "0.5px solid #FDE68A", borderRadius: "10px", padding: "14px", textAlign: "center" }}>
+              <span style={{ fontSize: "14px", color: "#713F12" }}>
+                {age.daysToNext === 0 ? "🎂 Happy Birthday!" : `🎂 Next birthday in ${age.daysToNext} days`}
+              </span>
             </div>
           </div>
         )}
-
-        <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-blue-900 mb-2">How to use</h2>
-          <ul className="text-sm text-blue-700 space-y-1">
-            <li>• Select your date of birth from the picker above</li>
-            <li>• Your exact age appears instantly</li>
-            <li>• See total days, weeks, months and hours lived</li>
-          </ul>
-        </div>
       </div>
+      <Footer />
     </main>
   );
 }
