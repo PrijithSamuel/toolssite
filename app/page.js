@@ -1,131 +1,197 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "QuikToolkit — Free Online Tools, No Signup Required",
+  description: "Free online tools — PDF converter, calculators, image tools, unit converter and more. No signup, no limits, works in your browser.",
+};
+
 const categories = [
   {
     name: "PDF Tools",
-    description: "Convert, compress, merge and split PDF files",
     icon: "📄",
-    color: "bg-red-50 border-red-200",
-    iconBg: "bg-red-100",
-    tools: ["PDF to Text", "Compress PDF", "Merge PDF", "Split PDF"],
+    iconBg: "#FEE2E2",
+    count: 4,
     slug: "pdf",
+    tools: ["Merge PDF", "Split PDF", "Compress PDF", "PDF to Text"],
   },
   {
     name: "Calculators",
-    description: "Percentage, EMI, BMI and more calculators",
     icon: "🧮",
-    color: "bg-blue-50 border-blue-200",
-    iconBg: "bg-blue-100",
-    tools: ["Percentage Calculator", "EMI Calculator", "BMI Calculator", "Age Calculator"],
+    iconBg: "#DBEAFE",
+    count: 4,
     slug: "calculators",
+    tools: ["Percentage", "EMI Calculator", "BMI Calculator", "Age Calculator"],
   },
   {
     name: "Converters",
-    description: "Unit, currency and image converters",
     icon: "🔄",
-    color: "bg-green-50 border-green-200",
-    iconBg: "bg-green-100",
-    tools: ["Unit Converter", "Currency Converter", "Image Converter", "Color Converter"],
+    iconBg: "#D1FAE5",
+    count: 4,
     slug: "converters",
-  },
-  {
-    name: "Image Tools",
-    description: "Compress, resize and convert images",
-    icon: "🖼️",
-    color: "bg-purple-50 border-purple-200",
-    iconBg: "bg-purple-100",
-    tools: ["Compress Image", "Resize Image", "Image to PDF", "Convert Format"],
-    slug: "image-tools",
+    tools: ["Unit Converter", "Currency Converter", "Color Converter", "Image Format"],
   },
   {
     name: "Text Tools",
-    description: "Word counter, case converter and more",
     icon: "✍️",
-    color: "bg-yellow-50 border-yellow-200",
-    iconBg: "bg-yellow-100",
-    tools: ["Word Counter", "Case Converter", "Remove Duplicates", "Text Reverser"],
+    iconBg: "#FEF9C3",
+    count: 4,
     slug: "text-tools",
+    tools: ["Word Counter", "Case Converter", "Text Reverser", "Remove Duplicates"],
+  },
+  {
+    name: "Image Tools",
+    icon: "🖼️",
+    iconBg: "#EDE9FE",
+    count: 4,
+    slug: "image-tools",
+    tools: ["Compress Image", "Resize Image", "Image to PDF", "Convert Format"],
   },
   {
     name: "Developer Tools",
-    description: "JSON formatter, QR code, regex tester and more",
     icon: "⚙️",
-    color: "bg-gray-50 border-gray-200",
-    iconBg: "bg-gray-100",
-    tools: ["JSON Formatter", "QR Code Generator", "Regex Tester", "Password Generator"],
+    iconBg: "#F1F5F9",
+    count: 4,
     slug: "developer-tools",
+    tools: ["JSON Formatter", "QR Code Generator", "Regex Tester", "Password Generator"],
   },
+];
+
+const popularTools = [
+  { name: "Merge PDF", desc: "Combine PDFs into one", icon: "📄", iconBg: "#FEE2E2", href: "/pdf/merge", badge: "Hot" },
+  { name: "EMI Calculator", desc: "Calculate loan EMI", icon: "🧮", iconBg: "#DBEAFE", href: "/calculators/emi", badge: "Popular" },
+  { name: "Image Compressor", desc: "Reduce image size", icon: "🖼️", iconBg: "#D1FAE5", href: "/image-tools/compress", badge: "Hot" },
+  { name: "Word Counter", desc: "Count words instantly", icon: "✍️", iconBg: "#FEF9C3", href: "/text-tools/word-counter", badge: "Popular" },
+  { name: "Password Generator", desc: "Strong secure passwords", icon: "🔑", iconBg: "#EDE9FE", href: "/developer-tools/password-generator", badge: "New" },
+  { name: "Unit Converter", desc: "Convert any unit", icon: "🔄", iconBg: "#D1FAE5", href: "/converters/unit", badge: "Popular" },
+  { name: "QR Code Generator", desc: "Generate QR codes free", icon: "📱", iconBg: "#F1F5F9", href: "/developer-tools/qr-code", badge: "New" },
+  { name: "BMI Calculator", desc: "Check your BMI", icon: "⚖️", iconBg: "#DBEAFE", href: "/calculators/bmi", badge: "Popular" },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
 
-      {/* Header */}
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div>
-            <span className="text-xl font-bold text-gray-900">QuikToolkit</span>
-            <span className="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Free</span>
-          </div>
-          <nav className="flex gap-6 text-sm text-gray-500">
-            <a href="#tools" className="hover:text-gray-900">Tools</a>
-            <a href="#about" className="hover:text-gray-900">About</a>
-          </nav>
-        </div>
-      </header>
+      {/* Navigation */}
+      <nav style={{ background: "#4F46E5", borderBottom: "none" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "56px" }}>
+          {/* Logo */}
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "32px", textDecoration: "none" }}>
+            <div style={{ width: "30px", height: "30px", background: "rgba(255,255,255,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>🛠️</div>
+            <span style={{ fontSize: "16px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
+          </Link>
 
-      {/* Hero */}
-      <section className="px-6 py-16 text-center bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Free Online Tools — No Signup Required
-          </h1>
-          <p className="text-lg text-gray-500 mb-8">
-            PDF converter, calculators, image tools and more. 100% free, works in your browser, no account needed.
-          </p>
-          <a href="#tools" className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors">
-            Browse All Tools
-          </a>
-        </div>
-      </section>
-
-      {/* Tools Grid */}
-      <section id="tools" className="px-6 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">All Tools</h2>
-          <p className="text-gray-500 text-center mb-10">Click any category to explore the tools</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Nav links */}
+          <div style={{ display: "flex", flex: 1, gap: "0" }}>
             {categories.map((cat) => (
-              <Link key={cat.slug} href={`/${cat.slug}`} className={`border rounded-xl p-6 ${cat.color} hover:shadow-md transition-shadow cursor-pointer block`}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-10 h-10 rounded-lg ${cat.iconBg} flex items-center justify-center text-xl`}>
-                    {cat.icon}
-                  </div>
-                  <h3 className="font-semibold text-gray-900">{cat.name}</h3>
-                </div>
-                <p className="text-sm text-gray-500 mb-4">{cat.description}</p>
-                <ul className="space-y-1">
-                  {cat.tools.map((tool) => (
-                    <li key={tool} className="text-sm text-gray-600 flex items-center gap-2">
-                      <span className="w-1 h-1 bg-gray-400 rounded-full inline-block"></span>
-                      {tool}
-                    </li>
-                  ))}
-                </ul>
+              <Link key={cat.slug} href={`/${cat.slug}`} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.8)", textDecoration: "none", borderBottom: "2px solid transparent", whiteSpace: "nowrap" }}>
+                {cat.name.replace(" Tools", "").replace("Developer", "Dev")}
               </Link>
             ))}
           </div>
+
+          {/* Search */}
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", width: "190px" }}>
+            <span style={{ fontSize: "14px" }}>🔍</span>
+            <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>Search tools...</span>
+          </div>
         </div>
-      </section>
+      </nav>
+
+      {/* Hero */}
+      <div style={{ background: "#4F46E5", padding: "48px 24px 40px", textAlign: "center" }}>
+        <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "4px 14px", fontSize: "12px", color: "white", fontWeight: "500", marginBottom: "16px" }}>
+            ✓ 100% Free — No Signup Required
+          </div>
+          <h1 style={{ fontSize: "34px", fontWeight: "500", color: "white", marginBottom: "10px", lineHeight: "1.25" }}>
+            Free Online Tools for Everyone
+          </h1>
+          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", marginBottom: "24px" }}>
+            PDF, calculators, image tools, converters and more. Works entirely in your browser.
+          </p>
+
+          {/* Search bar */}
+          <div style={{ display: "flex", alignItems: "center", background: "white", borderRadius: "12px", maxWidth: "500px", margin: "0 auto 24px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
+            <span style={{ padding: "0 10px 0 16px", fontSize: "18px" }}>🔍</span>
+            <input
+              type="text"
+              placeholder="Search 50+ tools — try 'PDF merge' or 'BMI'..."
+              style={{ flex: 1, border: "none", outline: "none", fontSize: "13px", padding: "14px 0", background: "transparent", color: "#374151" }}
+            />
+            <button style={{ background: "#4F46E5", color: "white", border: "none", padding: "10px 20px", fontSize: "13px", fontWeight: "500", cursor: "pointer", margin: "6px", borderRadius: "8px" }}>
+              Search
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
+            {[["50+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["6", "Categories"]].map(([num, label]) => (
+              <div key={label} style={{ textAlign: "center" }}>
+                <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
+                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "32px 24px" }}>
+
+        {/* Popular tools */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Most popular tools</h2>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px", marginBottom: "36px" }}>
+          {popularTools.map((tool) => (
+            <Link key={tool.href} href={tool.href} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "16px", textAlign: "center", textDecoration: "none", display: "block" }}>
+              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: tool.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", margin: "0 auto 10px" }}>
+                {tool.icon}
+              </div>
+              <div style={{ fontSize: "12px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>{tool.name}</div>
+              <div style={{ fontSize: "11px", color: "#6B7280", marginBottom: "8px" }}>{tool.desc}</div>
+              <span style={{ fontSize: "10px", padding: "2px 8px", borderRadius: "4px", background: "#EEF2FF", color: "#4F46E5", fontWeight: "500" }}>{tool.badge}</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Categories */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Browse by category</h2>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
+          {categories.map((cat) => (
+            <Link key={cat.slug} href={`/${cat.slug}`} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "18px", textDecoration: "none", display: "block" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: cat.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}>
+                  {cat.icon}
+                </div>
+                <div>
+                  <div style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B" }}>{cat.name}</div>
+                  <div style={{ fontSize: "11px", color: "#6366F1", fontWeight: "500" }}>{cat.count} tools</div>
+                </div>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
+                {cat.tools.map((tool) => (
+                  <span key={tool} style={{ fontSize: "11px", padding: "3px 8px", borderRadius: "5px", color: "#4338CA", background: "#EEF2FF", border: "0.5px solid #C7D2FE" }}>
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
 
       {/* Footer */}
-      <footer id="about" className="border-t border-gray-100 px-6 py-8 text-center text-sm text-gray-400">
-        <p className="mb-3">QuikToolkit — Free online tools for everyone. No signup, no limits.</p>
-        <div className="flex justify-center gap-6">
-          <a href="/privacy-policy" className="hover:text-gray-600">Privacy Policy</a>
-          <a href="/terms" className="hover:text-gray-600">Terms of Service</a>
-          <a href="mailto:contact@quiktoolkit.com" className="hover:text-gray-600">Contact</a>
+      <footer style={{ background: "#4F46E5", padding: "20px 24px", marginTop: "40px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)" }}>QuikToolkit — Free tools for everyone. No signup, no limits.</span>
+          <div style={{ display: "flex", gap: "20px" }}>
+            {[["Privacy Policy", "/privacy-policy"], ["Terms", "/terms"], ["Contact", "mailto:contact@quiktoolkit.com"]].map(([label, href]) => (
+              <Link key={label} href={href} style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>{label}</Link>
+            ))}
+          </div>
         </div>
       </footer>
 
