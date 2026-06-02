@@ -12,6 +12,10 @@ const tools = [
   { name: "Case Converter", description: "Convert text to UPPER, lower or Title Case", href: "/text-tools/case-converter", icon: "🔤" },
   { name: "Text Reverser", description: "Reverse any text instantly", href: "/text-tools/text-reverser", icon: "🔁" },
   { name: "Remove Duplicates", description: "Remove duplicate lines from text", href: "/text-tools/remove-duplicates", icon: "🗑️" },
+  { name: "Lorem Ipsum Generator", description: "Generate placeholder text instantly", href: "/text-tools/lorem-ipsum", icon: "📄" },
+  { name: "Text to Slug", description: "Convert text to URL-friendly slug", href: "/text-tools/text-to-slug", icon: "🔗" },
+  { name: "Line Counter", description: "Count lines and get line statistics", href: "/text-tools/line-counter", icon: "🔢" },
+  { name: "Sort Lines", description: "Sort lines alphabetically, by length or randomly", href: "/text-tools/sort-lines", icon: "↕️" },
 ];
 
 export default function TextTools() {
