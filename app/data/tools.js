@@ -125,6 +125,14 @@ const tools = [
   { name: "USC Calculator Ireland 2025", description: "Universal Social Charge — full band-by-band breakdown with reduced rates", href: "/finance/ireland-usc", category: "Finance", icon: "📊", badge: "New" },
   { name: "Irish Pension Calculator 2025", description: "Pension tax relief by age, net cost, and retirement pot projection", href: "/finance/ireland-pension", category: "Finance", icon: "🏦", badge: "New" },
 
+  // Dutch / Netherlands Finance Tools
+  { name: "Dutch Income Tax Calculator 2025", description: "Bruto netto berekenen — Box 1 tax, heffingskortingen, 30% ruling Netherlands", href: "/finance/netherlands-tax", category: "Finance", icon: "🇳🇱", badge: "New" },
+  { name: "BTW Calculator Nederland 2025", description: "Dutch VAT calculator — 21%, 9%, 0% BTW, excl. and incl. berekenen", href: "/finance/netherlands-btw", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "30% Ruling Calculator Netherlands 2025", description: "Calculate 30%-regeling tax saving — eligibility check for expats", href: "/finance/netherlands-30-percent", category: "Finance", icon: "💼", badge: "New" },
+  { name: "Hypotheek Calculator Nederland 2025", description: "Dutch mortgage — maandlast, hypotheekrenteaftrek, overdrachtsbelasting, NHG", href: "/finance/netherlands-mortgage", category: "Finance", icon: "🏠", badge: "New" },
+  { name: "ZZP Belasting Calculator 2025", description: "Dutch freelancer tax — winst, MKB-winstvrijstelling, zelfstandigenaftrek, BTW", href: "/finance/netherlands-zzp", category: "Finance", icon: "💻", badge: "New" },
+  { name: "Toeslagen Calculator Nederland 2025", description: "Dutch allowances — zorgtoeslag, huurtoeslag, kinderbijslag, kinderopvangtoeslag", href: "/finance/netherlands-toeslagen", category: "Finance", icon: "🏛️", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

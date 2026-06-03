@@ -109,6 +109,13 @@ export default function sitemap() {
     "/finance/german-grade-calculator",
     "/finance/kurzarbeit",
     "/finance/elterngeld",
+    // Dutch / Netherlands Finance Tools
+    "/finance/netherlands-tax",
+    "/finance/netherlands-btw",
+    "/finance/netherlands-30-percent",
+    "/finance/netherlands-mortgage",
+    "/finance/netherlands-zzp",
+    "/finance/netherlands-toeslagen",
     // Irish Finance Tools
     "/finance/ireland-tax",
     "/finance/ireland-vat",

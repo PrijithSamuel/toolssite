@@ -26,6 +26,12 @@ const tools = [
   { name: "Stamp Duty Ireland 🇮🇪", description: "Stamp duty on residential, commercial property and land", href: "/finance/ireland-stamp-duty", icon: "📑" },
   { name: "USC Calculator Ireland 🇮🇪", description: "Universal Social Charge — detailed band-by-band breakdown", href: "/finance/ireland-usc", icon: "📊" },
   { name: "Irish Pension Calculator 🇮🇪", description: "Pension tax relief, net cost and projected pot at retirement", href: "/finance/ireland-pension", icon: "🏦" },
+  { name: "Dutch Income Tax 2025 🇳🇱", description: "Bruto netto berekenen — Box 1 tax, heffingskortingen and 30% ruling", href: "/finance/netherlands-tax", icon: "🇳🇱" },
+  { name: "BTW Calculator Nederland 🇳🇱", description: "Dutch VAT — 21% / 9% / 0%, excl. and incl. BTW berekenen", href: "/finance/netherlands-btw", icon: "🧾" },
+  { name: "30% Ruling Calculator 🇳🇱", description: "Calculate your 30%-regeling tax saving for expats in the Netherlands", href: "/finance/netherlands-30-percent", icon: "💼" },
+  { name: "Hypotheek Calculator 🇳🇱", description: "Dutch mortgage — maandlast, renteaftrek and overdrachtsbelasting", href: "/finance/netherlands-mortgage", icon: "🏠" },
+  { name: "ZZP Belasting Calculator 🇳🇱", description: "Dutch freelancer tax — winst, MKB-vrijstelling, BTW schedule", href: "/finance/netherlands-zzp", icon: "💻" },
+  { name: "Toeslagen Calculator 🇳🇱", description: "Dutch allowances — zorgtoeslag, huurtoeslag, kinderbijslag 2025", href: "/finance/netherlands-toeslagen", icon: "🏛️" },
 ];
 
 export default function Finance() {
