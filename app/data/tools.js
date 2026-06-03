@@ -116,6 +116,15 @@ const tools = [
   // Abfindung
   { name: "Abfindungsrechner", description: "German severance pay calculator with Fünftelregelung tax benefit", href: "/calculators/abfindung", category: "Calculators", icon: "📋", badge: "New" },
 
+  // Irish Finance Tools
+  { name: "Irish Income Tax Calculator 2025", description: "Calculate PAYE, USC and PRSI — Ireland take-home pay 2025", href: "/finance/ireland-tax", category: "Finance", icon: "🇮🇪", badge: "New" },
+  { name: "Irish VAT Calculator 2025", description: "Add or remove Irish VAT — 23%, 13.5%, 9%, 4.8% and 0% rates", href: "/finance/ireland-vat", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "Mortgage Calculator Ireland 2025", description: "Monthly repayments with Central Bank LTV rules and stamp duty", href: "/finance/ireland-mortgage", category: "Finance", icon: "🏠", badge: "New" },
+  { name: "Rent Tax Credit Ireland 2025", description: "Calculate your Irish rent tax credit — max €1,000 or €2,000 for couples", href: "/finance/ireland-rent-tax-credit", category: "Finance", icon: "🏘️", badge: "New" },
+  { name: "Stamp Duty Calculator Ireland 2025", description: "Stamp duty on residential and commercial property in Ireland", href: "/finance/ireland-stamp-duty", category: "Finance", icon: "📑", badge: "New" },
+  { name: "USC Calculator Ireland 2025", description: "Universal Social Charge — full band-by-band breakdown with reduced rates", href: "/finance/ireland-usc", category: "Finance", icon: "📊", badge: "New" },
+  { name: "Irish Pension Calculator 2025", description: "Pension tax relief by age, net cost, and retirement pot projection", href: "/finance/ireland-pension", category: "Finance", icon: "🏦", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

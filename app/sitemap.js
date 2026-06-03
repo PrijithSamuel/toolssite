@@ -109,6 +109,14 @@ export default function sitemap() {
     "/finance/german-grade-calculator",
     "/finance/kurzarbeit",
     "/finance/elterngeld",
+    // Irish Finance Tools
+    "/finance/ireland-tax",
+    "/finance/ireland-vat",
+    "/finance/ireland-mortgage",
+    "/finance/ireland-rent-tax-credit",
+    "/finance/ireland-stamp-duty",
+    "/finance/ireland-usc",
+    "/finance/ireland-pension",
     // German Converter
     "/converters/german-units",
     // Abfindung

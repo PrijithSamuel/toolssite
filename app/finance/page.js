@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Finance Calculators — Loan, Salary, German Brutto-Netto, MwSt",
-  description: "Free online finance calculators — loan calculator, compound interest, salary breakdown, German Brutto-Netto-Rechner, MwSt, Elterngeld and more. No signup required.",
+  title: "Free Finance Calculators — Loan, Salary, German, Irish Tax Tools",
+  description: "Free online finance calculators — loan calculator, compound interest, German Brutto-Netto, Irish PAYE/USC/PRSI, mortgage, VAT and more. No signup required.",
 };
 
 const tools = [
@@ -12,13 +12,20 @@ const tools = [
   { name: "Compound Interest", description: "Calculate investment growth with compounding interest", href: "/finance/compound-interest", icon: "📈" },
   { name: "Salary Calculator", description: "Break annual salary into monthly, weekly, hourly rates", href: "/finance/salary-calculator", icon: "💰" },
   { name: "Invoice Generator", description: "Create and print professional invoices with line items", href: "/finance/invoice-generator", icon: "🧾" },
-  { name: "TVA Calculator", description: "Calculate French VAT — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", icon: "🇫🇷" },
-  { name: "French Tax Calculator", description: "Estimate your Impôt sur le revenu 2024", href: "/finance/french-tax-calculator", icon: "📋" },
-  { name: "Brutto-Netto-Rechner", description: "German salary calculator — all deductions, Steuerklassen, Bundesland", href: "/finance/brutto-netto", icon: "🇩🇪" },
-  { name: "Mehrwertsteuer-Rechner", description: "German VAT calculator — 19%, 7% rates, Netto ↔ Brutto", href: "/finance/mehrwertsteuer", icon: "🧾" },
-  { name: "Notendurchschnitt Rechner", description: "German grade average calculator with Bavarian formula", href: "/finance/german-grade-calculator", icon: "🎓" },
-  { name: "Kurzarbeitergeld-Rechner", description: "Short-time work allowance calculator (60%/67% net difference)", href: "/finance/kurzarbeit", icon: "⏸️" },
-  { name: "Elterngeld-Rechner", description: "German parental allowance — Basis-Elterngeld & ElterngeldPlus", href: "/finance/elterngeld", icon: "👶" },
+  { name: "TVA Calculator 🇫🇷", description: "Calculate French VAT — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", icon: "🇫🇷" },
+  { name: "French Tax Calculator 🇫🇷", description: "Estimate your Impôt sur le revenu 2024", href: "/finance/french-tax-calculator", icon: "📋" },
+  { name: "Brutto-Netto-Rechner 🇩🇪", description: "German salary calculator — all deductions, Steuerklassen, Bundesland", href: "/finance/brutto-netto", icon: "🇩🇪" },
+  { name: "Mehrwertsteuer-Rechner 🇩🇪", description: "German VAT calculator — 19%, 7% rates, Netto ↔ Brutto", href: "/finance/mehrwertsteuer", icon: "🧾" },
+  { name: "Notendurchschnitt Rechner 🇩🇪", description: "German grade average calculator with Bavarian formula", href: "/finance/german-grade-calculator", icon: "🎓" },
+  { name: "Kurzarbeitergeld-Rechner 🇩🇪", description: "Short-time work allowance calculator (60%/67% net difference)", href: "/finance/kurzarbeit", icon: "⏸️" },
+  { name: "Elterngeld-Rechner 🇩🇪", description: "German parental allowance — Basis-Elterngeld & ElterngeldPlus", href: "/finance/elterngeld", icon: "👶" },
+  { name: "Irish Income Tax 2025 🇮🇪", description: "PAYE, USC and PRSI calculator — Irish take-home pay", href: "/finance/ireland-tax", icon: "🇮🇪" },
+  { name: "Irish VAT Calculator 🇮🇪", description: "Calculate Irish VAT — 23%, 13.5%, 9% rates, add or remove", href: "/finance/ireland-vat", icon: "🧾" },
+  { name: "Mortgage Calculator Ireland 🇮🇪", description: "Monthly repayments with Central Bank LTV rules and stamp duty", href: "/finance/ireland-mortgage", icon: "🏠" },
+  { name: "Rent Tax Credit Ireland 🇮🇪", description: "Calculate your €1,000 / €2,000 rent tax credit for 2025", href: "/finance/ireland-rent-tax-credit", icon: "🏘️" },
+  { name: "Stamp Duty Ireland 🇮🇪", description: "Stamp duty on residential, commercial property and land", href: "/finance/ireland-stamp-duty", icon: "📑" },
+  { name: "USC Calculator Ireland 🇮🇪", description: "Universal Social Charge — detailed band-by-band breakdown", href: "/finance/ireland-usc", icon: "📊" },
+  { name: "Irish Pension Calculator 🇮🇪", description: "Pension tax relief, net cost and projected pot at retirement", href: "/finance/ireland-pension", icon: "🏦" },
 ];
 
 export default function Finance() {
