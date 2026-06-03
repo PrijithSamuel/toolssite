@@ -116,6 +116,14 @@ export default function sitemap() {
     "/finance/netherlands-mortgage",
     "/finance/netherlands-zzp",
     "/finance/netherlands-toeslagen",
+    // Canada Finance Tools
+    "/finance/canada-income-tax",
+    "/finance/canada-gst-hst",
+    "/finance/canada-mortgage",
+    "/finance/canada-rrsp",
+    "/finance/canada-tfsa",
+    "/finance/canada-cpp",
+    "/finance/canada-hst-reverse",
     // Sri Lanka Finance Tools
     "/finance/sri-lanka-salary",
     "/finance/sri-lanka-epf",

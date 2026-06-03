@@ -142,6 +142,15 @@ const tools = [
   { name: "Fixed Deposit Calculator Sri Lanka 2025", description: "FD interest, withholding tax (5%) and net maturity — bank rate comparison LKR", href: "/finance/sri-lanka-fixed-deposit", category: "Finance", icon: "🏧", badge: "New" },
   { name: "VAT Calculator Sri Lanka 2025", description: "Calculate VAT at 18% and SSCL 2.5% in Sri Lanka — add or remove VAT LKR", href: "/finance/sri-lanka-vat", category: "Finance", icon: "🧾", badge: "New" },
 
+  // Canada Finance Tools
+  { name: "Canadian Income Tax Calculator 2025", description: "Federal + provincial tax, CPP and EI — CRA 2025 rates all provinces and territories", href: "/finance/canada-income-tax", category: "Finance", icon: "🇨🇦", badge: "New" },
+  { name: "GST HST Calculator Canada 2025", description: "GST, HST and PST for all Canadian provinces and territories — add or remove tax", href: "/finance/canada-gst-hst", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "Canadian Mortgage Calculator 2025", description: "CMHC insurance, stress test, land transfer tax for all Canadian provinces", href: "/finance/canada-mortgage", category: "Finance", icon: "🏠", badge: "New" },
+  { name: "RRSP Calculator Canada 2025", description: "CRA RRSP tax refund, contribution room and retirement projection 2025", href: "/finance/canada-rrsp", category: "Finance", icon: "🏦", badge: "New" },
+  { name: "TFSA Calculator Canada 2025", description: "TFSA contribution room, over-contribution warning and tax-free growth projection", href: "/finance/canada-tfsa", category: "Finance", icon: "💰", badge: "New" },
+  { name: "CPP Benefits Calculator Canada 2025", description: "Estimate Canada Pension Plan retirement benefit — early, standard and delayed CPP", href: "/finance/canada-cpp", category: "Finance", icon: "👴", badge: "New" },
+  { name: "HST Reverse Calculator Canada 2025", description: "Remove HST/GST from receipt total — all provinces, perfect for CRA expense reports", href: "/finance/canada-hst-reverse", category: "Finance", icon: "🔄", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

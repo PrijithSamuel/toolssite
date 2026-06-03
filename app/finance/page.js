@@ -39,6 +39,13 @@ const tools = [
   { name: "Stamp Duty Calculator Sri Lanka 🇱🇰", description: "Stamp duty and transfer fees for property transactions in Sri Lanka", href: "/finance/sri-lanka-stamp-duty", icon: "📑" },
   { name: "Fixed Deposit Calculator Sri Lanka 🇱🇰", description: "FD interest, WHT (5%) and net maturity value — bank rate comparison", href: "/finance/sri-lanka-fixed-deposit", icon: "🏧" },
   { name: "VAT Calculator Sri Lanka 🇱🇰", description: "Calculate VAT at 18% and SSCL 2.5% — add or remove VAT in LKR", href: "/finance/sri-lanka-vat", icon: "🧾" },
+  { name: "Canadian Income Tax 2025 🇨🇦", description: "Federal + provincial tax, CPP and EI — CRA 2025 rates all provinces", href: "/finance/canada-income-tax", icon: "🇨🇦" },
+  { name: "GST HST Calculator Canada 🇨🇦", description: "GST, HST and PST for all Canadian provinces and territories 2025", href: "/finance/canada-gst-hst", icon: "🧾" },
+  { name: "Canadian Mortgage Calculator 🇨🇦", description: "CMHC insurance, stress test, land transfer tax — all provinces 2025", href: "/finance/canada-mortgage", icon: "🏠" },
+  { name: "RRSP Calculator Canada 🇨🇦", description: "Tax refund, contribution room and retirement projection — CRA 2025", href: "/finance/canada-rrsp", icon: "🏦" },
+  { name: "TFSA Calculator Canada 🇨🇦", description: "Contribution room, over-contribution check and tax-free growth 2025", href: "/finance/canada-tfsa", icon: "💰" },
+  { name: "CPP Benefits Calculator Canada 🇨🇦", description: "Estimate CPP retirement benefit — early, standard and delayed 2025", href: "/finance/canada-cpp", icon: "👴" },
+  { name: "HST Reverse Calculator Canada 🇨🇦", description: "Remove HST/GST from receipt total — all provinces, for expense reports", href: "/finance/canada-hst-reverse", icon: "🔄" },
 ];
 
 export default function Finance() {
