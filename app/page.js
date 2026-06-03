@@ -79,6 +79,38 @@ const categories = [
     slug: "seo-tools",
     tools: ["Meta Tag Generator", "Word Density"],
   },
+  {
+    name: "Timer Tools",
+    icon: "⏱️",
+    iconBg: "#FEE2E2",
+    count: 3,
+    slug: "timer-tools",
+    tools: ["Stopwatch", "Countdown Timer", "Pomodoro"],
+  },
+  {
+    name: "Random Tools",
+    icon: "🎲",
+    iconBg: "#EDE9FE",
+    count: 4,
+    slug: "random-tools",
+    tools: ["Random Number", "Coin Flip", "Name Picker", "Spin Wheel"],
+  },
+  {
+    name: "Math Tools",
+    icon: "📐",
+    iconBg: "#DBEAFE",
+    count: 3,
+    slug: "math-tools",
+    tools: ["Fraction Calc", "% Change", "Prime Checker"],
+  },
+  {
+    name: "Date Tools",
+    icon: "📅",
+    iconBg: "#D1FAE5",
+    count: 3,
+    slug: "date-tools",
+    tools: ["Date Difference", "Days Until", "Unix Timestamp"],
+  },
 ];
 
 const popularTools = [
@@ -134,7 +166,7 @@ export default function Home() {
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
-            {[["65+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["9", "Categories"]].map(([num, label]) => (
+            {[["80+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["13", "Categories"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
                 <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>

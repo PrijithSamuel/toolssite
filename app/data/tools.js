@@ -62,8 +62,29 @@ const tools = [
   { name: "Hash Generator", description: "Generate MD5, SHA-1 and SHA-256 hashes from text", href: "/developer-tools/hash-generator", category: "Developer Tools", icon: "🔒", badge: "New" },
 
   // SEO Tools
-  { name: "Meta Tag Generator", description: "Generate SEO, Open Graph and Twitter Card meta tags", href: "/seo-tools/meta-tag-generator", category: "SEO Tools", icon: "🏷️", badge: "New" },
-  { name: "Word Density Analyzer", description: "Find the most used keywords in any text", href: "/seo-tools/word-density", category: "SEO Tools", icon: "📊", badge: "New" },
+  { name: "Meta Tag Generator", description: "Generate SEO, Open Graph and Twitter Card meta tags", href: "/seo-tools/meta-tag-generator", category: "SEO Tools", icon: "🏷️", badge: "" },
+  { name: "Word Density Analyzer", description: "Find the most used keywords in any text", href: "/seo-tools/word-density", category: "SEO Tools", icon: "📊", badge: "" },
+
+  // Timer Tools
+  { name: "Stopwatch", description: "Precise stopwatch with lap times and HH:MM:SS.ms display", href: "/timer-tools/stopwatch", category: "Timer Tools", icon: "⏱️", badge: "New" },
+  { name: "Countdown Timer", description: "Set a countdown with alarm beep on completion", href: "/timer-tools/countdown-timer", category: "Timer Tools", icon: "⏳", badge: "New" },
+  { name: "Pomodoro Timer", description: "25/5 Pomodoro technique timer with session counter", href: "/timer-tools/pomodoro", category: "Timer Tools", icon: "🍅", badge: "New" },
+
+  // Random Tools
+  { name: "Random Number Generator", description: "Generate random numbers with custom range and dice roller", href: "/random-tools/random-number", category: "Random Tools", icon: "🎲", badge: "New" },
+  { name: "Coin Flip", description: "Flip a coin and track heads/tails statistics", href: "/random-tools/coin-flip", category: "Random Tools", icon: "🪙", badge: "New" },
+  { name: "Random Name Picker", description: "Pick random winner(s) from a list with animation", href: "/random-tools/random-name-picker", category: "Random Tools", icon: "🎯", badge: "New" },
+  { name: "Spin the Wheel", description: "Create a custom spin wheel and spin for a random result", href: "/random-tools/spin-wheel", category: "Random Tools", icon: "🎡", badge: "New" },
+
+  // Math Tools
+  { name: "Fraction Calculator", description: "Add, subtract, multiply and divide fractions with steps", href: "/math-tools/fraction-calculator", category: "Math Tools", icon: "½", badge: "New" },
+  { name: "Percentage Change", description: "Calculate % of, what % is, and % increase/decrease", href: "/math-tools/percentage-change", category: "Math Tools", icon: "%", badge: "New" },
+  { name: "Prime Checker", description: "Check primality, find factors, list primes up to N", href: "/math-tools/prime-checker", category: "Math Tools", icon: "🔢", badge: "New" },
+
+  // Date Tools
+  { name: "Date Difference Calculator", description: "Find the exact difference between two dates", href: "/date-tools/date-difference", category: "Date Tools", icon: "📅", badge: "New" },
+  { name: "Days Until", description: "Count down to any event — holidays, birthdays and more", href: "/date-tools/days-until", category: "Date Tools", icon: "🗓️", badge: "New" },
+  { name: "Unix Timestamp Converter", description: "Convert between Unix timestamps and human-readable dates", href: "/date-tools/unix-timestamp", category: "Date Tools", icon: "🕐", badge: "New" },
 ];
 
 export default tools;
