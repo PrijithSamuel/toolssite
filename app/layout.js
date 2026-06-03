@@ -16,9 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata = {
   verification: {
     google: "JN0BZX3kmEEjMBhPNDdMjhDRGYsE_VZCxfnlepr3sRs",
-    other: {
-    "msvalidate.01": "PASTE_YOUR_CODE_HERE",
-  },
   },
   title: {
     default: "QuikToolkit — Free Online Tools, No Signup Required",
@@ -54,6 +51,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="msvalidate.01" content="925D078522E61D890CDB98983366CC21" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Analytics />
         <Script
