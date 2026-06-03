@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-export const metadata = undefined;
+
 
 function fmt(n) { return Math.round(n).toLocaleString("de-DE"); }
 
