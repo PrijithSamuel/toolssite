@@ -163,6 +163,15 @@ const tools = [
   { name: "Home Loan EMI Calculator India 2025", description: "Home loan EMI, total interest, amortisation schedule and prepayment savings India", href: "/finance/india-home-loan", category: "Finance", icon: "🏗️", badge: "New" },
   { name: "CTC to In-Hand Salary Calculator India 2025", description: "Convert CTC to monthly take-home — EPF, Professional Tax, Income Tax FY 2025-26", href: "/finance/india-ctc", category: "Finance", icon: "💰", badge: "New" },
 
+  // Singapore Finance Tools
+  { name: "Singapore Income Tax Calculator 2025", description: "IRAS YA2026 progressive rates with reliefs — resident and non-resident S$", href: "/finance/singapore-income-tax", category: "Finance", icon: "🇸🇬", badge: "New" },
+  { name: "CPF Calculator Singapore 2025", description: "CPF contributions, OA/SA/MA allocation and take-home pay — all age groups", href: "/finance/singapore-cpf", category: "Finance", icon: "💼", badge: "New" },
+  { name: "Stamp Duty Calculator Singapore 2025", description: "BSD and ABSD for all buyer types — Singapore Citizen, PR, Foreigner, Entity", href: "/finance/singapore-stamp-duty", category: "Finance", icon: "🏠", badge: "New" },
+  { name: "HDB Loan Calculator Singapore 2025", description: "HDB vs bank loan — MSR, TDSR check, CPF usage and side-by-side comparison", href: "/finance/singapore-hdb-loan", category: "Finance", icon: "🏗️", badge: "New" },
+  { name: "CPF Retirement Sum Calculator Singapore 2025", description: "Project CPF at 55, BRS/FRS/ERS status and CPF LIFE monthly payout at 65", href: "/finance/singapore-cpf-retirement", category: "Finance", icon: "🏦", badge: "New" },
+  { name: "GST Calculator Singapore 2025", description: "Singapore GST at 9% — add or remove GST with tourist refund scheme info", href: "/finance/singapore-gst", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "Property Tax Calculator Singapore 2025", description: "Annual property tax from Annual Value — owner-occupied and investment rates", href: "/finance/singapore-property-tax", category: "Finance", icon: "🏛️", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

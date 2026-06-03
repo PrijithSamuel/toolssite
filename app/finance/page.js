@@ -56,6 +56,13 @@ const tools = [
   { name: "FD Calculator India 🇮🇳", description: "Fixed Deposit returns with TDS (10%), compounding and bank rate comparison", href: "/finance/india-fd", icon: "🏧" },
   { name: "Home Loan EMI Calculator India 🇮🇳", description: "EMI, total interest, amortisation and prepayment savings — 2025 rates", href: "/finance/india-home-loan", icon: "🏗️" },
   { name: "CTC to In-Hand Salary Calculator 🇮🇳", description: "Convert CTC offer to monthly take-home — EPF, Professional Tax, Income Tax", href: "/finance/india-ctc", icon: "💰" },
+  { name: "Singapore Income Tax 2025 🇸🇬", description: "IRAS YA2026 progressive rates with reliefs — resident and non-resident", href: "/finance/singapore-income-tax", icon: "🇸🇬" },
+  { name: "CPF Calculator Singapore 2025 🇸🇬", description: "CPF contributions, OA/SA/MA allocation and take-home pay — all age groups", href: "/finance/singapore-cpf", icon: "💼" },
+  { name: "Stamp Duty Singapore 2025 🇸🇬", description: "BSD and ABSD for all buyer types — Singapore Citizen, PR, Foreigner, Entity", href: "/finance/singapore-stamp-duty", icon: "🏠" },
+  { name: "HDB Loan Calculator Singapore 🇸🇬", description: "HDB vs bank loan — MSR, TDSR, CPF usage and side-by-side comparison", href: "/finance/singapore-hdb-loan", icon: "🏗️" },
+  { name: "CPF Retirement Sum Singapore 🇸🇬", description: "Project CPF at 55, BRS/FRS/ERS status and CPF LIFE monthly payout", href: "/finance/singapore-cpf-retirement", icon: "🏦" },
+  { name: "GST Calculator Singapore 🇸🇬", description: "Singapore GST at 9% — add or remove GST with tourist refund info", href: "/finance/singapore-gst", icon: "🧾" },
+  { name: "Property Tax Singapore 2025 🇸🇬", description: "Annual property tax — owner-occupied and non-owner-occupied rates", href: "/finance/singapore-property-tax", icon: "🏛️" },
 ];
 
 export default function Finance() {

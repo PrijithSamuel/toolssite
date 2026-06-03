@@ -116,6 +116,14 @@ export default function sitemap() {
     "/finance/netherlands-mortgage",
     "/finance/netherlands-zzp",
     "/finance/netherlands-toeslagen",
+    // Singapore Finance Tools
+    "/finance/singapore-income-tax",
+    "/finance/singapore-cpf",
+    "/finance/singapore-stamp-duty",
+    "/finance/singapore-hdb-loan",
+    "/finance/singapore-cpf-retirement",
+    "/finance/singapore-gst",
+    "/finance/singapore-property-tax",
     // India Finance Tools
     "/finance/india-income-tax",
     "/finance/india-gst",
