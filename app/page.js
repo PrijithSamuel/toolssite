@@ -111,6 +111,22 @@ const categories = [
     slug: "date-tools",
     tools: ["Date Difference", "Days Until", "Unix Timestamp"],
   },
+  {
+    name: "Food Tools",
+    icon: "👨‍🍳",
+    iconBg: "#FEF9C3",
+    count: 3,
+    slug: "food-tools",
+    tools: ["Recipe Converter", "Cooking Converter", "Calorie Counter"],
+  },
+  {
+    name: "Student Tools",
+    icon: "🎓",
+    iconBg: "#DBEAFE",
+    count: 3,
+    slug: "student-tools",
+    tools: ["Grade Calculator", "Study Timer", "Citation Generator"],
+  },
 ];
 
 const popularTools = [
@@ -166,7 +182,7 @@ export default function Home() {
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
-            {[["80+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["13", "Categories"]].map(([num, label]) => (
+            {[["95+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["15", "Categories"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
                 <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>

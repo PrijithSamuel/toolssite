@@ -12,6 +12,8 @@ const tools = [
   { name: "Compound Interest", description: "Calculate investment growth with compounding interest", href: "/finance/compound-interest", icon: "📈" },
   { name: "Salary Calculator", description: "Break annual salary into monthly, weekly, hourly rates", href: "/finance/salary-calculator", icon: "💰" },
   { name: "Invoice Generator", description: "Create and print professional invoices with line items", href: "/finance/invoice-generator", icon: "🧾" },
+  { name: "TVA Calculator", description: "Calculate French VAT — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", icon: "🇫🇷" },
+  { name: "French Tax Calculator", description: "Estimate your Impôt sur le revenu 2024", href: "/finance/french-tax-calculator", icon: "📋" },
 ];
 
 export default function Finance() {

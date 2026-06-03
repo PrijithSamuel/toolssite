@@ -90,6 +90,28 @@ export default function sitemap() {
     "/date-tools/date-difference",
     "/date-tools/days-until",
     "/date-tools/unix-timestamp",
+    // Food Tools
+    "/food-tools",
+    "/food-tools/recipe-converter",
+    "/food-tools/cooking-converter",
+    "/food-tools/calorie-counter",
+    // Student Tools
+    "/student-tools",
+    "/student-tools/grade-calculator",
+    "/student-tools/study-timer",
+    "/student-tools/citation-generator",
+    // Finance additions
+    "/finance/vat-calculator",
+    "/finance/french-tax-calculator",
+    // Converter addition
+    "/converters/euro-converter",
+    // Developer tool addition
+    "/developer-tools/json-to-csv",
+    // Text tool additions
+    "/text-tools/html-encode",
+    "/text-tools/text-to-speech",
+    // PDF addition
+    "/pdf/word-count",
   ];
 
   return routes.map((route) => ({

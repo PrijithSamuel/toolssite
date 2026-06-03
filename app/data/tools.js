@@ -82,9 +82,36 @@ const tools = [
   { name: "Prime Checker", description: "Check primality, find factors, list primes up to N", href: "/math-tools/prime-checker", category: "Math Tools", icon: "🔢", badge: "New" },
 
   // Date Tools
-  { name: "Date Difference Calculator", description: "Find the exact difference between two dates", href: "/date-tools/date-difference", category: "Date Tools", icon: "📅", badge: "New" },
-  { name: "Days Until", description: "Count down to any event — holidays, birthdays and more", href: "/date-tools/days-until", category: "Date Tools", icon: "🗓️", badge: "New" },
-  { name: "Unix Timestamp Converter", description: "Convert between Unix timestamps and human-readable dates", href: "/date-tools/unix-timestamp", category: "Date Tools", icon: "🕐", badge: "New" },
+  { name: "Date Difference Calculator", description: "Find the exact difference between two dates", href: "/date-tools/date-difference", category: "Date Tools", icon: "📅", badge: "" },
+  { name: "Days Until", description: "Count down to any event — holidays, birthdays and more", href: "/date-tools/days-until", category: "Date Tools", icon: "🗓️", badge: "" },
+  { name: "Unix Timestamp Converter", description: "Convert between Unix timestamps and human-readable dates", href: "/date-tools/unix-timestamp", category: "Date Tools", icon: "🕐", badge: "" },
+
+  // Food Tools
+  { name: "Recipe Converter", description: "Scale recipe ingredients up or down for any servings", href: "/food-tools/recipe-converter", category: "Food Tools", icon: "👨‍🍳", badge: "New" },
+  { name: "Cooking Converter", description: "Convert cooking weights, volumes and oven temperatures", href: "/food-tools/cooking-converter", category: "Food Tools", icon: "⚖️", badge: "New" },
+  { name: "Calorie Counter", description: "Track daily calorie intake with 30 pre-loaded foods", href: "/food-tools/calorie-counter", category: "Food Tools", icon: "🥗", badge: "New" },
+
+  // Student Tools
+  { name: "Grade Calculator", description: "Calculate weighted grades and predict needed scores", href: "/student-tools/grade-calculator", category: "Student Tools", icon: "📊", badge: "New" },
+  { name: "Study Timer", description: "Custom study/break timer with session log", href: "/student-tools/study-timer", category: "Student Tools", icon: "⏱️", badge: "New" },
+  { name: "Citation Generator", description: "Generate APA, MLA and Chicago citations instantly", href: "/student-tools/citation-generator", category: "Student Tools", icon: "📚", badge: "New" },
+
+  // Finance additions
+  { name: "TVA Calculator", description: "Calculate French VAT (TVA) — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "French Tax Calculator", description: "Estimate 2024 French income tax (Impôt sur le revenu)", href: "/finance/french-tax-calculator", category: "Finance", icon: "🇫🇷", badge: "New" },
+
+  // Converter addition
+  { name: "Euro Converter", description: "Convert EUR to 9 major European currencies simultaneously", href: "/converters/euro-converter", category: "Converters", icon: "💶", badge: "New" },
+
+  // Developer tool addition
+  { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
+
+  // Text tool additions
+  { name: "HTML Encoder / Decoder", description: "Encode HTML special characters or decode HTML entities", href: "/text-tools/html-encode", category: "Text Tools", icon: "🔤", badge: "New" },
+  { name: "Text to Speech", description: "Convert text to speech using browser Web Speech API", href: "/text-tools/text-to-speech", category: "Text Tools", icon: "🔊", badge: "New" },
+
+  // PDF addition
+  { name: "Word Count / Text Analyzer", description: "Count words, characters, pages and reading time", href: "/pdf/word-count", category: "PDF Tools", icon: "📝", badge: "New" },
 ];
 
 export default tools;
