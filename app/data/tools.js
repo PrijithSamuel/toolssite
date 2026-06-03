@@ -133,6 +133,15 @@ const tools = [
   { name: "ZZP Belasting Calculator 2025", description: "Dutch freelancer tax — winst, MKB-winstvrijstelling, zelfstandigenaftrek, BTW", href: "/finance/netherlands-zzp", category: "Finance", icon: "💻", badge: "New" },
   { name: "Toeslagen Calculator Nederland 2025", description: "Dutch allowances — zorgtoeslag, huurtoeslag, kinderbijslag, kinderopvangtoeslag", href: "/finance/netherlands-toeslagen", category: "Finance", icon: "🏛️", badge: "New" },
 
+  // Sri Lanka Finance Tools
+  { name: "Sri Lanka Salary Calculator 2025", description: "EPF (8%), ETF (3%) and APIT deductions — net take-home salary LKR 2025", href: "/finance/sri-lanka-salary", category: "Finance", icon: "🇱🇰", badge: "New" },
+  { name: "EPF ETF Retirement Calculator Sri Lanka 2025", description: "Project EPF/ETF savings balance at retirement with 8% compound interest", href: "/finance/sri-lanka-epf", category: "Finance", icon: "🏦", badge: "New" },
+  { name: "Vehicle Import Duty Calculator Sri Lanka 2025", description: "Customs duty, excise, VAT and total landed cost for vehicle imports to Sri Lanka", href: "/finance/sri-lanka-vehicle", category: "Finance", icon: "🚗", badge: "New" },
+  { name: "Income Tax Calculator Sri Lanka 2025", description: "APIT annual PIT slabs 2025 — salary, business, rent and interest income LKR", href: "/finance/sri-lanka-income-tax", category: "Finance", icon: "📊", badge: "New" },
+  { name: "Stamp Duty Calculator Sri Lanka 2025", description: "Stamp duty and transfer fees for property transactions in Sri Lanka", href: "/finance/sri-lanka-stamp-duty", category: "Finance", icon: "📑", badge: "New" },
+  { name: "Fixed Deposit Calculator Sri Lanka 2025", description: "FD interest, withholding tax (5%) and net maturity — bank rate comparison LKR", href: "/finance/sri-lanka-fixed-deposit", category: "Finance", icon: "🏧", badge: "New" },
+  { name: "VAT Calculator Sri Lanka 2025", description: "Calculate VAT at 18% and SSCL 2.5% in Sri Lanka — add or remove VAT LKR", href: "/finance/sri-lanka-vat", category: "Finance", icon: "🧾", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

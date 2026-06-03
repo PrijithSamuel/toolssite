@@ -116,6 +116,14 @@ export default function sitemap() {
     "/finance/netherlands-mortgage",
     "/finance/netherlands-zzp",
     "/finance/netherlands-toeslagen",
+    // Sri Lanka Finance Tools
+    "/finance/sri-lanka-salary",
+    "/finance/sri-lanka-epf",
+    "/finance/sri-lanka-vehicle",
+    "/finance/sri-lanka-income-tax",
+    "/finance/sri-lanka-stamp-duty",
+    "/finance/sri-lanka-fixed-deposit",
+    "/finance/sri-lanka-vat",
     // Irish Finance Tools
     "/finance/ireland-tax",
     "/finance/ireland-vat",

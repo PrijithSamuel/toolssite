@@ -32,6 +32,13 @@ const tools = [
   { name: "Hypotheek Calculator 🇳🇱", description: "Dutch mortgage — maandlast, renteaftrek and overdrachtsbelasting", href: "/finance/netherlands-mortgage", icon: "🏠" },
   { name: "ZZP Belasting Calculator 🇳🇱", description: "Dutch freelancer tax — winst, MKB-vrijstelling, BTW schedule", href: "/finance/netherlands-zzp", icon: "💻" },
   { name: "Toeslagen Calculator 🇳🇱", description: "Dutch allowances — zorgtoeslag, huurtoeslag, kinderbijslag 2025", href: "/finance/netherlands-toeslagen", icon: "🏛️" },
+  { name: "Sri Lanka Salary Calculator 🇱🇰", description: "EPF, ETF and APIT deductions — net take-home salary in LKR", href: "/finance/sri-lanka-salary", icon: "🇱🇰" },
+  { name: "EPF ETF Retirement Calculator 🇱🇰", description: "Project EPF/ETF savings at retirement with compound interest", href: "/finance/sri-lanka-epf", icon: "🏦" },
+  { name: "Vehicle Import Duty Sri Lanka 🇱🇰", description: "Customs duty, excise, VAT and total landed cost for vehicle imports", href: "/finance/sri-lanka-vehicle", icon: "🚗" },
+  { name: "Income Tax Calculator Sri Lanka 🇱🇰", description: "APIT annual PIT slabs — salary, business, rent and interest income 2025", href: "/finance/sri-lanka-income-tax", icon: "📊" },
+  { name: "Stamp Duty Calculator Sri Lanka 🇱🇰", description: "Stamp duty and transfer fees for property transactions in Sri Lanka", href: "/finance/sri-lanka-stamp-duty", icon: "📑" },
+  { name: "Fixed Deposit Calculator Sri Lanka 🇱🇰", description: "FD interest, WHT (5%) and net maturity value — bank rate comparison", href: "/finance/sri-lanka-fixed-deposit", icon: "🏧" },
+  { name: "VAT Calculator Sri Lanka 🇱🇰", description: "Calculate VAT at 18% and SSCL 2.5% — add or remove VAT in LKR", href: "/finance/sri-lanka-vat", icon: "🧾" },
 ];
 
 export default function Finance() {
