@@ -151,6 +151,18 @@ const tools = [
   { name: "CPP Benefits Calculator Canada 2025", description: "Estimate Canada Pension Plan retirement benefit — early, standard and delayed CPP", href: "/finance/canada-cpp", category: "Finance", icon: "👴", badge: "New" },
   { name: "HST Reverse Calculator Canada 2025", description: "Remove HST/GST from receipt total — all provinces, perfect for CRA expense reports", href: "/finance/canada-hst-reverse", category: "Finance", icon: "🔄", badge: "New" },
 
+  // India Finance Tools
+  { name: "Income Tax Calculator India FY 2025-26", description: "Old vs New Regime — 87A rebate, 80C/80D deductions, cess, monthly TDS India", href: "/finance/india-income-tax", category: "Finance", icon: "🇮🇳", badge: "New" },
+  { name: "GST Calculator India 2025", description: "CGST SGST IGST — add or remove GST at 5%, 12%, 18%, 28% India", href: "/finance/india-gst", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "SIP Calculator India 2025", description: "Mutual fund SIP returns calculator with step-up SIP and year-wise growth India", href: "/finance/india-sip", category: "Finance", icon: "📈", badge: "New" },
+  { name: "HRA Calculator India 2025", description: "HRA exemption under Section 10(13A) — metro/non-metro, tax saving India", href: "/finance/india-hra", category: "Finance", icon: "🏠", badge: "New" },
+  { name: "PPF Calculator India 2025", description: "Public Provident Fund at 7.1% p.a. — EEE tax status, 80C benefit India", href: "/finance/india-ppf", category: "Finance", icon: "🏦", badge: "New" },
+  { name: "EPF Calculator India 2025", description: "Employee Provident Fund at 8.25% — retirement corpus with salary increment India", href: "/finance/india-epf", category: "Finance", icon: "💼", badge: "New" },
+  { name: "Gratuity Calculator India 2025", description: "Gratuity under Payment of Gratuity Act — tax exempt up to ₹20 Lakhs India", href: "/finance/india-gratuity", category: "Finance", icon: "📋", badge: "New" },
+  { name: "FD Calculator India 2025", description: "Fixed Deposit returns with TDS (10%/20%), compounding and bank rate comparison India", href: "/finance/india-fd", category: "Finance", icon: "🏧", badge: "New" },
+  { name: "Home Loan EMI Calculator India 2025", description: "Home loan EMI, total interest, amortisation schedule and prepayment savings India", href: "/finance/india-home-loan", category: "Finance", icon: "🏗️", badge: "New" },
+  { name: "CTC to In-Hand Salary Calculator India 2025", description: "Convert CTC to monthly take-home — EPF, Professional Tax, Income Tax FY 2025-26", href: "/finance/india-ctc", category: "Finance", icon: "💰", badge: "New" },
+
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
 

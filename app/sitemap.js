@@ -116,6 +116,17 @@ export default function sitemap() {
     "/finance/netherlands-mortgage",
     "/finance/netherlands-zzp",
     "/finance/netherlands-toeslagen",
+    // India Finance Tools
+    "/finance/india-income-tax",
+    "/finance/india-gst",
+    "/finance/india-sip",
+    "/finance/india-hra",
+    "/finance/india-ppf",
+    "/finance/india-epf",
+    "/finance/india-gratuity",
+    "/finance/india-fd",
+    "/finance/india-home-loan",
+    "/finance/india-ctc",
     // Canada Finance Tools
     "/finance/canada-income-tax",
     "/finance/canada-gst-hst",

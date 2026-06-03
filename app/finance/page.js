@@ -46,6 +46,16 @@ const tools = [
   { name: "TFSA Calculator Canada 🇨🇦", description: "Contribution room, over-contribution check and tax-free growth 2025", href: "/finance/canada-tfsa", icon: "💰" },
   { name: "CPP Benefits Calculator Canada 🇨🇦", description: "Estimate CPP retirement benefit — early, standard and delayed 2025", href: "/finance/canada-cpp", icon: "👴" },
   { name: "HST Reverse Calculator Canada 🇨🇦", description: "Remove HST/GST from receipt total — all provinces, for expense reports", href: "/finance/canada-hst-reverse", icon: "🔄" },
+  { name: "Income Tax Calculator India FY 2025-26 🇮🇳", description: "Old vs New Regime — 87A rebate, 80C/80D deductions, cess, monthly TDS", href: "/finance/india-income-tax", icon: "🇮🇳" },
+  { name: "GST Calculator India 🇮🇳", description: "CGST + SGST or IGST — add/remove GST at 5%, 12%, 18%, 28%", href: "/finance/india-gst", icon: "🧾" },
+  { name: "SIP Calculator India 🇮🇳", description: "Mutual fund SIP returns with step-up, wealth gain and year-wise growth", href: "/finance/india-sip", icon: "📈" },
+  { name: "HRA Calculator India 🇮🇳", description: "HRA exemption — minimum of 3 conditions, tax saving at your slab", href: "/finance/india-hra", icon: "🏠" },
+  { name: "PPF Calculator India 🇮🇳", description: "Public Provident Fund — 7.1% p.a., EEE status, 80C tax benefit", href: "/finance/india-ppf", icon: "🏦" },
+  { name: "EPF Calculator India 🇮🇳", description: "Employee Provident Fund — 8.25% interest, retirement corpus projection", href: "/finance/india-epf", icon: "💼" },
+  { name: "Gratuity Calculator India 🇮🇳", description: "Gratuity under Payment of Gratuity Act — tax exempt up to ₹20 Lakhs", href: "/finance/india-gratuity", icon: "📋" },
+  { name: "FD Calculator India 🇮🇳", description: "Fixed Deposit returns with TDS (10%), compounding and bank rate comparison", href: "/finance/india-fd", icon: "🏧" },
+  { name: "Home Loan EMI Calculator India 🇮🇳", description: "EMI, total interest, amortisation and prepayment savings — 2025 rates", href: "/finance/india-home-loan", icon: "🏗️" },
+  { name: "CTC to In-Hand Salary Calculator 🇮🇳", description: "Convert CTC offer to monthly take-home — EPF, Professional Tax, Income Tax", href: "/finance/india-ctc", icon: "💰" },
 ];
 
 export default function Finance() {
