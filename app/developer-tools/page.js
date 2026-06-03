@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Developer Tools — JSON, Base64, Regex, Markdown, URL Encoder",
-  description: "Free online developer tools — JSON formatter, Base64 encoder, regex tester, markdown previewer, URL encoder and more. No signup required.",
+  title: "Free Developer Tools — UUID, Hash, JSON, Base64, Regex, Markdown",
+  description: "Free online developer tools — UUID generator, hash generator, JSON formatter, Base64 encoder, regex tester, markdown previewer and more. No signup required.",
 };
 
 const tools = [
@@ -15,6 +15,8 @@ const tools = [
   { name: "Base64 Encoder/Decoder", description: "Encode text to Base64 or decode Base64 strings", href: "/developer-tools/base64", icon: "🔐" },
   { name: "URL Encoder/Decoder", description: "Encode or decode URL percent-encoded strings", href: "/developer-tools/url-encoder", icon: "🔗" },
   { name: "Markdown Previewer", description: "Write Markdown and see a live HTML preview", href: "/developer-tools/markdown", icon: "📝" },
+  { name: "UUID Generator", description: "Generate cryptographically random UUID v4 values", href: "/developer-tools/uuid-generator", icon: "🎲" },
+  { name: "Hash Generator", description: "Generate MD5, SHA-1 and SHA-256 hashes from text", href: "/developer-tools/hash-generator", icon: "🔒" },
 ];
 
 export default function DeveloperTools() {

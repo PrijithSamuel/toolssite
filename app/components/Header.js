@@ -3,10 +3,13 @@ import Link from "next/link";
 const navLinks = [
   { label: "PDF", href: "/pdf" },
   { label: "Calculators", href: "/calculators" },
+  { label: "Finance", href: "/finance" },
+  { label: "Health", href: "/health" },
   { label: "Converters", href: "/converters" },
-  { label: "Image Tools", href: "/image-tools" },
   { label: "Text Tools", href: "/text-tools" },
+  { label: "Image", href: "/image-tools" },
   { label: "Developer", href: "/developer-tools" },
+  { label: "SEO", href: "/seo-tools" },
 ];
 
 export default function Header({ breadcrumbs = [] }) {
@@ -14,18 +17,18 @@ export default function Header({ breadcrumbs = [] }) {
     <>
       <nav style={{ background: "#4F46E5" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "56px" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "32px", textDecoration: "none" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "24px", textDecoration: "none", flexShrink: 0 }}>
             <div style={{ width: "30px", height: "30px", background: "rgba(255,255,255,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>🛠️</div>
-            <span style={{ fontSize: "16px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
+            <span style={{ fontSize: "15px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
           </Link>
-          <div style={{ display: "flex", flex: 1 }}>
+          <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
+              <Link key={link.href} href={link.href} style={{ padding: "0 9px", height: "56px", display: "flex", alignItems: "center", fontSize: "12px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
                 {link.label}
               </Link>
             ))}
           </div>
-          <Link href="/search" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", textDecoration: "none", width: "180px" }}>
+          <Link href="/search" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "5px 14px", textDecoration: "none", width: "160px", flexShrink: 0 }}>
             <span style={{ fontSize: "13px" }}>🔍</span>
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>Search tools...</span>
           </Link>

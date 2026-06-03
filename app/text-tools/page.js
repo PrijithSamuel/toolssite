@@ -16,6 +16,7 @@ const tools = [
   { name: "Text to Slug", description: "Convert text to URL-friendly slug", href: "/text-tools/text-to-slug", icon: "🔗" },
   { name: "Line Counter", description: "Count lines and get line statistics", href: "/text-tools/line-counter", icon: "🔢" },
   { name: "Sort Lines", description: "Sort lines alphabetically, by length or randomly", href: "/text-tools/sort-lines", icon: "↕️" },
+  { name: "Text Compare", description: "Highlight differences between two texts line by line", href: "/text-tools/text-compare", icon: "🔀" },
 ];
 
 export default function TextTools() {

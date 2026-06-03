@@ -24,21 +24,37 @@ const categories = [
     tools: ["Tip Calculator", "Discount Calculator", "GPA Calculator", "Scientific"],
   },
   {
+    name: "Finance",
+    icon: "💰",
+    iconBg: "#D1FAE5",
+    count: 4,
+    slug: "finance",
+    tools: ["Loan Calculator", "Compound Interest", "Salary Calculator", "Invoice"],
+  },
+  {
+    name: "Health",
+    icon: "🏥",
+    iconBg: "#FCE7F3",
+    count: 3,
+    slug: "health",
+    tools: ["Calorie Calculator", "Water Intake", "Ideal Weight"],
+  },
+  {
     name: "Converters",
     icon: "🔄",
-    iconBg: "#D1FAE5",
+    iconBg: "#CCFBF1",
     count: 6,
     slug: "converters",
     tools: ["Unit Converter", "Time Zone", "Number Base", "Color Converter"],
   },
   {
-  name: "Text Tools",
-  icon: "✍️",
-  iconBg: "#FEF9C3",
-  count: 8,
-  slug: "text-tools",
-  tools: ["Word Counter", "Case Converter", "Lorem Ipsum", "Sort Lines"],
-},
+    name: "Text Tools",
+    icon: "✍️",
+    iconBg: "#FEF9C3",
+    count: 9,
+    slug: "text-tools",
+    tools: ["Word Counter", "Text Compare", "Lorem Ipsum", "Sort Lines"],
+  },
   {
     name: "Image Tools",
     icon: "🖼️",
@@ -51,9 +67,17 @@ const categories = [
     name: "Developer Tools",
     icon: "⚙️",
     iconBg: "#F1F5F9",
-    count: 7,
+    count: 9,
     slug: "developer-tools",
-    tools: ["JSON Formatter", "Base64 Encoder", "Markdown Previewer", "URL Encoder"],
+    tools: ["UUID Generator", "Hash Generator", "Base64 Encoder", "Markdown"],
+  },
+  {
+    name: "SEO Tools",
+    icon: "🔍",
+    iconBg: "#FEF3C7",
+    count: 2,
+    slug: "seo-tools",
+    tools: ["Meta Tag Generator", "Word Density"],
   },
 ];
 
@@ -110,7 +134,7 @@ export default function Home() {
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
-            {[["50+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["6", "Categories"]].map(([num, label]) => (
+            {[["65+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["9", "Categories"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
                 <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>
