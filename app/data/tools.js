@@ -100,8 +100,21 @@ const tools = [
   { name: "TVA Calculator", description: "Calculate French VAT (TVA) — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", category: "Finance", icon: "🧾", badge: "New" },
   { name: "French Tax Calculator", description: "Estimate 2024 French income tax (Impôt sur le revenu)", href: "/finance/french-tax-calculator", category: "Finance", icon: "🇫🇷", badge: "New" },
 
+  // German Finance Tools
+  { name: "Brutto-Netto-Rechner 2025", description: "German salary calculator — Steuerklassen, Bundesland, all social deductions", href: "/finance/brutto-netto", category: "Finance", icon: "🇩🇪", badge: "New" },
+  { name: "Mehrwertsteuer-Rechner", description: "German VAT calculator — MwSt berechnen 19% / 7%, Netto ↔ Brutto", href: "/finance/mehrwertsteuer", category: "Finance", icon: "🧾", badge: "New" },
+  { name: "Notendurchschnitt Rechner", description: "German grade average calculator with weighted subjects and Bavarian formula", href: "/finance/german-grade-calculator", category: "Finance", icon: "🎓", badge: "New" },
+  { name: "Kurzarbeitergeld-Rechner", description: "Calculate German short-time work allowance (60% or 67% net difference)", href: "/finance/kurzarbeit", category: "Finance", icon: "⏸️", badge: "New" },
+  { name: "Elterngeld-Rechner", description: "German parental allowance — Basis-Elterngeld & ElterngeldPlus comparison", href: "/finance/elterngeld", category: "Finance", icon: "👶", badge: "New" },
+
+  // German Converter
+  { name: "German / EU Unit Converter", description: "EU clothing, shoe, ring, and paper sizes — convert to UK and US", href: "/converters/german-units", category: "Converters", icon: "📏", badge: "New" },
+
   // Converter addition
   { name: "Euro Converter", description: "Convert EUR to 9 major European currencies simultaneously", href: "/converters/euro-converter", category: "Converters", icon: "💶", badge: "New" },
+
+  // Abfindung
+  { name: "Abfindungsrechner", description: "German severance pay calculator with Fünftelregelung tax benefit", href: "/calculators/abfindung", category: "Calculators", icon: "📋", badge: "New" },
 
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },

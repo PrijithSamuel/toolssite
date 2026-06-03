@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Finance Calculators — Loan, Compound Interest, Salary, Invoice",
-  description: "Free online finance calculators — loan calculator, compound interest, salary breakdown, invoice generator. No signup required.",
+  title: "Free Finance Calculators — Loan, Salary, German Brutto-Netto, MwSt",
+  description: "Free online finance calculators — loan calculator, compound interest, salary breakdown, German Brutto-Netto-Rechner, MwSt, Elterngeld and more. No signup required.",
 };
 
 const tools = [
@@ -14,6 +14,11 @@ const tools = [
   { name: "Invoice Generator", description: "Create and print professional invoices with line items", href: "/finance/invoice-generator", icon: "🧾" },
   { name: "TVA Calculator", description: "Calculate French VAT — add or remove tax (HT/TTC)", href: "/finance/vat-calculator", icon: "🇫🇷" },
   { name: "French Tax Calculator", description: "Estimate your Impôt sur le revenu 2024", href: "/finance/french-tax-calculator", icon: "📋" },
+  { name: "Brutto-Netto-Rechner", description: "German salary calculator — all deductions, Steuerklassen, Bundesland", href: "/finance/brutto-netto", icon: "🇩🇪" },
+  { name: "Mehrwertsteuer-Rechner", description: "German VAT calculator — 19%, 7% rates, Netto ↔ Brutto", href: "/finance/mehrwertsteuer", icon: "🧾" },
+  { name: "Notendurchschnitt Rechner", description: "German grade average calculator with Bavarian formula", href: "/finance/german-grade-calculator", icon: "🎓" },
+  { name: "Kurzarbeitergeld-Rechner", description: "Short-time work allowance calculator (60%/67% net difference)", href: "/finance/kurzarbeit", icon: "⏸️" },
+  { name: "Elterngeld-Rechner", description: "German parental allowance — Basis-Elterngeld & ElterngeldPlus", href: "/finance/elterngeld", icon: "👶" },
 ];
 
 export default function Finance() {

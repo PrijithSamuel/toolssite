@@ -103,6 +103,16 @@ export default function sitemap() {
     // Finance additions
     "/finance/vat-calculator",
     "/finance/french-tax-calculator",
+    // German Finance Tools
+    "/finance/brutto-netto",
+    "/finance/mehrwertsteuer",
+    "/finance/german-grade-calculator",
+    "/finance/kurzarbeit",
+    "/finance/elterngeld",
+    // German Converter
+    "/converters/german-units",
+    // Abfindung
+    "/calculators/abfindung",
     // Converter addition
     "/converters/euro-converter",
     // Developer tool addition
