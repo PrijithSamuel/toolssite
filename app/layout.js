@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   verification: {
     google: "JN0BZX3kmEEjMBhPNDdMjhDRGYsE_VZCxfnlepr3sRs",
+    other: {
+    "msvalidate.01": "PASTE_YOUR_CODE_HERE",
+  },
   },
   title: {
     default: "QuikToolkit — Free Online Tools, No Signup Required",
