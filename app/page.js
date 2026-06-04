@@ -140,6 +140,15 @@ const popularTools = [
   { name: "BMI Calculator", desc: "Check your BMI", icon: "⚖️", iconBg: "#DBEAFE", href: "/calculators/bmi", badge: "Popular" },
 ];
 
+const navLinks = [
+  { label: "PDF", href: "/pdf" },
+  { label: "Calculators", href: "/calculators" },
+  { label: "Finance", href: "/finance" },
+  { label: "Converters", href: "/converters" },
+  { label: "Text Tools", href: "/text-tools" },
+  { label: "More ▾", href: "/search" },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -152,9 +161,9 @@ export default function Home() {
             <span style={{ fontSize: "16px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
           </Link>
           <div style={{ display: "flex", flex: 1 }}>
-            {categories.map((cat) => (
-              <Link key={cat.slug} href={`/${cat.slug}`} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
-                {cat.name.replace(" Tools", "").replace("Developer", "Dev")}
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
+                {link.label}
               </Link>
             ))}
           </div>

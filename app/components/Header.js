@@ -2,20 +2,11 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "PDF", href: "/pdf" },
-  { label: "Calc", href: "/calculators" },
+  { label: "Calculators", href: "/calculators" },
   { label: "Finance", href: "/finance" },
-  { label: "Health", href: "/health" },
-  { label: "Convert", href: "/converters" },
-  { label: "Text", href: "/text-tools" },
-  { label: "Image", href: "/image-tools" },
-  { label: "Dev", href: "/developer-tools" },
-  { label: "SEO", href: "/seo-tools" },
-  { label: "Timers", href: "/timer-tools" },
-  { label: "Random", href: "/random-tools" },
-  { label: "Math", href: "/math-tools" },
-  { label: "Dates", href: "/date-tools" },
-  { label: "Food", href: "/food-tools" },
-  { label: "Student", href: "/student-tools" },
+  { label: "Converters", href: "/converters" },
+  { label: "Text Tools", href: "/text-tools" },
+  { label: "More ▾", href: "/search" },
 ];
 
 export default function Header({ breadcrumbs = [] }) {
