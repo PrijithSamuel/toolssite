@@ -34,7 +34,18 @@ export default function Header({ breadcrumbs = [] }) {
               </Link>
             ))}
           </div>
-          <Link href="/search" style={{ display: "flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "7px 16px", textDecoration: "none", marginLeft: "auto", flexShrink: 0, position: "relative", zIndex: 10 }}>
+          <Link href="/search" style={{
+  display: "flex",
+  alignItems: "center",
+  gap: "8px",
+  background: "rgba(255,255,255,0.15)",
+  border: "0.5px solid rgba(255,255,255,0.3)",
+  borderRadius: "20px",
+  padding: "7px 16px",
+  textDecoration: "none",
+  marginLeft: "auto",
+  flexShrink: 0,
+}}>
             <span style={{ fontSize: "14px" }}>🔍</span>
             <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>Search</span>
           </Link>
