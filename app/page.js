@@ -266,7 +266,7 @@ export default function Home() {
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)" }}>QuikToolkit — Free tools for everyone. No signup, no limits.</span>
           <div style={{ display: "flex", gap: "20px" }}>
-            {[["Privacy Policy", "/privacy-policy"], ["Terms", "/terms"], ["Contact", "mailto:contact@quiktoolkit.com"]].map(([label, href]) => (
+            {[["About", "/about"], ["Privacy Policy", "/privacy-policy"], ["Terms", "/terms"], ["Contact", "/contact"]].map(([label, href]) => (
               <Link key={label} href={href} style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>{label}</Link>
             ))}
           </div>

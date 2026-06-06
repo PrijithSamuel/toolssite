@@ -3,6 +3,8 @@ export default function sitemap() {
 
   const routes = [
     "",
+    "/about",
+    "/contact",
     // PDF Tools
     "/pdf",
     "/pdf/compress",
