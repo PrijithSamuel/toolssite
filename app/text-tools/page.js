@@ -17,6 +17,12 @@ const tools = [
   { name: "Line Counter", description: "Count lines and get line statistics", href: "/text-tools/line-counter", icon: "🔢" },
   { name: "Sort Lines", description: "Sort lines alphabetically, by length or randomly", href: "/text-tools/sort-lines", icon: "↕️" },
   { name: "Text Compare", description: "Highlight differences between two texts line by line", href: "/text-tools/text-compare", icon: "🔀" },
+  { name: "Palindrome Checker", description: "Check if text is a palindrome ignoring spaces and punctuation", href: "/text-tools/palindrome", icon: "🔁" },
+  { name: "Text to Binary", description: "Convert text to 8-bit binary or decode binary back to text", href: "/text-tools/text-to-binary", icon: "01" },
+  { name: "Morse Code", description: "Encode or decode Morse code with audio playback", href: "/text-tools/morse-code", icon: "📡" },
+  { name: "Number to Words", description: "Convert any number up to 1 trillion into English words", href: "/text-tools/number-to-words", icon: "🔢" },
+  { name: "Remove Spaces", description: "Remove all, extra, or leading/trailing spaces from text", href: "/text-tools/remove-spaces", icon: "✂️" },
+  { name: "Add Line Numbers", description: "Add line numbers to any text with custom separators", href: "/text-tools/add-line-numbers", icon: "#️⃣" },
 ];
 
 export default function TextTools() {

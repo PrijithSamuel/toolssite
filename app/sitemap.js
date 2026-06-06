@@ -172,6 +172,12 @@ export default function sitemap() {
     // Text tool additions
     "/text-tools/html-encode",
     "/text-tools/text-to-speech",
+    "/text-tools/palindrome",
+    "/text-tools/text-to-binary",
+    "/text-tools/morse-code",
+    "/text-tools/number-to-words",
+    "/text-tools/remove-spaces",
+    "/text-tools/add-line-numbers",
     // PDF addition
     "/pdf/word-count",
   ];

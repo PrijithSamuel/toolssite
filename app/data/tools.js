@@ -178,6 +178,12 @@ const tools = [
   // Text tool additions
   { name: "HTML Encoder / Decoder", description: "Encode HTML special characters or decode HTML entities", href: "/text-tools/html-encode", category: "Text Tools", icon: "🔤", badge: "New" },
   { name: "Text to Speech", description: "Convert text to speech using browser Web Speech API", href: "/text-tools/text-to-speech", category: "Text Tools", icon: "🔊", badge: "New" },
+  { name: "Palindrome Checker", description: "Check if text is a palindrome ignoring spaces and punctuation", href: "/text-tools/palindrome", category: "Text Tools", icon: "🔁", badge: "New" },
+  { name: "Text to Binary", description: "Convert text to 8-bit binary or decode binary back to text", href: "/text-tools/text-to-binary", category: "Text Tools", icon: "💻", badge: "New" },
+  { name: "Morse Code", description: "Encode or decode Morse code with audio playback", href: "/text-tools/morse-code", category: "Text Tools", icon: "📡", badge: "New" },
+  { name: "Number to Words", description: "Convert any number up to 1 trillion into English words", href: "/text-tools/number-to-words", category: "Text Tools", icon: "🔢", badge: "New" },
+  { name: "Remove Spaces", description: "Remove all, extra, or leading/trailing spaces from text", href: "/text-tools/remove-spaces", category: "Text Tools", icon: "✂️", badge: "New" },
+  { name: "Add Line Numbers", description: "Add line numbers to any text with custom separators", href: "/text-tools/add-line-numbers", category: "Text Tools", icon: "#️⃣", badge: "New" },
 
   // PDF addition
   { name: "Word Count / Text Analyzer", description: "Count words, characters, pages and reading time", href: "/pdf/word-count", category: "PDF Tools", icon: "📝", badge: "New" },
