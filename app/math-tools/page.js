@@ -11,6 +11,10 @@ const tools = [
   { name: "Fraction Calculator", description: "Add, subtract, multiply and divide fractions with step-by-step solutions", href: "/math-tools/fraction-calculator", icon: "½" },
   { name: "Percentage Change", description: "Calculate percentage of, what percent, and percent increase/decrease", href: "/math-tools/percentage-change", icon: "%" },
   { name: "Prime Checker", description: "Check if a number is prime, find factors and list primes", href: "/math-tools/prime-checker", icon: "🔢" },
+  { name: "LCM & GCD Calculator", description: "Find LCM and GCD of up to 5 numbers with prime factorization", href: "/math-tools/lcm-gcd", icon: "÷" },
+  { name: "Quadratic Equation Solver", description: "Solve ax² + bx + c = 0 with roots, discriminant and vertex", href: "/math-tools/quadratic", icon: "²" },
+  { name: "Standard Deviation", description: "Calculate mean, median, mode, variance and standard deviation", href: "/math-tools/standard-deviation", icon: "σ" },
+  { name: "Roman Numerals", description: "Convert numbers to Roman numerals or decode Roman numerals", href: "/math-tools/roman-numerals", icon: "Ⅻ" },
 ];
 
 export default function MathTools() {

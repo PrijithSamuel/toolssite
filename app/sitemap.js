@@ -87,6 +87,10 @@ export default function sitemap() {
     "/math-tools/fraction-calculator",
     "/math-tools/percentage-change",
     "/math-tools/prime-checker",
+    "/math-tools/lcm-gcd",
+    "/math-tools/quadratic",
+    "/math-tools/standard-deviation",
+    "/math-tools/roman-numerals",
     // Date Tools
     "/date-tools",
     "/date-tools/date-difference",

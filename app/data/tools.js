@@ -80,6 +80,10 @@ const tools = [
   { name: "Fraction Calculator", description: "Add, subtract, multiply and divide fractions with steps", href: "/math-tools/fraction-calculator", category: "Math Tools", icon: "½", badge: "New" },
   { name: "Percentage Change", description: "Calculate % of, what % is, and % increase/decrease", href: "/math-tools/percentage-change", category: "Math Tools", icon: "%", badge: "New" },
   { name: "Prime Checker", description: "Check primality, find factors, list primes up to N", href: "/math-tools/prime-checker", category: "Math Tools", icon: "🔢", badge: "New" },
+  { name: "LCM & GCD Calculator", description: "Find LCM and GCD of up to 5 numbers with prime factorization and steps", href: "/math-tools/lcm-gcd", category: "Math Tools", icon: "÷", badge: "New" },
+  { name: "Quadratic Equation Solver", description: "Solve ax² + bx + c = 0 — roots, discriminant, vertex, step-by-step", href: "/math-tools/quadratic", category: "Math Tools", icon: "²", badge: "New" },
+  { name: "Standard Deviation Calculator", description: "Mean, median, mode, variance and population/sample standard deviation", href: "/math-tools/standard-deviation", category: "Math Tools", icon: "σ", badge: "New" },
+  { name: "Roman Numeral Converter", description: "Convert numbers 1–3999 to Roman numerals or decode Roman numerals", href: "/math-tools/roman-numerals", category: "Math Tools", icon: "Ⅻ", badge: "New" },
 
   // Date Tools
   { name: "Date Difference Calculator", description: "Find the exact difference between two dates", href: "/date-tools/date-difference", category: "Date Tools", icon: "📅", badge: "" },
