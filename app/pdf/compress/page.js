@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 export default function CompressPDF() {
   const [file, setFile] = useState(null);
@@ -43,6 +44,7 @@ export default function CompressPDF() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Reduce PDF file size instantly. Free, no signup, no watermark.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" onChange={handleFile} className="hidden" id="compress-input" />
           <label htmlFor="compress-input" style={{ cursor: "pointer" }}>

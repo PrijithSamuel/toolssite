@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 export default function PDFToText() {
   const [file, setFile] = useState(null);
@@ -57,6 +58,7 @@ export default function PDFToText() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Extract text content from any PDF file instantly. Free, no signup required.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" onChange={handleFile} className="hidden" id="pdftext-input" />
           <label htmlFor="pdftext-input" style={{ cursor: "pointer" }}>

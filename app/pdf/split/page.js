@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 export default function SplitPDF() {
   const [file, setFile] = useState(null);
@@ -86,6 +87,7 @@ export default function SplitPDF() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Split a PDF into separate pages or extract specific pages. Free, no signup.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" onChange={handleFile} className="hidden" id="split-input" />
           <label htmlFor="split-input" style={{ cursor: "pointer" }}>

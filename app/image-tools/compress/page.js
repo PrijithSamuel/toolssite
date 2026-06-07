@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
 import FAQ from "../../components/FAQ";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 const FAQS = [
   { q: "Will compressing reduce image quality?", a: "Slight quality reduction may occur at high compression levels. Use the quality slider to find the best balance between file size and visual quality." },
@@ -67,6 +68,7 @@ export default function ImageCompressor() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Compress JPG and PNG images without losing quality. Free, no signup required.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept="image/*" onChange={handleFile} className="hidden" id="file-input" />
           <label htmlFor="file-input" style={{ cursor: "pointer" }}>

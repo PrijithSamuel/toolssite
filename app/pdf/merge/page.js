@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
 import FAQ from "../../components/FAQ";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 const FAQS = [
   { q: "Is the PDF merge tool free?", a: "Yes, completely free with no limits. You can merge as many PDF files as you want with no watermark added." },
@@ -64,6 +65,7 @@ export default function MergePDF() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Combine multiple PDF files into one. Free, no signup, no watermark.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" multiple onChange={handleFiles} className="hidden" id="merge-input" />
           <label htmlFor="merge-input" aria-label="Upload PDF files" style={{ cursor: "pointer" }}>

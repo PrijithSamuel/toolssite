@@ -194,7 +194,7 @@ export default function Home() {
             {[
               { icon: "🔒", text: "Files never leave your device" },
               { icon: "⚡", text: "Works in your browser" },
-              { icon: "🌍", text: "Used in 10+ countries" },
+              { icon: "💯", text: "Always free, no signup" },
             ].map(({ icon, text }) => (
               <div key={text} style={{ display: "inline-flex", alignItems: "center", gap: "5px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "4px 12px", fontSize: "12px", color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
                 <span aria-hidden="true">{icon}</span><span>{text}</span>

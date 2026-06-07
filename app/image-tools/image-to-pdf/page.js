@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 export default function ImageToPDF() {
   const [images, setImages] = useState([]);
@@ -56,6 +57,7 @@ export default function ImageToPDF() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert one or multiple images to PDF. Free, no signup required.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept="image/*" multiple onChange={handleFiles} className="hidden" id="pdf-input" />
           <label htmlFor="pdf-input" style={{ cursor: "pointer" }}>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import PrivacyBanner from "../../components/PrivacyBanner";
 
 export default function ConvertFormat() {
   const [file, setFile] = useState(null);
@@ -65,6 +66,7 @@ export default function ConvertFormat() {
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert images between JPG, PNG and WebP. Free, no signup required.</p>
         </div>
 
+        <PrivacyBanner />
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept="image/*" onChange={handleFile} className="hidden" id="format-input" />
           <label htmlFor="format-input" style={{ cursor: "pointer" }}>
