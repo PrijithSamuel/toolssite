@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import TrustBadges from "../components/TrustBadges";
 
 export const metadata = {
   title: "Free PDF Tools — Compress, Merge, Split PDF",
@@ -19,10 +20,11 @@ export default function PDFTools() {
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <Header breadcrumbs={[{ label: "PDF Tools" }]} />
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "32px 24px" }}>
-        <div style={{ marginBottom: "28px" }}>
+        <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>PDF Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online PDF tools — no signup, no watermark, no limits.</p>
         </div>
+        <TrustBadges />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

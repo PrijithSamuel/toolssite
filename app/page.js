@@ -217,11 +217,24 @@ export default function Home() {
           <HeroSearch />
 
           {/* Stats */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "36px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "36px", marginBottom: "20px" }}>
             {[["95+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["15", "Categories"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
                 <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Trust indicators */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "8px", flexWrap: "wrap" }}>
+            {[
+              { icon: "🔒", text: "Files never leave your device" },
+              { icon: "⚡", text: "Works in your browser" },
+              { icon: "🌍", text: "Used in 10+ countries" },
+            ].map(({ icon, text }) => (
+              <div key={text} style={{ display: "inline-flex", alignItems: "center", gap: "5px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "4px 12px", fontSize: "12px", color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
+                <span>{icon}</span><span>{text}</span>
               </div>
             ))}
           </div>
