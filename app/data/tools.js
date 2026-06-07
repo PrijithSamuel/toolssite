@@ -25,6 +25,9 @@ const tools = [
   { name: "Calorie Calculator", description: "Calculate BMR and daily calorie needs (Mifflin-St Jeor)", href: "/health/calorie-calculator", category: "Health", icon: "🔥", badge: "New" },
   { name: "Water Intake Calculator", description: "Recommended daily water intake by weight and activity", href: "/health/water-intake", category: "Health", icon: "💧", badge: "New" },
   { name: "Ideal Weight Calculator", description: "Calculate ideal weight using 4 medical formulas", href: "/health/ideal-weight", category: "Health", icon: "⚖️", badge: "New" },
+  { name: "Body Fat Calculator", description: "US Navy method body fat percentage with category breakdown", href: "/health/body-fat", category: "Health", icon: "📊", badge: "New" },
+  { name: "Sleep Calculator", description: "Ideal bedtimes and wake times based on 90-min sleep cycles", href: "/health/sleep-calculator", category: "Health", icon: "😴", badge: "New" },
+  { name: "Calories Burned Calculator", description: "Calories burned by activity using MET values with food equivalents", href: "/health/calories-burned", category: "Health", icon: "🔥", badge: "New" },
 
   // Converters
   { name: "Unit Converter", description: "Convert length, weight, temperature, speed and more", href: "/converters/unit", category: "Converters", icon: "📏", badge: "Popular" },

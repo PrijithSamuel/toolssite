@@ -11,6 +11,9 @@ const tools = [
   { name: "Calorie Calculator", description: "Calculate BMR and daily calorie needs using Mifflin-St Jeor", href: "/health/calorie-calculator", icon: "🔥" },
   { name: "Water Intake Calculator", description: "Recommended daily water intake based on weight and activity", href: "/health/water-intake", icon: "💧" },
   { name: "Ideal Weight Calculator", description: "Calculate ideal weight using 4 medical formulas", href: "/health/ideal-weight", icon: "⚖️" },
+  { name: "Body Fat Calculator", description: "US Navy method body fat percentage with category breakdown", href: "/health/body-fat", icon: "📊" },
+  { name: "Sleep Calculator", description: "Ideal bedtimes and wake times based on 90-min sleep cycles", href: "/health/sleep-calculator", icon: "😴" },
+  { name: "Calories Burned", description: "Calories burned by activity using MET values with food equivalents", href: "/health/calories-burned", icon: "🔥" },
 ];
 
 export default function Health() {

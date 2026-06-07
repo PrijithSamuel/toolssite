@@ -32,6 +32,9 @@ export default function sitemap() {
     "/health/calorie-calculator",
     "/health/water-intake",
     "/health/ideal-weight",
+    "/health/body-fat",
+    "/health/sleep-calculator",
+    "/health/calories-burned",
     // Converters
     "/converters",
     "/converters/unit",
