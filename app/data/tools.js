@@ -200,6 +200,12 @@ const tools = [
 
   // PDF addition
   { name: "Word Count / Text Analyzer", description: "Count words, characters, pages and reading time", href: "/pdf/word-count", category: "PDF Tools", icon: "📝", badge: "New" },
+
+  // Engineering Tools
+  { name: "Ohm's Law Calculator", description: "Calculate Voltage, Current, Resistance or Power from any two known values", href: "/engineering/ohms-law", category: "Engineering", icon: "⚡", badge: "New" },
+  { name: "Resistor Color Code", description: "Decode 4-band resistor color codes to resistance and tolerance", href: "/engineering/resistor-color", category: "Engineering", icon: "🎨", badge: "New" },
+  { name: "Aspect Ratio Calculator", description: "Simplify pixel dimensions to a ratio or calculate a missing dimension", href: "/engineering/aspect-ratio", category: "Engineering", icon: "📐", badge: "New" },
+  { name: "PPI Calculator", description: "Calculate pixels per inch, megapixels and dot pitch for any screen", href: "/engineering/ppi-calculator", category: "Engineering", icon: "🖥️", badge: "New" },
 ];
 
 export default tools;

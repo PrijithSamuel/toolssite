@@ -193,6 +193,12 @@ export default function sitemap() {
     "/text-tools/add-line-numbers",
     // PDF addition
     "/pdf/word-count",
+    // Engineering Tools
+    "/engineering",
+    "/engineering/ohms-law",
+    "/engineering/resistor-color",
+    "/engineering/aspect-ratio",
+    "/engineering/ppi-calculator",
   ];
 
   return routes.map((route) => ({

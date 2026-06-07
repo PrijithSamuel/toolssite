@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Finance", href: "/finance" },
   { label: "Converters", href: "/converters" },
   { label: "Text Tools", href: "/text-tools" },
+  { label: "Engineering", href: "/engineering" },
   { label: "More ▾", href: "/search" },
 ];
 

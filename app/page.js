@@ -127,6 +127,14 @@ const categories = [
     slug: "student-tools",
     tools: ["Grade Calculator", "Study Timer", "Citation Generator"],
   },
+  {
+    name: "Engineering",
+    icon: "🔧",
+    iconBg: "#F0FDF4",
+    count: 4,
+    slug: "engineering",
+    tools: ["Ohm's Law", "Resistor Color", "Aspect Ratio", "PPI Calc"],
+  },
 ];
 
 const popularTools = [
