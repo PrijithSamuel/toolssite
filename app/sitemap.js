@@ -63,6 +63,8 @@ export default function sitemap() {
     "/image-tools/resize",
     "/image-tools/image-to-pdf",
     "/image-tools/convert-format",
+    "/image-tools/photo-print-size",
+    "/tools/screen-resolution",
     // Developer Tools
     "/developer-tools",
     "/developer-tools/password-generator",

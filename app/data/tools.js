@@ -219,6 +219,10 @@ const tools = [
   { name: "Clothing Size Converter", description: "Convert EU, US and UK clothing and shoe sizes for men and women — great for AliExpress, Amazon and Zara", href: "/converters/clothing-size", category: "Converters", icon: "👗", badge: "New" },
   { name: "Cooking Measurement Converter", description: "Convert cups, tablespoons, ml, oz, lb and oven temperatures (°C / °F / Gas Mark)", href: "/converters/cooking-units", category: "Converters", icon: "🍳", badge: "New" },
 
+  // Image / Screen tools
+  { name: "Photo Print Size Calculator", description: "Check if your photo resolution is sufficient for print sizes from 10×15cm to 40×60cm at 300 DPI", href: "/image-tools/photo-print-size", category: "Image Tools", icon: "🖨️", badge: "New" },
+  { name: "Screen Resolution Reference", description: "Reference table of common resolutions plus a custom aspect ratio and megapixel calculator", href: "/tools/screen-resolution", category: "Developer Tools", icon: "🖥️", badge: "New" },
+
   // Games
   { name: "Reaction Time Test", description: "Click the green box as fast as you can — test your reflexes across 5 attempts", href: "/games/reaction-time", category: "Games", icon: "⚡", badge: "New" },
   { name: "Typing Speed Test", description: "How many words per minute can you type? 60-second timed typing challenge", href: "/games/typing-speed", category: "Games", icon: "⌨️", badge: "New" },

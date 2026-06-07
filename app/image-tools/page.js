@@ -12,6 +12,7 @@ const tools = [
   { name: "Image Resizer", description: "Resize images to any dimension instantly", href: "/image-tools/resize", icon: "📐" },
   { name: "Image to PDF", description: "Convert images to PDF in one click", href: "/image-tools/image-to-pdf", icon: "📑" },
   { name: "Convert Format", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format", icon: "🔄" },
+  { name: "Photo Print Size Calculator", description: "Check if your photo has enough resolution for print sizes from 10×15cm to 40×60cm", href: "/image-tools/photo-print-size", icon: "🖨️" },
 ];
 
 export default function ImageTools() {
