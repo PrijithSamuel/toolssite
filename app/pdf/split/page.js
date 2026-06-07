@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PDFDocument } from "pdf-lib";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -17,6 +16,7 @@ export default function SplitPDF() {
     const f = e.target.files[0];
     if (!f) return;
     setDone(false);
+    const { PDFDocument } = await import("pdf-lib");
     const bytes = await f.arrayBuffer();
     const pdf = await PDFDocument.load(bytes);
     setPageCount(pdf.getPageCount());
@@ -42,6 +42,7 @@ export default function SplitPDF() {
     if (!file) return;
     setLoading(true);
     try {
+      const { PDFDocument } = await import("pdf-lib");
       const bytes = await file.arrayBuffer();
       const srcPdf = await PDFDocument.load(bytes);
       const total = srcPdf.getPageCount();

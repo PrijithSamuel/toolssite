@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PDFDocument } from "pdf-lib";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
@@ -19,6 +18,7 @@ export default function CompressPDF() {
     if (!file) return;
     setLoading(true);
     try {
+      const { PDFDocument } = await import("pdf-lib");
       const bytes = await file.arrayBuffer();
       const pdf = await PDFDocument.load(bytes, { updateMetadata: false });
       pdf.setTitle(""); pdf.setAuthor(""); pdf.setSubject(""); pdf.setKeywords([]); pdf.setProducer(""); pdf.setCreator("");

@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import imageCompression from "browser-image-compression";
+import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
@@ -21,6 +20,13 @@ export default function ImageCompressor() {
   const [loading, setLoading] = useState(false);
   const [quality, setQuality] = useState(0.8);
 
+  useEffect(() => {
+    return () => {
+      if (original?.url) URL.revokeObjectURL(original.url);
+      if (compressed?.url) URL.revokeObjectURL(compressed.url);
+    };
+  }, [original, compressed]);
+
   async function handleFile(e) {
     const file = e.target.files[0];
     if (!file) return;
@@ -32,6 +38,7 @@ export default function ImageCompressor() {
     if (!original) return;
     setLoading(true);
     try {
+      const imageCompression = (await import("browser-image-compression")).default;
       const options = { maxSizeMB: 1, maxWidthOrHeight: 1920, useWebWorker: true, initialQuality: quality };
       const result = await imageCompression(original.file, options);
       setCompressed({ file: result, url: URL.createObjectURL(result) });

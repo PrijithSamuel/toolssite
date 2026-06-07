@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -11,6 +11,12 @@ export default function ConvertFormat() {
   const [quality, setQuality] = useState(0.9);
   const [converted, setConverted] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
 
   function handleFile(e) {
     const f = e.target.files[0];

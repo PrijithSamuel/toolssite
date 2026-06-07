@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { PDFDocument } from "pdf-lib";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
@@ -36,6 +35,7 @@ export default function MergePDF() {
     if (files.length < 2) return;
     setLoading(true);
     try {
+      const { PDFDocument } = await import("pdf-lib");
       const merged = await PDFDocument.create();
       for (const f of files) {
         const bytes = await f.file.arrayBuffer();

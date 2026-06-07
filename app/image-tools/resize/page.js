@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -11,6 +11,12 @@ export default function ImageResizer() {
   const [lockRatio, setLockRatio] = useState(true);
   const [resized, setResized] = useState(null);
   const canvasRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (original?.url) URL.revokeObjectURL(original.url);
+    };
+  }, [original]);
 
   function handleFile(e) {
     const file = e.target.files[0];
