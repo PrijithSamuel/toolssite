@@ -14,6 +14,8 @@ const tools = [
   { name: "Image Converter", description: "Convert images between JPG, PNG and WebP", href: "/image-tools/convert-format", icon: "🖼️" },
   { name: "Time Zone Converter", description: "Convert date and time between world time zones", href: "/converters/timezone", icon: "🌐" },
   { name: "Number Base Converter", description: "Convert numbers between Binary, Octal, Decimal, Hex", href: "/converters/number-base", icon: "🔢" },
+  { name: "Clothing Size Converter", description: "Convert EU, US and UK clothing and shoe sizes for men and women", href: "/converters/clothing-size", icon: "👗" },
+  { name: "Cooking Measurement Converter", description: "Convert cups, tablespoons, ounces, pounds and oven temperatures", href: "/converters/cooking-units", icon: "🍳" },
 ];
 
 export default function Converters() {

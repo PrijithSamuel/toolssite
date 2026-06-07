@@ -44,6 +44,8 @@ export default function sitemap() {
     "/converters/color",
     "/converters/timezone",
     "/converters/number-base",
+    "/converters/clothing-size",
+    "/converters/cooking-units",
     // Text Tools
     "/text-tools",
     "/text-tools/word-counter",

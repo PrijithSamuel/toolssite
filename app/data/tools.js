@@ -211,6 +211,10 @@ const tools = [
   { name: "Ukrainian Transliteration Tool", description: "Convert Ukrainian Cyrillic to Latin and back using official Cabinet Resolution No. 55 standard", href: "/text-tools/transliteration", category: "Text Tools", icon: "🇺🇦", badge: "New" },
   { name: "Cyrillic to Latin Converter", description: "Character-by-character Cyrillic to Latin for Ukrainian and Russian — great for variable naming in code", href: "/text-tools/cyrillic-latin", category: "Text Tools", icon: "🔤", badge: "New" },
 
+  // Converter additions
+  { name: "Clothing Size Converter", description: "Convert EU, US and UK clothing and shoe sizes for men and women — great for AliExpress, Amazon and Zara", href: "/converters/clothing-size", category: "Converters", icon: "👗", badge: "New" },
+  { name: "Cooking Measurement Converter", description: "Convert cups, tablespoons, ml, oz, lb and oven temperatures (°C / °F / Gas Mark)", href: "/converters/cooking-units", category: "Converters", icon: "🍳", badge: "New" },
+
   // Games
   { name: "Reaction Time Test", description: "Click the green box as fast as you can — test your reflexes across 5 attempts", href: "/games/reaction-time", category: "Games", icon: "⚡", badge: "New" },
   { name: "Typing Speed Test", description: "How many words per minute can you type? 60-second timed typing challenge", href: "/games/typing-speed", category: "Games", icon: "⌨️", badge: "New" },
