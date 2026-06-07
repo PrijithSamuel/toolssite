@@ -191,6 +191,8 @@ export default function sitemap() {
     "/text-tools/number-to-words",
     "/text-tools/remove-spaces",
     "/text-tools/add-line-numbers",
+    "/text-tools/transliteration",
+    "/text-tools/cyrillic-latin",
     // PDF addition
     "/pdf/word-count",
     // Engineering Tools

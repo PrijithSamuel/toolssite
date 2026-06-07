@@ -23,6 +23,8 @@ const tools = [
   { name: "Number to Words", description: "Convert any number up to 1 trillion into English words", href: "/text-tools/number-to-words", icon: "🔢" },
   { name: "Remove Spaces", description: "Remove all, extra, or leading/trailing spaces from text", href: "/text-tools/remove-spaces", icon: "✂️" },
   { name: "Add Line Numbers", description: "Add line numbers to any text with custom separators", href: "/text-tools/add-line-numbers", icon: "#️⃣" },
+  { name: "Ukrainian Transliteration", description: "Convert Ukrainian Cyrillic to Latin (Cabinet Resolution No. 55 standard)", href: "/text-tools/transliteration", icon: "🇺🇦" },
+  { name: "Cyrillic to Latin", description: "Character-by-character Cyrillic → Latin for Ukrainian and Russian", href: "/text-tools/cyrillic-latin", icon: "🔤" },
 ];
 
 export default function TextTools() {
