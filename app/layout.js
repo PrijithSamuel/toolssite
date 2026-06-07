@@ -2,15 +2,18 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import BackToTop from "./components/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -50,6 +53,8 @@ export const metadata = {
       follow: true,
     },
   },
+  manifest: "/manifest.webmanifest",
+  themeColor: "#4F46E5",
 };
 
 export default function RootLayout({ children }) {
@@ -68,6 +73,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         {children}
+        <BackToTop />
       </body>
     </html>
   );

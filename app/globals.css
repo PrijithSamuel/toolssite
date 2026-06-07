@@ -109,3 +109,14 @@ details[open] summary span[aria-hidden] {
   .hamburger-btn { display: none !important; }
   .mobile-menu { display: none !important; }
 }
+
+.adsbygoogle {
+  display: block;
+  min-height: 100px;
+}
+
+@media (min-width: 768px) {
+  .adsbygoogle {
+    min-height: 280px;
+  }
+}
