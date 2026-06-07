@@ -71,3 +71,23 @@ body {
   background: rgba(255,255,255,0.15);
   border-radius: 6px;
 }
+
+@media (max-width: 768px) {
+  nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    min-height: 44px;
+  }
+
+  .tool-card {
+    min-height: 60px;
+  }
+
+  .cat-card {
+    padding: 16px !important;
+  }
+}

@@ -15,14 +15,14 @@ export default function Header({ breadcrumbs = [] }) {
   return (
     <>
       <nav role="navigation" aria-label="Main navigation" style={{ background: "#4F46E5" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", height: "52px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", height: "56px" }}>
           <Link href="/" aria-label="QuikToolkit home page" style={{ display: "flex", alignItems: "center", gap: "7px", marginRight: "16px", textDecoration: "none", flexShrink: 0 }}>
             <div style={{ width: "28px", height: "28px", background: "rgba(255,255,255,0.2)", borderRadius: "7px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>🛠️</div>
             <span style={{ fontSize: "14px", fontWeight: "600", color: "white" }}>QuikToolkit</span>
           </Link>
           <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link-item" style={{ padding: "0 7px", height: "52px", display: "flex", alignItems: "center", fontSize: "11.5px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
+              <Link key={link.href} href={link.href} className="nav-link-item" style={{ padding: "0 14px", height: "56px", display: "flex", alignItems: "center", fontSize: "11.5px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
                 {link.label}
               </Link>
             ))}
