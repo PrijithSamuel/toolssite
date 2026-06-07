@@ -183,6 +183,10 @@ const tools = [
 
   // Developer tool addition
   { name: "JSON to CSV", description: "Convert JSON arrays to CSV with flattening of nested objects", href: "/developer-tools/json-to-csv", category: "Developer Tools", icon: "📊", badge: "New" },
+  { name: "HTML Encoder / Decoder", description: "Encode HTML special characters or decode HTML entities", href: "/developer-tools/html-encoder", category: "Developer Tools", icon: "🔤", badge: "New" },
+  { name: "Image to Base64", description: "Convert any image to Base64 string, data URI and img tag", href: "/developer-tools/image-to-base64", category: "Developer Tools", icon: "🖼️", badge: "New" },
+  { name: "CSS Gradient Generator", description: "Build linear or radial gradients visually with live preview", href: "/developer-tools/css-gradient", category: "Developer Tools", icon: "🎨", badge: "New" },
+  { name: "Password Strength Checker", description: "Analyse password strength with entropy estimate and improvement tips", href: "/developer-tools/password-strength", category: "Developer Tools", icon: "🔐", badge: "New" },
 
   // Text tool additions
   { name: "HTML Encoder / Decoder", description: "Encode HTML special characters or decode HTML entities", href: "/text-tools/html-encode", category: "Text Tools", icon: "🔤", badge: "New" },

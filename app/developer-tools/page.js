@@ -17,6 +17,10 @@ const tools = [
   { name: "Markdown Previewer", description: "Write Markdown and see a live HTML preview", href: "/developer-tools/markdown", icon: "📝" },
   { name: "UUID Generator", description: "Generate cryptographically random UUID v4 values", href: "/developer-tools/uuid-generator", icon: "🎲" },
   { name: "Hash Generator", description: "Generate MD5, SHA-1 and SHA-256 hashes from text", href: "/developer-tools/hash-generator", icon: "🔒" },
+  { name: "HTML Encoder / Decoder", description: "Encode HTML special characters or decode HTML entities", href: "/developer-tools/html-encoder", icon: "🔤" },
+  { name: "Image to Base64", description: "Convert any image to Base64 string, data URI and img tag", href: "/developer-tools/image-to-base64", icon: "🖼️" },
+  { name: "CSS Gradient Generator", description: "Build linear or radial gradients visually with live preview", href: "/developer-tools/css-gradient", icon: "🎨" },
+  { name: "Password Strength Checker", description: "Analyse password strength with entropy estimate and improvement tips", href: "/developer-tools/password-strength", icon: "🔐" },
 ];
 
 export default function DeveloperTools() {

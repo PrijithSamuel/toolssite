@@ -178,6 +178,10 @@ export default function sitemap() {
     "/converters/euro-converter",
     // Developer tool addition
     "/developer-tools/json-to-csv",
+    "/developer-tools/html-encoder",
+    "/developer-tools/image-to-base64",
+    "/developer-tools/css-gradient",
+    "/developer-tools/password-strength",
     // Text tool additions
     "/text-tools/html-encode",
     "/text-tools/text-to-speech",
