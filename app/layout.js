@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.quiktoolkit.com"),
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "JN0BZX3kmEEjMBhPNDdMjhDRGYsE_VZCxfnlepr3sRs",
   },
