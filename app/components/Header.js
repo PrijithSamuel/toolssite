@@ -7,10 +7,8 @@ const navLinks = [
   { label: "PDF", href: "/pdf" },
   { label: "Calculators", href: "/calculators" },
   { label: "Finance", href: "/finance" },
-  { label: "Converters", href: "/converters" },
-  { label: "Text Tools", href: "/text-tools" },
-  { label: "Engineering", href: "/engineering" },
-  { label: "Games", href: "/games" },
+  { label: "Image", href: "/image-tools" },
+  { label: "Text", href: "/text-tools" },
   { label: "More ▾", href: "/search" },
 ];
 

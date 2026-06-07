@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import FAQ from "../../components/FAQ";
+import LastUpdated from "../../components/LastUpdated";
 
 function fmt(n) { return Math.round(Math.abs(n)).toLocaleString("en-IN"); }
 function fmtDec(n, d = 1) { return Math.abs(n).toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -85,6 +86,8 @@ export default function IndiaIncomeTax() {
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Income Tax Calculator India FY 2025-26</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Compare Old vs New Regime — includes 87A rebate, cess, and all major deductions.</p>
         </div>
+
+        <LastUpdated date="January 2025" source="Income Tax India" sourceUrl="https://incometax.gov.in" />
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
           India&apos;s income tax system for FY 2025-26 offers a choice between the Old Regime with deductions and the New Regime with lower flat rates. Under the New Regime, zero tax is payable on income up to ₹12.75 lakh after the ₹75,000 standard deduction and ₹60,000 Section 87A rebate. The Old Regime is beneficial if you have significant deductions under Section 80C (PPF, ELSS, LIC up to ₹1.5 lakh), home loan interest (up to ₹2 lakh), or HRA exemption. This calculator computes tax under both regimes and recommends which one saves you more money based on your specific income and deductions.

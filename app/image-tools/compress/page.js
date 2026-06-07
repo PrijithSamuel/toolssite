@@ -99,11 +99,11 @@ export default function ImageCompressor() {
             <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "20px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px", marginBottom: "8px" }}>
                 <span style={{ fontWeight: "500", color: "#1E1B4B" }}>Quality</span>
-                <span style={{ color: "#6366F1" }}>{Math.round(quality * 100)}%</span>
+                <span style={{ color: "#6366F1" }}>{Math.round(quality * 100)}% quality {quality >= 0.8 ? "(recommended)" : quality <= 0.4 ? "(smallest file)" : ""}</span>
               </div>
               <input type="range" min="0.1" max="1" step="0.1" value={quality} onChange={(e) => setQuality(parseFloat(e.target.value))} style={{ width: "100%", accentColor: "#4F46E5" }} />
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#9CA3AF", marginTop: "4px" }}>
-                <span>Smaller file</span><span>Better quality</span>
+                <span>Maximum compression</span><span>Balanced</span><span>Best quality</span>
               </div>
             </div>
 

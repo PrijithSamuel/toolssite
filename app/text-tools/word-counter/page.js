@@ -47,7 +47,7 @@ export default function WordCounter() {
           {[
             { label: "Words", value: words },
             { label: "Characters", value: characters },
-            { label: "No Spaces", value: charactersNoSpaces },
+            { label: "Chars (no spaces)", value: charactersNoSpaces },
             { label: "Sentences", value: sentences },
             { label: "Paragraphs", value: paragraphs },
             { label: "Read Time", value: readingTime + " min" },
@@ -58,6 +58,10 @@ export default function WordCounter() {
             </div>
           ))}
         </div>
+
+        <p style={{ fontSize: "12px", color: "#9CA3AF", marginBottom: "8px" }}>
+          * Reading time based on 200 words per minute average reading speed
+        </p>
 
         {/* Textarea */}
         <div style={{ position: "relative" }}>

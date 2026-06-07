@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import FAQ from "../../components/FAQ";
+import LastUpdated from "../../components/LastUpdated";
 
 
 
@@ -121,6 +122,8 @@ export default function BruttoNetto() {
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Brutto-Netto-Rechner 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Berechne dein Nettogehalt — German salary calculator with all deductions.</p>
         </div>
+
+        <LastUpdated date="January 2025" source="Bundesfinanzministerium" sourceUrl="https://www.bundesfinanzministerium.de" />
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
           Germany&apos;s payroll deductions are among the most complex in Europe — your net salary (Nettolohn) can be as little as 55-65% of your gross salary (Bruttogehalt) depending on your tax class, state, and insurance choices. The six Steuerklassen (tax classes) determine your income tax withholding: single employees use Class 1, married couples typically split between Class 3 (higher earner) and Class 5 (lower earner) or both use Class 4. Social contributions — pension (9.3%), unemployment (1.3%), health insurance (~9%), and nursing care (1.7-2.2%) — apply to all employees regardless of tax class. This calculator applies 2025 rates for all German states.

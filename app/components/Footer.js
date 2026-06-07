@@ -42,15 +42,15 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h3 style={{ fontSize: "13px", fontWeight: "500", color: "white", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Company</h3>
-            {[["About Us", "/about"], ["Contact", "/contact"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms"]].map(([label, href]) => (
+            {[["About Us", "/about"], ["Contact", "/contact"], ["Privacy Policy", "/privacy-policy"], ["Terms of Service", "/terms"], ["Sitemap", "/sitemap.xml"]].map(([label, href]) => (
               <Link key={href} href={href} aria-label={label} style={{ display: "block", fontSize: "13px", color: "rgba(255,255,255,0.75)", textDecoration: "none", marginBottom: "6px" }}>{label}</Link>
             ))}
           </div>
         </div>
 
         <div style={{ borderTop: "0.5px solid rgba(255,255,255,0.1)", paddingTop: "20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)" }}>{"© " + new Date().getFullYear() + " QuikToolkit. Free online tools for everyone."}</span>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)" }}>No data stored. No signup required. 100% browser-based.</span>
+          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.72)" }}>{"© " + new Date().getFullYear() + " QuikToolkit. Free online tools for everyone."}</span>
+          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.72)" }}>No data stored. No signup required. 100% browser-based.</span>
         </div>
       </div>
     </footer>

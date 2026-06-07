@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import FAQ from "../../components/FAQ";
+import LastUpdated from "../../components/LastUpdated";
 
 function fmt(n) { return Math.round(n).toLocaleString("en-IE"); }
 function fmtDec(n) { return n.toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
@@ -69,6 +70,8 @@ export default function IrelandTax() {
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Irish Income Tax Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate PAYE, USC and PRSI — Ireland&apos;s three income taxes for 2025.</p>
         </div>
+
+        <LastUpdated date="January 2025" source="Revenue.ie" sourceUrl="https://www.revenue.ie" />
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
           Irish employees pay three separate taxes on their earnings: PAYE income tax (20% or 40%), Universal Social Charge (USC at tiered rates), and PRSI (Pay Related Social Insurance at 4%). Unlike most countries, these three charges are calculated and applied independently rather than as a single combined rate. For a single employee earning €50,000 in 2025, total deductions typically amount to around €13,000-14,000, leaving a net take-home of approximately €36,000-37,000. Tax credits — the personal credit of €1,875 and the PAYE credit of €1,875 — reduce your final PAYE liability and are automatically applied by your employer through the Revenue payroll system.

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import LastUpdated from "../../components/LastUpdated";
 
 function fmt(n) { return Math.round(n).toLocaleString("nl-NL"); }
 function fmtDec(n, d = 2) { return n.toLocaleString("nl-NL", { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -59,6 +60,8 @@ export default function NetherlandsTax() {
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Dutch Income Tax Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Bruto netto berekenen — Box 1 tax, heffingskortingen and 30% ruling for the Netherlands.</p>
         </div>
+
+        <LastUpdated date="January 2025" source="Belastingdienst" sourceUrl="https://www.belastingdienst.nl" />
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
           <div style={{ marginBottom: "18px" }}>
