@@ -29,7 +29,7 @@ const categories = [
     name: "Finance",
     icon: "💰",
     iconBg: "#D1FAE5",
-    count: 4,
+    count: 55,
     slug: "finance",
     tools: ["Loan Calculator", "Compound Interest", "Salary Calculator", "Invoice"],
   },
@@ -37,7 +37,7 @@ const categories = [
     name: "Health",
     icon: "🏥",
     iconBg: "#FCE7F3",
-    count: 3,
+    count: 8,
     slug: "health",
     tools: ["Calorie Calculator", "Water Intake", "Ideal Weight"],
   },
@@ -45,7 +45,7 @@ const categories = [
     name: "Converters",
     icon: "🔄",
     iconBg: "#CCFBF1",
-    count: 6,
+    count: 8,
     slug: "converters",
     tools: ["Unit Converter", "Time Zone", "Number Base", "Color Converter"],
   },
@@ -53,7 +53,7 @@ const categories = [
     name: "Text Tools",
     icon: "✍️",
     iconBg: "#FEF9C3",
-    count: 9,
+    count: 17,
     slug: "text-tools",
     tools: ["Word Counter", "Text Compare", "Lorem Ipsum", "Sort Lines"],
   },
@@ -61,7 +61,7 @@ const categories = [
     name: "Image Tools",
     icon: "🖼️",
     iconBg: "#EDE9FE",
-    count: 4,
+    count: 5,
     slug: "image-tools",
     tools: ["Compress Image", "Resize Image", "Image to PDF", "Convert Format"],
   },
@@ -69,7 +69,7 @@ const categories = [
     name: "Developer Tools",
     icon: "⚙️",
     iconBg: "#F1F5F9",
-    count: 9,
+    count: 13,
     slug: "developer-tools",
     tools: ["UUID Generator", "Hash Generator", "Base64 Encoder", "Markdown"],
   },
@@ -101,7 +101,7 @@ const categories = [
     name: "Math Tools",
     icon: "📐",
     iconBg: "#DBEAFE",
-    count: 3,
+    count: 10,
     slug: "math-tools",
     tools: ["Fraction Calc", "% Change", "Prime Checker"],
   },
@@ -168,10 +168,10 @@ export default function Home() {
       <div style={{ background: "#4F46E5", padding: "48px 24px 40px", textAlign: "center" }}>
         <div style={{ maxWidth: "640px", margin: "0 auto" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "4px 14px", fontSize: "12px", color: "white", fontWeight: "500", marginBottom: "16px" }}>
-            ✓ 100% Free — No Signup Required
+            ✓ 100+ Free Tools — No Signup Required
           </div>
           <h1 style={{ fontSize: "34px", fontWeight: "500", color: "white", marginBottom: "10px", lineHeight: "1.25" }}>
-            Free Online Tools for Everyone
+            QuikToolkit — Free Online Tools for Everyone
           </h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", marginBottom: "24px" }}>
             PDF, calculators, image tools, converters and more. Works entirely in your browser.
@@ -209,7 +209,7 @@ export default function Home() {
 
         {/* Popular tools */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Most popular tools</h2>
+          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Most Popular Free Online Tools</h2>
           <Link href="/search" style={{ fontSize: "13px", color: "#4F46E5", textDecoration: "none", fontWeight: "500" }}>See all →</Link>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "10px", marginBottom: "36px" }}>
@@ -227,7 +227,7 @@ export default function Home() {
 
         {/* Categories */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Browse by category</h2>
+          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Browse All Tool Categories — PDF, Calculators, Converters &amp; More</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "12px" }}>
           {categories.map((cat) => (

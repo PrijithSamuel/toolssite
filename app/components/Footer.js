@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div style={{ borderTop: "0.5px solid rgba(255,255,255,0.1)", paddingTop: "20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>© 2025 QuikToolkit. Free online tools for everyone.</span>
+          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>{"© " + new Date().getFullYear() + " QuikToolkit. Free online tools for everyone."}</span>
           <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>No data stored. No signup required. 100% browser-based.</span>
         </div>
       </div>
