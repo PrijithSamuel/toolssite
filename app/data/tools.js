@@ -207,6 +207,10 @@ const tools = [
   { name: "Aspect Ratio Calculator", description: "Simplify pixel dimensions to a ratio or calculate a missing dimension", href: "/engineering/aspect-ratio", category: "Engineering", icon: "📐", badge: "New" },
   { name: "PPI Calculator", description: "Calculate pixels per inch, megapixels and dot pitch for any screen", href: "/engineering/ppi-calculator", category: "Engineering", icon: "🖥️", badge: "New" },
 
+  // Math shape calculators
+  { name: "Area Calculator", description: "Calculate area of square, rectangle, triangle, circle, trapezoid, parallelogram, rhombus and ellipse", href: "/math-tools/area-calculator", category: "Math Tools", icon: "📐", badge: "New" },
+  { name: "Volume Calculator", description: "Calculate volume of cube, rectangular box, sphere, cylinder, cone, pyramid and triangular prism", href: "/math-tools/volume-calculator", category: "Math Tools", icon: "📦", badge: "New" },
+
   // Transliteration Tools
   { name: "Ukrainian Transliteration Tool", description: "Convert Ukrainian Cyrillic to Latin and back using official Cabinet Resolution No. 55 standard", href: "/text-tools/transliteration", category: "Text Tools", icon: "🇺🇦", badge: "New" },
   { name: "Cyrillic to Latin Converter", description: "Character-by-character Cyrillic to Latin for Ukrainian and Russian — great for variable naming in code", href: "/text-tools/cyrillic-latin", category: "Text Tools", icon: "🔤", badge: "New" },

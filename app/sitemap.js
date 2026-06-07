@@ -98,6 +98,8 @@ export default function sitemap() {
     "/math-tools/quadratic",
     "/math-tools/standard-deviation",
     "/math-tools/roman-numerals",
+    "/math-tools/area-calculator",
+    "/math-tools/volume-calculator",
     // Date Tools
     "/date-tools",
     "/date-tools/date-difference",

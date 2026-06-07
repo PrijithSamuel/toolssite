@@ -15,6 +15,8 @@ const tools = [
   { name: "Quadratic Equation Solver", description: "Solve ax² + bx + c = 0 with roots, discriminant and vertex", href: "/math-tools/quadratic", icon: "²" },
   { name: "Standard Deviation", description: "Calculate mean, median, mode, variance and standard deviation", href: "/math-tools/standard-deviation", icon: "σ" },
   { name: "Roman Numerals", description: "Convert numbers to Roman numerals or decode Roman numerals", href: "/math-tools/roman-numerals", icon: "Ⅻ" },
+  { name: "Area Calculator", description: "Calculate area of square, rectangle, triangle, circle and 5 more shapes", href: "/math-tools/area-calculator", icon: "📐" },
+  { name: "Volume Calculator", description: "Calculate volume of cube, sphere, cylinder, cone and more 3D shapes", href: "/math-tools/volume-calculator", icon: "📦" },
 ];
 
 export default function MathTools() {
