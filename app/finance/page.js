@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Finance Calculators — Loan, Salary, German, Irish Tax Tools",
-  description: "Free online finance calculators — loan calculator, compound interest, German Brutto-Netto, Irish PAYE/USC/PRSI, mortgage, VAT and more. No signup required.",
+  title: "Free Finance Calculators — Tax Mortgage Salary Tools",
+  description: "Free finance calculators for India, Germany, Ireland, Netherlands, UK, Canada, USA, Singapore and Sri Lanka. Tax calculators, mortgage tools, salary calculators.",
 };
 
 const tools = [

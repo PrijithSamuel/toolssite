@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Developer Tools — UUID, Hash, JSON, Base64, Regex, Markdown",
-  description: "Free online developer tools — UUID generator, hash generator, JSON formatter, Base64 encoder, regex tester, markdown previewer and more. No signup required.",
+  title: "Free Developer Tools — JSON Formatter QR Code Regex",
+  description: "Free online developer tools — JSON formatter, QR code generator, regex tester, password generator, base64 encoder and more. No signup required.",
 };
 
 const tools = [

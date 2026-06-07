@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Online Games — Reaction Time, Typing Speed, Memory Game",
-  description: "Free browser games — test your reaction time, typing speed, play rock paper scissors and train your memory. No signup, no download required.",
+  title: "Free Online Games — Reaction Time Typing Speed Memory",
+  description: "Free online games — reaction time test, typing speed test WPM, rock paper scissors, memory card game. No signup, play instantly in your browser.",
 };
 
 const tools = [

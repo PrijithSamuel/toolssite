@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Online Calculators — Tip, Discount, GPA, BMI, EMI, Scientific",
-  description: "Free online calculators — tip, discount, GPA, scientific, percentage, BMI, EMI, age calculator and more. No signup required.",
+  title: "Free Online Calculators — EMI BMI Age Percentage",
+  description: "Free online calculators — EMI loan calculator, BMI calculator, age calculator, percentage calculator and more. Instant results, no signup required.",
 };
 
 const tools = [

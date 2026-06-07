@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Math Tools — Fraction Calculator, Percentage Change, Prime Checker",
-  description: "Free online math tools — fraction calculator, percentage change calculator, prime number checker. No signup required.",
+  title: "Free Math Tools — Calculator Solver Converter",
+  description: "Free online math tools — fraction calculator, quadratic solver, LCM GCD calculator, standard deviation, roman numerals and more. Instant results.",
 };
 
 const tools = [

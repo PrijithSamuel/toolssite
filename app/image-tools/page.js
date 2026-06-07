@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import TrustBadges from "../components/TrustBadges";
 
 export const metadata = {
-  title: "Free Image Tools — Compress, Resize, Convert Images",
-  description: "Free online image tools — compress, resize, convert format and convert to PDF. No signup required.",
+  title: "Free Image Tools Online — Compress Resize Convert",
+  description: "Free online image tools — compress images, resize images, convert image format, image to PDF. No signup required, works in your browser instantly.",
 };
 
 const tools = [

@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Health Calculators — Calories, Water Intake, Ideal Weight",
-  description: "Free online health calculators — calorie calculator, water intake, ideal weight. Based on scientific formulas. No signup required.",
+  title: "Free Health Calculators — BMI Calorie Sleep Tools",
+  description: "Free health calculators — BMI calculator, calorie calculator, water intake, ideal weight, body fat calculator and more. No signup required.",
 };
 
 const tools = [

@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Online Converters — Unit, Currency, Timezone, Number Base",
-  description: "Free online converters — unit converter, currency converter, time zone converter, number base converter, color converter and more. No signup required.",
+  title: "Free Online Converters — Unit Currency Color",
+  description: "Free online converters — unit converter for length weight temperature, currency converter for 20 currencies, color converter HEX RGB HSL. No signup needed.",
 };
 
 const tools = [

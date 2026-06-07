@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import TrustBadges from "../components/TrustBadges";
 
 export const metadata = {
-  title: "Free PDF Tools — Compress, Merge, Split PDF",
-  description: "Free online PDF tools. Compress, merge, split PDF files and extract text. No signup, no watermark, no limits.",
+  title: "Free PDF Tools Online — Merge Split Compress PDF",
+  description: "Free online PDF tools — merge PDF files, split PDF, compress PDF size and extract text. No signup required, no watermark, works in your browser instantly.",
 };
 
 const tools = [

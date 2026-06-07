@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Free Text Tools — Word Counter, Case Converter, Text Reverser",
-  description: "Free online text tools — word counter, case converter, text reverser, remove duplicates and more. No signup required.",
+  title: "Free Text Tools Online — Word Counter Case Converter",
+  description: "Free online text tools — word counter, case converter, text reverser, remove duplicates, lorem ipsum generator and more. No signup, instant results.",
 };
 
 const tools = [
