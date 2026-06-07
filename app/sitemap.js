@@ -35,6 +35,8 @@ export default function sitemap() {
     "/health/body-fat",
     "/health/sleep-calculator",
     "/health/calories-burned",
+    "/health/pregnancy-due-date",
+    "/health/running-pace",
     // Converters
     "/converters",
     "/converters/unit",

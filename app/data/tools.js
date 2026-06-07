@@ -28,6 +28,8 @@ const tools = [
   { name: "Body Fat Calculator", description: "US Navy method body fat percentage with category breakdown", href: "/health/body-fat", category: "Health", icon: "📊", badge: "New" },
   { name: "Sleep Calculator", description: "Ideal bedtimes and wake times based on 90-min sleep cycles", href: "/health/sleep-calculator", category: "Health", icon: "😴", badge: "New" },
   { name: "Calories Burned Calculator", description: "Calories burned by activity using MET values with food equivalents", href: "/health/calories-burned", category: "Health", icon: "🔥", badge: "New" },
+  { name: "Pregnancy Due Date Calculator", description: "Estimated due date, trimester, weeks remaining and milestone timeline", href: "/health/pregnancy-due-date", category: "Health", icon: "🤰", badge: "New" },
+  { name: "Running Pace Calculator", description: "Calculate pace, finish time or distance with per-km splits table", href: "/health/running-pace", category: "Health", icon: "🏃", badge: "New" },
 
   // Converters
   { name: "Unit Converter", description: "Convert length, weight, temperature, speed and more", href: "/converters/unit", category: "Converters", icon: "📏", badge: "Popular" },

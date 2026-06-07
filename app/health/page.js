@@ -14,6 +14,8 @@ const tools = [
   { name: "Body Fat Calculator", description: "US Navy method body fat percentage with category breakdown", href: "/health/body-fat", icon: "📊" },
   { name: "Sleep Calculator", description: "Ideal bedtimes and wake times based on 90-min sleep cycles", href: "/health/sleep-calculator", icon: "😴" },
   { name: "Calories Burned", description: "Calories burned by activity using MET values with food equivalents", href: "/health/calories-burned", icon: "🔥" },
+  { name: "Pregnancy Due Date", description: "Estimated due date, trimester, weeks remaining and milestone timeline", href: "/health/pregnancy-due-date", icon: "🤰" },
+  { name: "Running Pace Calculator", description: "Calculate pace, finish time or distance with per-km splits", href: "/health/running-pace", icon: "🏃" },
 ];
 
 export default function Health() {
