@@ -51,7 +51,7 @@ export default function ImageCompressor() {
   const savings = compressed ? Math.round((1 - compressed.file.size / original.file.size) * 100) : 0;
 
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Image Compressor" description="Compress images online free no signup" url="/image-tools/compress" />
       <Header breadcrumbs={[{ label: "Image Tools", href: "/image-tools" }, { label: "Image Compressor" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>

@@ -55,7 +55,7 @@ export default function MergePDF() {
   }
 
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Merge PDF" description="Combine multiple PDF files into one free online tool" url="/pdf/merge" />
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Merge PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>

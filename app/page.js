@@ -1,5 +1,7 @@
 import Link from "next/link";
 import HeroSearch from "./components/HeroSearch";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "QuikToolkit — Free Online Tools, No Signup Required",
@@ -156,50 +158,11 @@ const popularTools = [
   { name: "BMI Calculator", desc: "Check your BMI", icon: "⚖️", iconBg: "#DBEAFE", href: "/calculators/bmi", badge: "Popular" },
 ];
 
-const navLinks = [
-  { label: "PDF", href: "/pdf" },
-  { label: "Calculators", href: "/calculators" },
-  { label: "Finance", href: "/finance" },
-  { label: "Converters", href: "/converters" },
-  { label: "Text Tools", href: "/text-tools" },
-  { label: "More ▾", href: "/search" },
-];
-
 export default function Home() {
   return (
     <main id="main-content" role="main" className="min-h-screen" style={{ background: "#F5F3FF" }}>
 
-      {/* Navigation */}
-      <nav style={{ background: "#4F46E5" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "56px" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "8px", marginRight: "32px", textDecoration: "none" }}>
-            <div style={{ width: "30px", height: "30px", background: "rgba(255,255,255,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px" }}>🛠️</div>
-            <span style={{ fontSize: "16px", fontWeight: "500", color: "white" }}>QuikToolkit</span>
-          </Link>
-          <div style={{ display: "flex", flex: 1 }}>
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link-item" style={{ padding: "0 14px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <Link href="/search" aria-label="Search all tools" style={{
-  display: "flex",
-  alignItems: "center",
-  gap: "8px",
-  background: "rgba(255,255,255,0.15)",
-  border: "0.5px solid rgba(255,255,255,0.3)",
-  borderRadius: "20px",
-  padding: "7px 16px",
-  textDecoration: "none",
-  marginLeft: "auto",
-  flexShrink: 0,
-}}>
-            <span style={{ fontSize: "14px" }}>🔍</span>
-            <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>Search</span>
-          </Link>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero */}
       <div style={{ background: "#4F46E5", padding: "48px 24px 40px", textAlign: "center" }}>
@@ -218,7 +181,7 @@ export default function Home() {
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "36px", marginBottom: "20px" }}>
-            {[["95+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["15", "Categories"]].map(([num, label]) => (
+            {[["100+", "Free tools"], ["0", "Signups needed"], ["100%", "Browser based"], ["17", "Categories"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "20px", fontWeight: "500", color: "white" }}>{num}</div>
                 <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", marginTop: "2px" }}>{label}</div>
@@ -290,17 +253,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer style={{ background: "#4F46E5", padding: "20px 24px", marginTop: "40px" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)" }}>QuikToolkit — Free tools for everyone. No signup, no limits.</span>
-          <div style={{ display: "flex", gap: "20px" }}>
-            {[["About", "/about"], ["Privacy Policy", "/privacy-policy"], ["Terms", "/terms"], ["Contact", "/contact"]].map(([label, href]) => (
-              <Link key={label} href={href} style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>{label}</Link>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
     </main>
   );

@@ -50,7 +50,7 @@ export default function BMICalculator() {
   const inputStyle = { width: "100%", border: "0.5px solid #C7D2FE", borderRadius: "8px", padding: "10px 12px", fontSize: "14px", outline: "none", background: "white", color: "#374151" };
 
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="BMI Calculator" description="Calculate Body Mass Index free online tool" url="/calculators/bmi" />
       <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "BMI Calculator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>

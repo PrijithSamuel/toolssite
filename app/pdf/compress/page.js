@@ -34,7 +34,7 @@ export default function CompressPDF() {
   function download() { if (!result) return; const link = document.createElement("a"); link.href = result.url; link.download = result.name; link.click(); }
 
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Compress PDF" description="Reduce PDF file size free online no signup" url="/pdf/compress" />
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Compress PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>

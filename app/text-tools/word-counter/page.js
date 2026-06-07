@@ -24,7 +24,7 @@ export default function WordCounter() {
   const readingTime = Math.ceil(words / 200);
 
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Word Counter" description="Count words characters sentences free online" url="/text-tools/word-counter" />
       <Header breadcrumbs={[{ label: "Text Tools", href: "/text-tools" }, { label: "Word Counter" }]} />
 
