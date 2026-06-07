@@ -81,7 +81,7 @@ export default function SplitPDF() {
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Split PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Split PDF</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Split PDF Online — Extract Pages Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Split a PDF into separate pages or extract specific pages. Free, no signup.</p>
         </div>
 

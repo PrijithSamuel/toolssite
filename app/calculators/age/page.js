@@ -43,7 +43,7 @@ export default function AgeCalculator() {
       <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "Age Calculator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Age Calculator</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Age Calculator — Calculate Exact Age Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your exact age in years, months, days and more.</p>
         </div>
 

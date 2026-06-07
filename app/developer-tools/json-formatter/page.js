@@ -29,7 +29,7 @@ export default function JSONFormatter() {
       <Header breadcrumbs={[{ label: "Developer Tools", href: "/developer-tools" }, { label: "JSON Formatter" }]} />
       <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>JSON Formatter</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>JSON Formatter — Beautify &amp; Validate JSON Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Format, minify and validate JSON instantly. Free, no signup required.</p>
         </div>
 

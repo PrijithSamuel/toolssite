@@ -32,7 +32,7 @@ export default function WordCounter() {
 
         {/* Title */}
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Word Counter</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Word Counter — Count Words Characters Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Count words, characters, sentences and paragraphs instantly. Free, no signup required.</p>
         </div>
 

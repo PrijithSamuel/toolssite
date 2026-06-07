@@ -39,7 +39,7 @@ export default function CompressPDF() {
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Compress PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Compress PDF</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Compress PDF Online — Reduce File Size Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Reduce PDF file size instantly. Free, no signup, no watermark.</p>
         </div>
 

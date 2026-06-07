@@ -56,7 +56,7 @@ export default function ImageCompressor() {
       <Header breadcrumbs={[{ label: "Image Tools", href: "/image-tools" }, { label: "Image Compressor" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Compressor</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Compressor — Reduce Image Size Online Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Compress JPG and PNG images without losing quality. Free, no signup required.</p>
         </div>
 

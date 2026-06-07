@@ -32,7 +32,7 @@ export default function QRCodeGenerator() {
       <Header breadcrumbs={[{ label: "Developer Tools", href: "/developer-tools" }, { label: "QR Code Generator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>QR Code Generator</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>QR Code Generator — Create QR Codes Free Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Generate QR codes for any text or URL. Free, no signup required.</p>
         </div>
 

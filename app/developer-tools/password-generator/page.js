@@ -55,7 +55,7 @@ export default function PasswordGenerator() {
       <Header breadcrumbs={[{ label: "Developer Tools", href: "/developer-tools" }, { label: "Password Generator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
-          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Password Generator</h1>
+          <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Password Generator — Strong Secure Passwords Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Generate strong, secure passwords instantly. Free, no signup required.</p>
         </div>
 
