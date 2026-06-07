@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
 
 function fmt(n) { return Math.round(Math.abs(n)).toLocaleString("en-IN"); }
 function fmtDec(n, d = 1) { return Math.abs(n).toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -54,6 +55,14 @@ function calcOldRegime(grossIncome, ageGroup, ded80C, ded80D, hra, homeLoan) {
   return { taxable, tax, rebate, cess, total: tax + cess, totalDed };
 }
 
+const INDIA_TAX_FAQS = [
+  { q: "Which tax regime is better for salaried employees in India?", a: "The New Regime is generally better if your total deductions under 80C, HRA, home loan interest and other sections are less than ₹3.75 lakh. If your deductions exceed this, the Old Regime may result in lower tax. Use this calculator to compare both regimes with your actual numbers." },
+  { q: "Is income up to ₹12 lakh really tax free in India in FY 2025-26?", a: "Under the New Regime, income up to ₹12,75,000 is effectively tax-free after applying the ₹75,000 standard deduction and the ₹60,000 Section 87A rebate. Note that the rebate is not available if your income exceeds ₹12,75,000 — even by one rupee — and the full tax becomes payable." },
+  { q: "What is the Health and Education Cess?", a: "A 4% Health and Education Cess is applied on top of your calculated income tax. It applies under both the Old and New Regime and is mandatory. It funds health and education schemes under the government budget." },
+  { q: "Can I switch between Old and New tax regimes every year?", a: "Salaried employees can switch between Old and New regimes every financial year when filing their ITR. However business owners and those with professional income can switch only once." },
+  { q: "What is Section 87A rebate?", a: "Section 87A provides a tax rebate of up to ₹12,500 (Old Regime) or ₹60,000 (New Regime for FY 2025-26). Under the New Regime, if your total tax liability before cess is ₹60,000 or less — meaning your income is up to ₹12,75,000 — the entire tax is waived." },
+];
+
 export default function IndiaIncomeTax() {
   const [income, setIncome] = useState("1200000");
   const [ageGroup, setAgeGroup] = useState("below60");
@@ -75,6 +84,10 @@ export default function IndiaIncomeTax() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Income Tax Calculator India FY 2025-26</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Compare Old vs New Regime — includes 87A rebate, cess, and all major deductions.</p>
+        </div>
+
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+          India&apos;s income tax system for FY 2025-26 offers a choice between the Old Regime with deductions and the New Regime with lower flat rates. Under the New Regime, zero tax is payable on income up to ₹12.75 lakh after the ₹75,000 standard deduction and ₹60,000 Section 87A rebate. The Old Regime is beneficial if you have significant deductions under Section 80C (PPF, ELSS, LIC up to ₹1.5 lakh), home loan interest (up to ₹2 lakh), or HRA exemption. This calculator computes tax under both regimes and recommends which one saves you more money based on your specific income and deductions.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
@@ -179,6 +192,7 @@ export default function IndiaIncomeTax() {
           </>
         )}
       </div>
+      <FAQ faqs={INDIA_TAX_FAQS} />
       <Footer />
     </main>
   );

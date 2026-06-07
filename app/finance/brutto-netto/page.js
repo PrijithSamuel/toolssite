@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
 
 
 
@@ -78,6 +79,14 @@ function calc(grossM, klasse, state, church, isPrivate, hasChildren, isOver23) {
 
 function fmt(n) { return Math.round(n).toLocaleString("de-DE"); }
 
+const BRUTTO_NETTO_FAQS = [
+  { q: "What is Steuerklasse 3 and who should use it?", a: "Steuerklasse 3 (Tax Class 3) is for married employees whose spouse earns significantly less or does not work. It provides the lowest income tax withholding, maximising monthly take-home pay. However the couple is assessed jointly at year-end and the total household tax liability is the same as other classes — only the monthly withholding differs." },
+  { q: "What is the Solidaritätszuschlag (solidarity surcharge)?", a: "The Soli was largely abolished in 2021. It now only applies to individuals with annual income tax exceeding approximately €18,130 (roughly €96,000+ annual salary). High earners still pay 5.5% of their income tax as Soli." },
+  { q: "How much is Kirchensteuer (church tax) in Germany?", a: "Church tax is 8% of income tax in Bavaria and Baden-Württemberg, and 9% in all other German states. It applies only to registered members of a recognised church. You can leave the church (Kirchenaustritt) at your local Standesamt to stop paying it." },
+  { q: "What is the difference between gesetzliche and private Krankenversicherung?", a: "Gesetzliche Krankenversicherung (GKV) is statutory public health insurance. The contribution is approximately 14.6% plus an average additional contribution of 1.7%, split equally between employee and employer. Private Krankenversicherung (PKV) is optional for those earning above the Versicherungspflichtgrenze (~€69,300 in 2025) and offers different coverage at fixed monthly premiums not based on income." },
+  { q: "When does nursing care insurance (Pflegeversicherung) cost more?", a: "Employees without children aged 23 or over pay an additional 0.6% surcharge on nursing care insurance. The standard rate is 1.7% but those with no children pay 2.2%. Having a child removes this surcharge from the birth of the first child." },
+];
+
 export default function BruttoNetto() {
   const [grossInput, setGrossInput] = useState("3500");
   const [isMonthly, setIsMonthly] = useState(true);
@@ -111,6 +120,10 @@ export default function BruttoNetto() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Brutto-Netto-Rechner 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Berechne dein Nettogehalt — German salary calculator with all deductions.</p>
+        </div>
+
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+          Germany&apos;s payroll deductions are among the most complex in Europe — your net salary (Nettolohn) can be as little as 55-65% of your gross salary (Bruttogehalt) depending on your tax class, state, and insurance choices. The six Steuerklassen (tax classes) determine your income tax withholding: single employees use Class 1, married couples typically split between Class 3 (higher earner) and Class 5 (lower earner) or both use Class 4. Social contributions — pension (9.3%), unemployment (1.3%), health insurance (~9%), and nursing care (1.7-2.2%) — apply to all employees regardless of tax class. This calculator applies 2025 rates for all German states.
         </div>
 
         {/* Input card */}
@@ -278,6 +291,7 @@ export default function BruttoNetto() {
           </>
         )}
       </div>
+      <FAQ faqs={BRUTTO_NETTO_FAQS} />
       <Footer />
     </main>
   );

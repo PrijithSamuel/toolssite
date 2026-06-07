@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
 
 function fmt(n) { return Math.round(n).toLocaleString("en-IE"); }
 function fmtDec(n) { return n.toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
@@ -31,6 +32,14 @@ function calcPAYE(income, maritalStatus) {
   return Math.max(0, tax - credits);
 }
 
+const IRELAND_TAX_FAQS = [
+  { q: "What is the standard rate cut-off point in Ireland?", a: "In 2025 the standard rate cut-off is €42,000 for single individuals and €51,000 for married couples with one income. Income up to this threshold is taxed at 20% and income above it at 40%. The cut-off increases for married couples and civil partners." },
+  { q: "What is USC and who is exempt?", a: "Universal Social Charge is a tax on gross income charged at tiered rates from 0.5% to 8%. You are fully exempt from USC if your total income is €13,000 or less in 2025. Medical card holders with income under €60,000 pay a reduced maximum rate of 2%." },
+  { q: "How do I claim the rent tax credit in Ireland?", a: "The rent tax credit of up to €1,000 (single) or €2,000 (jointly assessed couple) is claimed through Revenue's myAccount online portal. You claim it for the current year under 'Manage Tax 2025' and it is applied as a reduction to your income tax liability." },
+  { q: "Does PRSI count towards the State pension?", a: "Yes. Each week you pay PRSI at Class A adds a contribution record towards the State Contributory Pension. You need a minimum of 520 paid PRSI contributions (10 years) to qualify for any State pension. The full pension requires an average of 48 contributions per year over your working life." },
+  { q: "What is the emergency tax rate in Ireland?", a: "If you start a new job without a valid Tax Credit Certificate from Revenue, your employer applies emergency tax. For the first 4 weeks you pay 20% on all income. After 4 weeks the rate increases to 40% on all income with no tax credits applied. Register with Revenue's myAccount to issue your employer a correct certificate immediately." },
+];
+
 export default function IrelandTax() {
   const [salaryInput, setSalaryInput] = useState("50000");
   const [marital, setMarital] = useState("single");
@@ -59,6 +68,10 @@ export default function IrelandTax() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Irish Income Tax Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate PAYE, USC and PRSI — Ireland&apos;s three income taxes for 2025.</p>
+        </div>
+
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+          Irish employees pay three separate taxes on their earnings: PAYE income tax (20% or 40%), Universal Social Charge (USC at tiered rates), and PRSI (Pay Related Social Insurance at 4%). Unlike most countries, these three charges are calculated and applied independently rather than as a single combined rate. For a single employee earning €50,000 in 2025, total deductions typically amount to around €13,000-14,000, leaving a net take-home of approximately €36,000-37,000. Tax credits — the personal credit of €1,875 and the PAYE credit of €1,875 — reduce your final PAYE liability and are automatically applied by your employer through the Revenue payroll system.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
@@ -165,6 +178,7 @@ export default function IrelandTax() {
           </>
         )}
       </div>
+      <FAQ faqs={IRELAND_TAX_FAQS} />
       <Footer />
     </main>
   );
