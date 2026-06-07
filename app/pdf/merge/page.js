@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
 import FAQ from "../../components/FAQ";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import HowToSchema from "../../components/HowToSchema";
 
 const FAQS = [
   { q: "Is the PDF merge tool free?", a: "Yes, completely free with no limits. You can merge as many PDF files as you want with no watermark added." },
@@ -60,6 +61,15 @@ export default function MergePDF() {
   return (
     <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Merge PDF" description="Combine multiple PDF files into one free online tool" url="/pdf/merge" />
+      <HowToSchema
+        name="How to merge PDF files online"
+        description="Combine multiple PDF files into one using QuikToolkit free PDF merger"
+        steps={[
+          { name: "Upload PDF files", text: "Click the upload area and select two or more PDF files from your device." },
+          { name: "Reorder if needed", text: "Use the up and down arrows to arrange the files in the order you want them merged." },
+          { name: "Merge and download", text: "Click the Merge button. The combined PDF downloads automatically to your device." },
+        ]}
+      />
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Merge PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>

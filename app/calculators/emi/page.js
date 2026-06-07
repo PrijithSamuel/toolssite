@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import HowToSchema from "../../components/HowToSchema";
 import FAQ from "../../components/FAQ";
 
 const FAQS = [
@@ -42,6 +43,16 @@ export default function EMICalculator() {
   return (
     <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="EMI Calculator" description="Calculate loan EMI monthly payment free online" url="/calculators/emi" />
+      <HowToSchema
+        name="How to calculate loan EMI"
+        description="Calculate your monthly loan EMI payment free using QuikToolkit EMI Calculator"
+        steps={[
+          { name: "Enter loan amount", text: "Type the total loan amount you wish to borrow in the Loan Amount field." },
+          { name: "Enter interest rate", text: "Enter the annual interest rate offered by your bank or lender." },
+          { name: "Enter loan tenure", text: "Set the loan tenure in years or months using the toggle." },
+          { name: "View results", text: "Your monthly EMI, total interest, and total payment are calculated instantly." },
+        ]}
+      />
       <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "EMI Calculator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>

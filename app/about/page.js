@@ -29,7 +29,7 @@ const categories = [
 
 const stats = [
   { num: "100+", label: "Free Tools" },
-  { num: "10+", label: "Countries Supported" },
+  { num: "168+", label: "Indexed pages" },
   { num: "0", label: "Signups Required" },
   { num: "100%", label: "Browser Based" },
 ];

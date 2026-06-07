@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
 import FAQ from "../../components/FAQ";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import HowToSchema from "../../components/HowToSchema";
 
 const FAQS = [
   { q: "Will compressing reduce image quality?", a: "Slight quality reduction may occur at high compression levels. Use the quality slider to find the best balance between file size and visual quality." },
@@ -63,6 +64,15 @@ export default function ImageCompressor() {
   return (
     <main id="main-content" className="min-h-screen" style={{ background: "#F5F3FF" }}>
       <SchemaOrg name="Image Compressor" description="Compress images online free no signup" url="/image-tools/compress" />
+      <HowToSchema
+        name="How to compress an image online"
+        description="Reduce image file size for free using QuikToolkit Image Compressor"
+        steps={[
+          { name: "Upload image", text: "Click the upload area and select a JPG, PNG or WebP image from your device." },
+          { name: "Adjust quality", text: "Use the quality slider to set the balance between file size and image quality." },
+          { name: "Download compressed image", text: "Click Compress Image, then download the compressed result to your device." },
+        ]}
+      />
       <Header breadcrumbs={[{ label: "Image Tools", href: "/image-tools" }, { label: "Image Compressor" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>

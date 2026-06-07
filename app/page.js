@@ -225,6 +225,12 @@ export default function Home() {
           ))}
         </div>
 
+        <div style={{ textAlign: "center", marginTop: "16px", marginBottom: "8px" }}>
+          <Link href="/search" style={{ fontSize: "14px", color: "#4F46E5", textDecoration: "none", fontWeight: "500" }}>
+            View all 100+ free tools →
+          </Link>
+        </div>
+
         {/* Categories */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
           <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B" }}>Browse All Tool Categories — PDF, Calculators, Converters &amp; More</h2>
