@@ -17,6 +17,7 @@ const tools = [
   { name: "Roman Numerals", description: "Convert numbers to Roman numerals or decode Roman numerals", href: "/math-tools/roman-numerals", icon: "Ⅻ" },
   { name: "Area Calculator", description: "Calculate area of square, rectangle, triangle, circle and 5 more shapes", href: "/math-tools/area-calculator", icon: "📐" },
   { name: "Volume Calculator", description: "Calculate volume of cube, sphere, cylinder, cone and more 3D shapes", href: "/math-tools/volume-calculator", icon: "📦" },
+  { name: "Percentage Calculator", description: "Three percentage calculators on one page: X% of Y, X is what % of Y, and % change", href: "/math-tools/percentage-calc", icon: "%" },
 ];
 
 export default function MathTools() {

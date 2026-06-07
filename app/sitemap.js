@@ -102,6 +102,7 @@ export default function sitemap() {
     "/math-tools/roman-numerals",
     "/math-tools/area-calculator",
     "/math-tools/volume-calculator",
+    "/math-tools/percentage-calc",
     // Date Tools
     "/date-tools",
     "/date-tools/date-difference",
