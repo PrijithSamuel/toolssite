@@ -8,6 +8,10 @@ export default function ContactPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (document.querySelector('[name="access_key"]').value === "YOUR_WEB3FORMS_KEY") {
+      alert("Contact form not configured yet. Please email us directly at contact@quiktoolkit.com");
+      return;
+    }
     setStatus("loading");
     const form = e.target;
     const data = new FormData(form);
