@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import SchemaOrg from "../../components/SchemaOrg";
 
 export default function CompressPDF() {
   const [file, setFile] = useState(null);
@@ -34,6 +35,7 @@ export default function CompressPDF() {
 
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <SchemaOrg name="Compress PDF" description="Reduce PDF file size free online no signup" url="/pdf/compress" />
       <Header breadcrumbs={[{ label: "PDF Tools", href: "/pdf" }, { label: "Compress PDF" }]} />
       <div style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>

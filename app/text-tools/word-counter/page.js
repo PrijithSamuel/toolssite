@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import SchemaOrg from "../../components/SchemaOrg";
 
 export default function WordCounter() {
   const [text, setText] = useState("");
@@ -15,6 +16,7 @@ export default function WordCounter() {
 
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <SchemaOrg name="Word Counter" description="Count words characters sentences free online" url="/text-tools/word-counter" />
       <Header breadcrumbs={[{ label: "Text Tools", href: "/text-tools" }, { label: "Word Counter" }]} />
 
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px 24px" }}>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import SchemaOrg from "../../components/SchemaOrg";
 
 export default function BMICalculator() {
   const [unit, setUnit] = useState("metric");
@@ -41,6 +42,7 @@ export default function BMICalculator() {
 
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <SchemaOrg name="BMI Calculator" description="Calculate Body Mass Index free online tool" url="/calculators/bmi" />
       <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "BMI Calculator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>

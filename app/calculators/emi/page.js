@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import SchemaOrg from "../../components/SchemaOrg";
 
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
@@ -29,6 +30,7 @@ export default function EMICalculator() {
 
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+      <SchemaOrg name="EMI Calculator" description="Calculate loan EMI monthly payment free online" url="/calculators/emi" />
       <Header breadcrumbs={[{ label: "Calculators", href: "/calculators" }, { label: "EMI Calculator" }]} />
       <div style={{ maxWidth: "600px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ marginBottom: "24px" }}>
