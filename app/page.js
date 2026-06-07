@@ -178,7 +178,7 @@ export default function Home() {
           </Link>
           <div style={{ display: "flex", flex: 1 }}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
+              <Link key={link.href} href={link.href} className="nav-link-item" style={{ padding: "0 12px", height: "56px", display: "flex", alignItems: "center", fontSize: "13px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
                 {link.label}
               </Link>
             ))}
@@ -251,7 +251,7 @@ export default function Home() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px", marginBottom: "36px" }}>
           {popularTools.map((tool) => (
-            <Link key={tool.href} href={tool.href} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "16px", textAlign: "center", textDecoration: "none", display: "block" }}>
+            <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "16px", textAlign: "center", textDecoration: "none", display: "block" }}>
               <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: tool.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", margin: "0 auto 10px" }}>
                 {tool.icon}
               </div>
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
           {categories.map((cat) => (
-            <Link key={cat.slug} href={`/${cat.slug}`} style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "18px", textDecoration: "none", display: "block" }}>
+            <Link key={cat.slug} href={`/${cat.slug}`} className="cat-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "18px", textDecoration: "none", display: "block" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: cat.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}>
                   {cat.icon}

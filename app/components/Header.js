@@ -22,7 +22,7 @@ export default function Header({ breadcrumbs = [] }) {
           </Link>
           <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} style={{ padding: "0 7px", height: "52px", display: "flex", alignItems: "center", fontSize: "11.5px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
+              <Link key={link.href} href={link.href} className="nav-link-item" style={{ padding: "0 7px", height: "52px", display: "flex", alignItems: "center", fontSize: "11.5px", color: "rgba(255,255,255,0.85)", textDecoration: "none", whiteSpace: "nowrap" }}>
                 {link.label}
               </Link>
             ))}
