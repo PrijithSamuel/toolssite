@@ -14,6 +14,8 @@ const FAQS = [
   { q: "Are my images uploaded to a server?", a: "No. All conversion happens locally in your browser. Your images never leave your device." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function ImageToPDF() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -64,6 +66,10 @@ export default function ImageToPDF() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image to PDF</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert one or multiple images to PDF. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Converting images to PDF is useful when submitting identity documents, assembling a photo portfolio, compiling scanned pages into a single document, or preparing images for professional printing. This tool places each uploaded image on its own page in the PDF. You can upload multiple images and reorder them using the arrows before converting. Page size options include A4, A3, Letter, and Legal in both portrait and landscape orientation — the image is automatically centered and scaled to fit within the page margins. All conversion happens in your browser using the jsPDF library. Your images are never uploaded to any server.
         </div>
 
         <PrivacyBanner />

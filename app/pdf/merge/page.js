@@ -16,6 +16,8 @@ const FAQS = [
   { q: "What is the maximum file size?", a: "Since processing happens in your browser, the limit depends on your device memory. Most modern computers handle PDF files up to 100MB easily." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function MergePDF() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -63,6 +65,10 @@ export default function MergePDF() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Merge PDF Files Online — Free, No Watermark</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Combine multiple PDF files into one. Free, no signup, no watermark.</p>
+        </div>
+
+        <div style={introStyle}>
+          Merging PDF files is one of the most common document tasks — combining a scanned contract with its cover letter, assembling a multi-chapter report, or joining bank statements into one file for a mortgage application. QuikToolkit's PDF merger combines any number of PDF files directly in your browser using the pdf-lib library. Your documents never leave your device. No account is needed, no file size limits are imposed by a server, and no watermark is added to the output. Simply upload, reorder if needed, and download the merged file in seconds.
         </div>
 
         <PrivacyBanner />

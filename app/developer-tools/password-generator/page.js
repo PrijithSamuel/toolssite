@@ -13,6 +13,8 @@ const FAQS = [
   { q: "How many passwords can I generate?", a: "You can generate as many passwords as you need. Click Generate repeatedly for new passwords or adjust settings between generations." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function PasswordGenerator() {
   const [length, setLength] = useState(16);
   const [options, setOptions] = useState({ uppercase: true, lowercase: true, numbers: true, symbols: true });
@@ -66,6 +68,10 @@ export default function PasswordGenerator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Password Generator — Strong Secure Passwords Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Generate strong, secure passwords instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          A strong password is your first line of defence against unauthorised account access. Security experts recommend passwords of at least 16 characters that combine uppercase letters, lowercase letters, numbers, and special characters — with no dictionary words, names, or predictable patterns. This generator uses your browser's built-in cryptographic random number generator (window.crypto.getRandomValues) — the same standard used by security applications — to produce passwords that are genuinely unpredictable. Generated passwords are never transmitted, logged, or stored anywhere. Adjust length and character types to match the requirements of any website or application.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "20px" }}>

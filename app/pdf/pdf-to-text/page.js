@@ -5,6 +5,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PrivacyBanner from "../../components/PrivacyBanner";
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function PDFToText() {
   const [file, setFile] = useState(null);
   const [text, setText] = useState("");
@@ -56,6 +58,10 @@ export default function PDFToText() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>PDF to Text Extractor — Free Online Tool</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Extract text content from any PDF file instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Extracting text from a PDF is essential for searching, editing, or repurposing document content. This tool works on text-based PDFs — files where the text was generated digitally, such as exported Word documents, financial reports, and contracts. Scanned documents that are images of text require optical character recognition (OCR) software and cannot be processed by this tool. The extracted text preserves paragraph structure and is separated by page markers so you can navigate the content easily. Download the result as a plain .txt file or copy it directly to your clipboard.
         </div>
 
         <PrivacyBanner />

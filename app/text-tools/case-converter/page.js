@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Does conversion work for non-English languages?", a: "The converter works best with English and Latin-based languages. Accented characters are preserved during conversion." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function CaseConverter() {
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
@@ -47,6 +49,10 @@ export default function CaseConverter() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Case Converter — UPPER lower Title Case Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert text to uppercase, lowercase, title case and more. Free, instant, no signup.</p>
+        </div>
+
+        <div style={introStyle}>
+          Text case conversion is a frequent need for developers, writers, and content creators. Pasting content from different sources often results in inconsistent capitalisation. UPPER CASE is used for headings, acronyms, and emphasis. lower case is used for email addresses, URLs, and code. Title Case capitalises the first letter of each word and is standard for article headings, book titles, and professional documents. Sentence case capitalises only the first letter of each sentence — the default for most prose writing. This tool converts any text between all major case formats instantly with a single click.
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px", marginBottom: "16px" }}>

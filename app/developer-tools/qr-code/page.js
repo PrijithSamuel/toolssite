@@ -14,6 +14,8 @@ const FAQS = [
   { q: "Will the QR code work forever?", a: "The QR code itself has no expiry. However if the URL it points to changes or goes offline the code will stop working." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function QRCodeGenerator() {
   const [text, setText] = useState("");
   const [size, setSize] = useState(256);
@@ -43,6 +45,10 @@ export default function QRCodeGenerator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>QR Code Generator — Create QR Codes Free Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Generate QR codes for any text or URL. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          QR codes are two-dimensional barcodes that smartphones can scan to instantly open a URL, display contact information, connect to Wi-Fi, or trigger any other text-based action. They are widely used on business cards, restaurant menus, event tickets, product packaging, and marketing materials. This generator creates QR codes for any text input — most commonly a URL. You can adjust the size for print or screen use, and customise the foreground and background colours to match your branding. Download the result as a PNG image ready for use in any design tool or printed material.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px", marginBottom: "16px" }}>

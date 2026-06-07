@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Is my JSON data sent to a server?", a: "No. All formatting and validation happens in your browser. Your JSON data is never transmitted anywhere." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function JSONFormatter() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
@@ -40,6 +42,10 @@ export default function JSONFormatter() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>JSON Formatter — Beautify &amp; Validate JSON Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Format, minify and validate JSON instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          JSON (JavaScript Object Notation) is the standard data format used by web APIs, configuration files, and databases. Unformatted JSON returned by an API looks like a single line of dense text — difficult to read and debug. Formatting adds indentation and line breaks to make the structure immediately visible. Minifying removes all whitespace to reduce file size for transmission. This formatter also validates your JSON syntax and shows the exact line and position of any error — useful when debugging API responses or hand-written configuration files. All processing is done in your browser with no data sent to any server.
         </div>
 
         <div style={{ display: "flex", gap: "10px", marginBottom: "14px", flexWrap: "wrap" }}>

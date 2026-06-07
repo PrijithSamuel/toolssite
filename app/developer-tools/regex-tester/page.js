@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Why does my regex show an error?", a: "An error means the regex syntax is invalid. Check for unclosed brackets, invalid escape sequences or unsupported features." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function RegexTester() {
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("g");
@@ -65,6 +67,10 @@ export default function RegexTester() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Regex Tester</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Test and debug regular expressions instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Regular expressions (regex) are patterns used to match, search, and manipulate text in programming. They are used in form validation (checking if an email address is correctly formatted), log file analysis (extracting specific entries), data cleaning (removing unwanted characters), and search and replace operations in text editors and code. Writing a regex that works exactly as intended often requires iteration — this tester lets you write a pattern and immediately see which parts of your test string it matches, highlighted in yellow. Common pre-built patterns for email, URL, phone, IP address, and date are available as quick-start options.
         </div>
 
         <div style={{ marginBottom: "16px" }}>

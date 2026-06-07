@@ -13,6 +13,8 @@ const FAQS = [
   { q: "What is the formula for percentage change?", a: "Percentage change = ((New Value - Original Value) / Original Value) × 100. A positive result means an increase, negative means a decrease." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function PercentageCalculator() {
   const [mode, setMode] = useState("basic");
   const [basicVal, setBasicVal] = useState({ percent: "", number: "" });
@@ -48,6 +50,10 @@ export default function PercentageCalculator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Percentage Calculator — Calculate % Instantly</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate percentages instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Percentage calculations come up constantly in everyday life — calculating a restaurant tip, working out how much you save in a sale, understanding whether your salary increase beats inflation, or checking your exam score as a percentage. This tool offers three different percentage calculations in one place: finding a percentage of a number (what is 15% of 240?), expressing one number as a percentage of another (30 is what percent of 240?), and calculating percentage change between two values (how much did the price increase from 200 to 240?). Each calculator updates instantly as you type.
         </div>
 
         <div style={{ display: "flex", gap: "8px", marginBottom: "20px", flexWrap: "wrap" }}>

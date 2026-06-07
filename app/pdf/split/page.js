@@ -14,6 +14,8 @@ const FAQS = [
   { q: "What format are the split pages saved in?", a: "Each extracted page or page range is saved as a separate PDF file, downloaded automatically to your device." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function SplitPDF() {
   const [file, setFile] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -94,6 +96,10 @@ export default function SplitPDF() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Split PDF Online — Extract Pages Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Split a PDF into separate pages or extract specific pages. Free, no signup.</p>
+        </div>
+
+        <div style={introStyle}>
+          Splitting a PDF is useful when you need to extract a single contract page from a multi-document bundle, isolate specific sections of a report, or separate invoice pages for different recipients. This tool gives you two options: extract all pages as individual PDF files, or specify exactly which pages you want using a range like 1,3,5-8. The original PDF is never modified — a new file is created for each extracted page or range. Your file is processed entirely in your browser with no server upload required.
         </div>
 
         <PrivacyBanner />

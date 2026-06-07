@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Will the output preserve the original order?", a: "Yes. Lines appear in their original order with duplicates removed. The first occurrence of each line is always kept." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function RemoveDuplicates() {
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
@@ -51,6 +53,10 @@ export default function RemoveDuplicates() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Remove Duplicate Lines</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Remove duplicate lines from any text instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Removing duplicate lines is a common data cleaning task when working with email lists, keyword lists, product catalogues, and database exports. Duplicate entries inflate list sizes, cause errors in mail merges, and skew data analysis. This tool removes every repeated line, keeping only the first occurrence of each unique line. The case-sensitive option treats "Apple" and "apple" as different entries — useful for programming where case matters. Whitespace trimming removes leading and trailing spaces before comparison, so " apple " and "apple" are treated as the same line even if they appear differently in the raw text.
         </div>
 
         <div style={{ display: "flex", gap: "20px", marginBottom: "14px" }}>

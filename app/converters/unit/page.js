@@ -47,6 +47,8 @@ function convertTemp(val, from, to) {
   return celsius + 273.15;
 }
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function UnitConverter() {
   const [category, setCategory] = useState("Length");
   const [from, setFrom] = useState("Meter");
@@ -78,6 +80,10 @@ export default function UnitConverter() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Unit Converter</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert length, weight, temperature, speed and more. Free, no signup.</p>
+        </div>
+
+        <div style={introStyle}>
+          Unit conversion is needed constantly when working with international recipes, engineering specifications, scientific data, or travel planning. The metric system (metres, kilograms, Celsius) is used by most of the world, while imperial units (feet, pounds, Fahrenheit) are common in the United States and a few other countries. Temperature is a special case — it uses an offset formula rather than a simple multiplier, so converting between Celsius and Fahrenheit cannot be done by multiplying alone. This converter covers six categories: length, weight, temperature, speed, area, and volume, with instant results as you type.
         </div>
 
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>

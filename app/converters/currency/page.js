@@ -37,6 +37,8 @@ const names = {
   MXN: "Mexican Peso",
 };
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("USD");
@@ -60,6 +62,10 @@ export default function CurrencyConverter() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Currency Converter</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert between 20 world currencies. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Currency conversion is needed for international travel, online shopping from foreign retailers, freelance invoicing in different currencies, and investment tracking. This converter supports 20 major world currencies including US Dollar, Euro, British Pound, Indian Rupee, Australian Dollar, Canadian Dollar, Singapore Dollar, UAE Dirham, Japanese Yen, and Swiss Franc. The rates shown are approximate mid-market reference rates — real exchange rates from banks and currency exchange services include a margin on top of these rates. For financial transactions, always verify the current rate with your bank or payment provider before converting.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>

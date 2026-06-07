@@ -14,6 +14,8 @@ const FAQS = [
   { q: "Does BMI differ for children?", a: "Yes. BMI for children uses age and sex specific percentiles rather than fixed ranges used for adults." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function BMICalculator() {
   const [unit, setUnit] = useState("metric");
   const [height, setHeight] = useState("");
@@ -57,6 +59,10 @@ export default function BMICalculator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>BMI Calculator — Body Mass Index Calculator</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your Body Mass Index instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Body Mass Index (BMI) is a screening tool that estimates whether your weight is appropriate for your height. It is calculated by dividing weight in kilograms by height in metres squared. A BMI between 18.5 and 24.9 is considered normal for most adults. BMI is a useful first indicator but has well-known limitations — it does not distinguish muscle from fat, and may misclassify athletes as overweight or older adults with low muscle mass as healthy. For a complete picture of health, BMI should be considered alongside waist circumference, body fat percentage, and medical history.
         </div>
 
         <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>

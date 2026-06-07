@@ -15,6 +15,8 @@ const FAQS = [
   { q: "How much can I reduce the file size?", a: "Typical reduction is 30-70% depending on the original image and quality setting chosen." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function ImageCompressor() {
   const [original, setOriginal] = useState(null);
   const [compressed, setCompressed] = useState(null);
@@ -66,6 +68,10 @@ export default function ImageCompressor() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Compressor — Reduce Image Size Online Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Compress JPG and PNG images without losing quality. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Image compression reduces file size while preserving visual quality — essential for faster website loading, staying within email attachment limits, and saving storage space. This tool uses a quality slider to let you control the balance between file size and visual quality. A setting of 0.8 (80%) typically achieves 40–60% file size reduction with no perceptible quality loss for most photographs. PNG files compress differently from JPEGs — PNGs use lossless compression so quality is preserved but size reduction is more limited. All compression happens locally in your browser using the browser-image-compression library — your images are never uploaded to any server.
         </div>
 
         <PrivacyBanner />

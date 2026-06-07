@@ -14,6 +14,8 @@ const FAQS = [
   { q: "Are my images uploaded anywhere?", a: "No. All resizing happens locally in your browser. Your images never leave your device." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function ImageResizer() {
   const [original, setOriginal] = useState(null);
   const [width, setWidth] = useState("");
@@ -71,6 +73,10 @@ export default function ImageResizer() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Resizer — Resize Images Online Free</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Resize images to any dimension instantly. Free, no signup required.</p>
+        </div>
+
+        <div style={introStyle}>
+          Resizing images is required for profile pictures, social media posts, email attachments, website thumbnails, and print preparation. This tool lets you enter exact pixel dimensions or choose from common presets including HD (1280×720), Full HD (1920×1080), square (1080×1080 for Instagram), and thumbnail sizes. The aspect ratio lock prevents distortion — when enabled, adjusting width automatically recalculates height to maintain the original proportions. All resizing happens in your browser using the HTML Canvas API. Your images are never uploaded to a server.
         </div>
 
         <PrivacyBanner />

@@ -14,6 +14,8 @@ const FAQS = [
   { q: "Can I prepay my loan to reduce EMI?", a: "Yes. Making partial prepayments reduces the outstanding principal which can either reduce your EMI amount or shorten your loan tenure." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
@@ -45,6 +47,10 @@ export default function EMICalculator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>EMI Calculator — Loan Monthly Payment Calculator</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your loan EMI, total interest and payment breakdown instantly.</p>
+        </div>
+
+        <div style={introStyle}>
+          An EMI (Equated Monthly Installment) is the fixed monthly amount you pay to repay a loan — covering both the principal borrowed and the interest charged. Before taking a home loan, car loan, or personal loan, calculating your EMI helps you understand the monthly commitment and the true total cost of borrowing. For example, a ₹10 lakh personal loan at 12% annual interest over 3 years costs ₹33,214 per month and ₹1,19,580 in total interest — 12% of the principal. This calculator uses the standard EMI formula and shows the full payment breakdown including principal, interest, and total repayment.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>

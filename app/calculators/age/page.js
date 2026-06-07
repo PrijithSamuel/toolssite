@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Does the calculator show my next birthday?", a: "Yes. The calculator shows how many days until your next birthday." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function AgeCalculator() {
   const [dob, setDob] = useState("");
 
@@ -54,6 +56,10 @@ export default function AgeCalculator() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Age Calculator — Calculate Exact Age Online</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your exact age in years, months, days and more.</p>
+        </div>
+
+        <div style={introStyle}>
+          Calculating your exact age sounds simple but becomes tricky when accounting for leap years, months of different lengths, and whether a birthday has passed yet this year. This calculator computes your age precisely in years, months, and days — not just a rough year count. It is useful for legal age verification, school enrollment deadlines, pension eligibility checks, and medical forms that require your exact age at a specific date. The calculator also shows your total age in days, weeks, and months, and tells you exactly how many days remain until your next birthday.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

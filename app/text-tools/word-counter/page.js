@@ -13,6 +13,8 @@ const FAQS = [
   { q: "Are my text contents saved?", a: "No. Everything stays in your browser. No text is stored or sent anywhere." },
 ];
 
+const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+
 export default function WordCounter() {
   const [text, setText] = useState("");
 
@@ -37,6 +39,10 @@ export default function WordCounter() {
         </div>
 
         {/* Stats row */}
+        <div style={introStyle}>
+          Word count matters across many contexts — academic essays typically require 1,500 to 5,000 words, Twitter posts are limited to 280 characters, LinkedIn posts perform best at 150 to 300 words, and Google Ads headlines must stay within 30 characters. This counter tracks six metrics simultaneously: word count, character count (including spaces), character count excluding spaces, sentence count, paragraph count, and estimated reading time based on an average reading speed of 200 words per minute. The counter updates in real time as you type or paste text — no button to click, no page reload required.
+        </div>
+
         <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "10px", marginBottom: "20px" }}>
           {[
             { label: "Words", value: words },
