@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Converters", href: "/converters" },
   { label: "Text Tools", href: "/text-tools" },
   { label: "Engineering", href: "/engineering" },
+  { label: "Games", href: "/games" },
   { label: "More ▾", href: "/search" },
 ];
 

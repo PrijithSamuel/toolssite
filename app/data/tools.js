@@ -206,6 +206,12 @@ const tools = [
   { name: "Resistor Color Code", description: "Decode 4-band resistor color codes to resistance and tolerance", href: "/engineering/resistor-color", category: "Engineering", icon: "🎨", badge: "New" },
   { name: "Aspect Ratio Calculator", description: "Simplify pixel dimensions to a ratio or calculate a missing dimension", href: "/engineering/aspect-ratio", category: "Engineering", icon: "📐", badge: "New" },
   { name: "PPI Calculator", description: "Calculate pixels per inch, megapixels and dot pitch for any screen", href: "/engineering/ppi-calculator", category: "Engineering", icon: "🖥️", badge: "New" },
+
+  // Games
+  { name: "Reaction Time Test", description: "Click the green box as fast as you can — test your reflexes across 5 attempts", href: "/games/reaction-time", category: "Games", icon: "⚡", badge: "New" },
+  { name: "Typing Speed Test", description: "How many words per minute can you type? 60-second timed typing challenge", href: "/games/typing-speed", category: "Games", icon: "⌨️", badge: "New" },
+  { name: "Rock Paper Scissors", description: "Play against the computer with score tracking and Best of 5 mode", href: "/games/rock-paper-scissors", category: "Games", icon: "🪨", badge: "New" },
+  { name: "Memory Game", description: "Match all 8 emoji pairs. Get 3 stars by finishing in under 15 moves", href: "/games/memory-game", category: "Games", icon: "🧠", badge: "New" },
 ];
 
 export default tools;

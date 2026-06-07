@@ -199,6 +199,12 @@ export default function sitemap() {
     "/engineering/resistor-color",
     "/engineering/aspect-ratio",
     "/engineering/ppi-calculator",
+    // Games
+    "/games",
+    "/games/reaction-time",
+    "/games/typing-speed",
+    "/games/rock-paper-scissors",
+    "/games/memory-game",
   ];
 
   return routes.map((route) => ({

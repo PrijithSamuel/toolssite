@@ -135,6 +135,14 @@ const categories = [
     slug: "engineering",
     tools: ["Ohm's Law", "Resistor Color", "Aspect Ratio", "PPI Calc"],
   },
+  {
+    name: "Games & Fun",
+    icon: "🎮",
+    iconBg: "#EDE9FE",
+    count: 4,
+    slug: "games",
+    tools: ["Reaction Time", "Typing Speed", "Rock Paper Scissors", "Memory Game"],
+  },
 ];
 
 const popularTools = [
