@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+import LastUpdated from "../../components/LastUpdated";
 
 function fmt(n) { return Math.round(Math.abs(n)).toLocaleString("en-SG"); }
 function fmtDec(n, d = 1) { return Math.abs(n).toLocaleString("en-SG", { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -31,6 +33,29 @@ function calcTaxResident(chargeableIncome) {
   });
   return { tax: Math.max(0, tax), rows };
 }
+
+const SINGAPORE_TAX_FAQS = [
+  {
+    q: "Who qualifies as a tax resident in Singapore?",
+    a: "You are a Singapore tax resident if you are a Singapore citizen or PR, or a foreigner who has stayed or worked in Singapore for 183 days or more in the tax year. Tax residents benefit from progressive rates starting at 0% and can claim personal reliefs.",
+  },
+  {
+    q: "What income tax rate applies to non-residents in Singapore?",
+    a: "Non-residents are taxed at a flat rate of 24% on employment income, or 15% if that produces a higher tax — whichever is the higher amount. Director's fees and other Singapore-sourced income are taxed at 24%. Non-residents cannot claim personal reliefs.",
+  },
+  {
+    q: "What is the S$80,000 personal income tax relief cap?",
+    a: "IRAS caps total personal income tax reliefs at S$80,000 per Year of Assessment. This combined cap covers CPF Relief, NSman Relief, Parent Relief, Child Relief, Course Fees Relief and SRS contributions. Any claim beyond $80,000 is automatically capped.",
+  },
+  {
+    q: "How does CPF Relief reduce my Singapore income tax?",
+    a: "CPF Relief lets you deduct your mandatory employee CPF contributions from taxable income. For most employees below 55, this is 20% of salary up to the CPF Annual Limit of S$37,740. It is automatically granted — you do not need to apply separately.",
+  },
+  {
+    q: "When is the Singapore income tax filing deadline?",
+    a: "The e-filing deadline for YA 2026 (income earned in 2025) is 18 April 2026 via myTax Portal. Most salaried employees under the Auto-Inclusion Scheme (AIS) do not need to file — their employer submits earnings data directly to IRAS.",
+  },
+];
 
 export default function SingaporeIncomeTax() {
   const [income, setIncome] = useState("120000");
@@ -73,6 +98,12 @@ export default function SingaporeIncomeTax() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Singapore Income Tax Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>IRAS YA2026 tax rates — progressive resident rates with reliefs, or non-resident flat rate.</p>
+        </div>
+        <LastUpdated date="January 2025" source="Inland Revenue Authority of Singapore" sourceUrl="https://www.iras.gov.sg" />
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+          Singapore's personal income tax system is designed to keep the burden low for middle-income earners. The first S$20,000 of chargeable income is tax-free, and rates rise gradually to a top rate of 24% on income above S$1,000,000 for residents. A wide range of personal reliefs — CPF contributions, parent relief, course fees and more — reduce taxable income, subject to a combined relief cap of S$80,000. Non-residents pay a flat 24% (or 15%, whichever is higher) with no reliefs available. Singapore does not tax capital gains or dividends.
+        </div>
+        <div style={{ marginBottom: "20px" }}>
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
@@ -183,6 +214,7 @@ export default function SingaporeIncomeTax() {
           </>
         )}
       </div>
+      <FAQ faqs={SINGAPORE_TAX_FAQS} />
       <Footer />
     </main>
   );

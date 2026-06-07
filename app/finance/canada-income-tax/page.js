@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+import LastUpdated from "../../components/LastUpdated";
 
 function fmt(n) { return Math.abs(Math.round(n)).toLocaleString("en-CA"); }
 function fmtDec(n, d = 1) { return n.toLocaleString("en-CA", { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -45,6 +47,29 @@ function getMarginalRate(income, fedBands, provBands) {
   return fedRate + provRate;
 }
 
+const CANADA_TAX_FAQS = [
+  {
+    q: "What is the federal Basic Personal Amount (BPA) for 2025?",
+    a: "The federal Basic Personal Amount for 2025 is $15,705. This gives every taxpayer a non-refundable credit of 15% of that amount (~$2,356), reducing federal tax before any other credits are applied.",
+  },
+  {
+    q: "What are the Canadian federal income tax brackets for 2025?",
+    a: "Canada's 2025 federal tax brackets are: 15% on the first $57,375; 20.5% on $57,375–$114,750; 26% on $114,750–$158,519; 29% on $158,519–$220,000; and 33% on income above $220,000.",
+  },
+  {
+    q: "Do I pay provincial income tax on top of federal tax?",
+    a: "Yes. Canada uses a two-tier system — you pay both federal income tax and provincial or territorial tax. Each province sets its own rate schedules. Quebec residents also file a separate provincial return with Revenu Québec.",
+  },
+  {
+    q: "What are CPP and EI deductions and how much are they?",
+    a: "CPP (Canada Pension Plan) is 5.95% on earnings between $3,500 and $68,500, capped at $3,867.50 for 2025. EI (Employment Insurance) is 1.66% of insurable earnings up to a cap of $1,049.12 for 2025. Both generate non-refundable federal tax credits.",
+  },
+  {
+    q: "Which Canadian province has the lowest income tax rate?",
+    a: "Nunavut (starting at 4%) and the Northwest Territories (5.9%) have the lowest territorial rates. Alberta has a flat 10% provincial rate with no provincial sales tax, making it popular for higher earners. Nova Scotia has the highest top marginal rate at 21%.",
+  },
+];
+
 export default function CanadaIncomeTax() {
   const [incomeInput, setIncomeInput] = useState("80000");
   const [provinceCode, setProvinceCode] = useState("ON");
@@ -78,6 +103,12 @@ export default function CanadaIncomeTax() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Canadian Income Tax Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Federal + provincial tax, CPP and EI — CRA 2025 rates for all provinces and territories.</p>
+        </div>
+        <LastUpdated date="January 2025" source="Canada Revenue Agency" sourceUrl="https://www.canada.ca/en/revenue-agency.html" />
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "20px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+          Canada uses a combined federal-provincial tax system. Federal tax is calculated on net income after deducting the Basic Personal Amount ($15,705 in 2025), CPP contributions and EI premiums. Each province adds its own progressive tax on the same income — so your combined marginal rate in Nova Scotia can exceed 54% at the top, while Alberta residents pay no provincial sales tax and have lower combined rates. CPP and EI deductions also generate their own non-refundable federal tax credits at the 15% rate.
+        </div>
+        <div style={{ marginBottom: "20px" }}>
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
@@ -166,6 +197,7 @@ export default function CanadaIncomeTax() {
           </>
         )}
       </div>
+      <FAQ faqs={CANADA_TAX_FAQS} />
       <Footer />
     </main>
   );
