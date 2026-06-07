@@ -14,9 +14,9 @@ const navLinks = [
 export default function Header({ breadcrumbs = [] }) {
   return (
     <>
-      <nav style={{ background: "#4F46E5" }}>
+      <nav role="navigation" aria-label="Main navigation" style={{ background: "#4F46E5" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", height: "52px" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "7px", marginRight: "16px", textDecoration: "none", flexShrink: 0 }}>
+          <Link href="/" aria-label="QuikToolkit home page" style={{ display: "flex", alignItems: "center", gap: "7px", marginRight: "16px", textDecoration: "none", flexShrink: 0 }}>
             <div style={{ width: "28px", height: "28px", background: "rgba(255,255,255,0.2)", borderRadius: "7px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>🛠️</div>
             <span style={{ fontSize: "14px", fontWeight: "600", color: "white" }}>QuikToolkit</span>
           </Link>
@@ -27,7 +27,7 @@ export default function Header({ breadcrumbs = [] }) {
               </Link>
             ))}
           </div>
-          <Link href="/search" style={{
+          <Link href="/search" aria-label="Search all tools" style={{
   display: "flex",
   alignItems: "center",
   gap: "8px",

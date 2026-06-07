@@ -55,6 +55,7 @@ export default function RootLayout({ children }) {
         <meta name="msvalidate.01" content="925D078522E61D890CDB98983366CC21" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Analytics />
         <Script
           async

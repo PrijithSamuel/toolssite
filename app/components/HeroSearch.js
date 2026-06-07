@@ -17,10 +17,11 @@ export default function HeroSearch() {
   }
 
   return (
-    <div style={{ display: "flex", alignItems: "center", background: "white", borderRadius: "12px", maxWidth: "500px", margin: "0 auto 24px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
-      <span style={{ padding: "0 10px 0 16px", fontSize: "18px" }}>🔍</span>
+    <div role="search" style={{ display: "flex", alignItems: "center", background: "white", borderRadius: "12px", maxWidth: "500px", margin: "0 auto 24px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
+      <span style={{ padding: "0 10px 0 16px", fontSize: "18px" }} aria-hidden="true">🔍</span>
       <input
         type="text"
+        aria-label="Search for tools"
         placeholder="Search 50+ tools — try 'PDF merge' or 'BMI'..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -29,6 +30,7 @@ export default function HeroSearch() {
       />
       <button
         type="button"
+        aria-label="Search"
         onClick={handleSearch}
         style={{ background: "#4F46E5", color: "white", border: "none", padding: "10px 20px", fontSize: "13px", fontWeight: "500", cursor: "pointer", margin: "6px", borderRadius: "8px" }}>
         Search

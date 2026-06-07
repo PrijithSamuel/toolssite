@@ -167,7 +167,7 @@ const navLinks = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
+    <main id="main-content" role="main" className="min-h-screen" style={{ background: "#F5F3FF" }}>
 
       {/* Navigation */}
       <nav style={{ background: "#4F46E5" }}>
@@ -183,7 +183,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <Link href="/search" style={{
+          <Link href="/search" aria-label="Search all tools" style={{
   display: "flex",
   alignItems: "center",
   gap: "8px",

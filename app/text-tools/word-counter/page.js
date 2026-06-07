@@ -55,6 +55,7 @@ export default function WordCounter() {
           {text && (
             <button
               type="button"
+              aria-label="Clear text"
               onClick={() => setText("")}
               style={{ position: "absolute", top: "12px", right: "12px", fontSize: "12px", color: "#6B7280", background: "white", border: "0.5px solid #E0E7FF", padding: "4px 12px", borderRadius: "6px", cursor: "pointer" }}
             >

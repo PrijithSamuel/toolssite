@@ -57,7 +57,7 @@ export default function MergePDF() {
 
         <div style={{ border: "2px dashed #C7D2FE", borderRadius: "12px", padding: "40px", textAlign: "center", marginBottom: "16px", background: "white" }}>
           <input type="file" accept=".pdf" multiple onChange={handleFiles} className="hidden" id="merge-input" />
-          <label htmlFor="merge-input" style={{ cursor: "pointer" }}>
+          <label htmlFor="merge-input" aria-label="Upload PDF files" style={{ cursor: "pointer" }}>
             <div style={{ fontSize: "40px", marginBottom: "10px" }}>📄</div>
             <p style={{ fontSize: "14px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>Click to upload PDF files</p>
             <p style={{ fontSize: "12px", color: "#9CA3AF" }}>Upload 2 or more PDF files to merge</p>
