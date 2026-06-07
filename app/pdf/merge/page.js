@@ -6,6 +6,15 @@ import { PDFDocument } from "pdf-lib";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Is the PDF merge tool free?", a: "Yes, completely free with no limits. You can merge as many PDF files as you want with no watermark added." },
+  { q: "Are my PDF files safe?", a: "Yes. All processing happens in your browser using JavaScript. Your files are never uploaded to any server." },
+  { q: "How many PDF files can I merge at once?", a: "You can merge as many PDF files as you need. Simply upload all files and reorder them before merging." },
+  { q: "Does the merged PDF have a watermark?", a: "No watermark is added. The merged PDF is clean and identical to your original files combined." },
+  { q: "What is the maximum file size?", a: "Since processing happens in your browser, the limit depends on your device memory. Most modern computers handle PDF files up to 100MB easily." },
+];
 
 export default function MergePDF() {
   const [files, setFiles] = useState([]);
@@ -111,6 +120,7 @@ export default function MergePDF() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

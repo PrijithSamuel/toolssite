@@ -3,6 +3,15 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Does the word counter work offline?", a: "Yes. The word counter works entirely in your browser with no internet connection needed after the page loads." },
+  { q: "Is there a word limit?", a: "No limit. You can paste or type any amount of text." },
+  { q: "How is reading time calculated?", a: "Reading time is calculated based on an average reading speed of 200 words per minute which is typical for most adults." },
+  { q: "Does it count words in all languages?", a: "The counter works best with English and space-separated languages. It counts any sequence of characters separated by spaces as a word." },
+  { q: "Are my text contents saved?", a: "No. Everything stays in your browser. No text is stored or sent anywhere." },
+];
 
 export default function WordCounter() {
   const [text, setText] = useState("");
@@ -76,6 +85,7 @@ export default function WordCounter() {
 
       </div>
 
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

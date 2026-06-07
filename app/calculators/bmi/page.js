@@ -4,6 +4,15 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What is BMI?", a: "BMI or Body Mass Index is a measure of body fat based on height and weight. It is calculated by dividing weight in kg by height in meters squared." },
+  { q: "What is a healthy BMI range?", a: "A BMI between 18.5 and 24.9 is considered normal weight. Below 18.5 is underweight, 25-29.9 is overweight and 30 or above is obese." },
+  { q: "Is BMI accurate for everyone?", a: "BMI is a general screening tool and does not account for muscle mass, age, gender or body composition. Athletes may have high BMI despite low body fat." },
+  { q: "How often should I check my BMI?", a: "Checking BMI once or twice a year is sufficient for most people unless you are actively working on weight management." },
+  { q: "Does BMI differ for children?", a: "Yes. BMI for children uses age and sex specific percentiles rather than fixed ranges used for adults." },
+];
 
 export default function BMICalculator() {
   const [unit, setUnit] = useState("metric");
@@ -105,6 +114,7 @@ export default function BMICalculator() {
           <p style={{ fontSize: "13px", color: "#4338CA" }}>BMI is a general indicator and does not account for muscle mass, age, or other health factors. Consult a doctor for a full health assessment.</p>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

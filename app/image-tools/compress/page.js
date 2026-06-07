@@ -5,6 +5,15 @@ import imageCompression from "browser-image-compression";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Will compressing reduce image quality?", a: "Slight quality reduction may occur at high compression levels. Use the quality slider to find the best balance between file size and visual quality." },
+  { q: "Are my images uploaded to a server?", a: "No. All compression happens locally in your browser using JavaScript. Your images never leave your device." },
+  { q: "What image formats are supported?", a: "JPG, PNG and WebP formats are supported for compression." },
+  { q: "What is the maximum image size I can compress?", a: "Since processing is done in your browser, very large images above 20MB may be slow on older devices. Most images compress instantly." },
+  { q: "How much can I reduce the file size?", a: "Typical reduction is 30-70% depending on the original image and quality setting chosen." },
+];
 
 export default function ImageCompressor() {
   const [original, setOriginal] = useState(null);
@@ -126,6 +135,7 @@ export default function ImageCompressor() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

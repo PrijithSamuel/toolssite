@@ -4,6 +4,15 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What is EMI?", a: "EMI stands for Equated Monthly Installment. It is the fixed monthly payment you make to repay a loan including both principal and interest." },
+  { q: "How is EMI calculated?", a: "EMI is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1) where P is principal, r is monthly interest rate and n is number of months." },
+  { q: "Does a higher down payment reduce EMI?", a: "Yes. A higher down payment reduces the loan principal which directly reduces your monthly EMI and total interest paid." },
+  { q: "What happens if I miss an EMI payment?", a: "Missing EMI payments results in late fees, penalty interest charges and negatively impacts your credit score. Always set up auto-payment." },
+  { q: "Can I prepay my loan to reduce EMI?", a: "Yes. Making partial prepayments reduces the outstanding principal which can either reduce your EMI amount or shorten your loan tenure." },
+];
 
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
@@ -98,6 +107,7 @@ export default function EMICalculator() {
           </div>
         )}
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );
