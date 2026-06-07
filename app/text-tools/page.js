@@ -36,6 +36,11 @@ export default function TextTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Text Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online text tools — no signup required.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            Text tools help writers, developers, students and content creators work with text more efficiently. Count words, characters, sentences and paragraphs in any text. Convert text between uppercase, lowercase, title case and sentence case. Generate lorem ipsum placeholder text for designs and prototypes. Sort lines alphabetically or randomly, remove duplicate lines, convert text to URL-friendly slugs and much more. All text tools work entirely in your browser with zero data storage.
+          </p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

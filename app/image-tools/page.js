@@ -25,6 +25,11 @@ export default function ImageTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Image Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online image tools — no signup required.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            Image tools let you compress, resize, convert and transform images directly in your browser. Compress JPG and PNG images to reduce file size without visible quality loss using our quality slider. Resize images to exact pixel dimensions or common presets like HD and Full HD. Convert images between JPG, PNG and WebP formats. Combine multiple images into a single PDF document. All image processing happens locally on your device — your photos are never uploaded to any server.
+          </p>
+        </div>
         <TrustBadges />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

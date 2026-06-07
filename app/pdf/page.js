@@ -24,6 +24,11 @@ export default function PDFTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>PDF Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online PDF tools — no signup, no watermark, no limits.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            PDF tools are among the most frequently needed online utilities. Whether you need to merge multiple PDF documents into a single file, split a large PDF into individual pages, reduce a PDF file size before emailing, or extract readable text from a PDF — QuikToolkit provides all these tools completely free with no file uploads to any server. All PDF processing happens directly in your browser using JavaScript, meaning your documents stay private on your device at all times. No watermarks are added to any output files.
+          </p>
+        </div>
         <TrustBadges />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

@@ -23,6 +23,8 @@ const categories = [
   { name: "Date Tools", icon: "📅", slug: "date-tools" },
   { name: "Food Tools", icon: "👨‍🍳", slug: "food-tools" },
   { name: "Student Tools", icon: "🎓", slug: "student-tools" },
+  { name: "Engineering", icon: "🔧", slug: "engineering" },
+  { name: "Games & Fun", icon: "🎮", slug: "games" },
 ];
 
 const stats = [

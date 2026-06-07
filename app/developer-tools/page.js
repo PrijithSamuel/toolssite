@@ -32,6 +32,11 @@ export default function DeveloperTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Developer Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online developer tools — no signup required.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            Developer tools help programmers and web developers work faster and more accurately. Format and validate JSON data instantly, generate QR codes for any URL or text, test regular expressions with live highlighting, generate cryptographically strong passwords, encode and decode Base64 strings, encode and decode URL components, preview Markdown in real time and generate unique UUIDs. All tools run in the browser with no backend required and no data logging.
+          </p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

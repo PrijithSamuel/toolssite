@@ -27,6 +27,11 @@ export default function Converters() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Converters</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online converters — no signup required.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            Unit converters are essential for students, engineers, travelers and anyone working with international measurements. Convert between metric and imperial units for length, weight, temperature, speed, area and volume. Convert between 20 world currencies with our currency converter. Transform color codes between HEX, RGB and HSL formats for web design. All converters update instantly as you type with no page reload required.
+          </p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

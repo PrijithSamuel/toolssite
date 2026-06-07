@@ -27,6 +27,11 @@ export default function Calculators() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Calculators</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online calculators — no signup required.</p>
         </div>
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            Our free online calculators cover the most commonly needed calculations for everyday life and work. Calculate your loan EMI and total interest before taking a mortgage or personal loan. Check your BMI to understand your body weight relative to height. Find out your exact age down to the day. Calculate percentage increases, decreases and comparisons instantly. All calculators run in your browser with no signup required and produce instant results as you type.
+          </p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>
