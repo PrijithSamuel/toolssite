@@ -5,6 +5,15 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SchemaOrg from "../../components/SchemaOrg";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "How much can I reduce a PDF file size?", a: "Typical reduction is 20-60% depending on the PDF content. PDFs with large embedded images compress more than text-only PDFs." },
+  { q: "Will compression reduce the PDF quality?", a: "Our tool removes unnecessary metadata and optimises the file structure. Visual quality of text and images is preserved." },
+  { q: "Are my PDF files uploaded to a server?", a: "No. All compression happens in your browser using JavaScript. Your files never leave your device." },
+  { q: "What is the maximum file size supported?", a: "Since processing is browser-based, files up to 50-100MB work well on modern computers. Very large files may be slow on older devices." },
+  { q: "Can I compress multiple PDFs at once?", a: "Currently one PDF at a time. Upload, compress, download, then repeat for additional files." },
+];
 
 export default function CompressPDF() {
   const [file, setFile] = useState(null);
@@ -116,6 +125,7 @@ export default function CompressPDF() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

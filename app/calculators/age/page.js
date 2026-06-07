@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "How accurate is the age calculator?", a: "Very accurate. It calculates the exact difference between your birth date and today including leap years, accounting for months with different day counts." },
+  { q: "What format should I enter my date of birth?", a: "Use the date picker to select your date of birth. The format depends on your browser locale but the picker handles this automatically." },
+  { q: "Can I calculate age for a future date?", a: "No. The calculator only works for past dates. Future dates will return no result." },
+  { q: "Why does my age in months sometimes seem off?", a: "Month calculations account for the varying number of days in each month, which can cause the month count to differ by one depending on the specific dates." },
+  { q: "Does the calculator show my next birthday?", a: "Yes. The calculator shows how many days until your next birthday." },
+];
 
 export default function AgeCalculator() {
   const [dob, setDob] = useState("");
@@ -78,6 +87,7 @@ export default function AgeCalculator() {
           </div>
         )}
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

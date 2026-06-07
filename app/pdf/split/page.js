@@ -4,6 +4,15 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Can I extract specific pages from a PDF?", a: "Yes. Choose the page range option and enter the page numbers you want to extract, such as 1,3,5-8." },
+  { q: "Will splitting damage my original PDF?", a: "No. The original file is never modified. A new PDF is created from your selected pages." },
+  { q: "Are my files safe when splitting?", a: "Completely safe. All splitting happens locally in your browser. Nothing is uploaded to any server." },
+  { q: "Can I split a password-protected PDF?", a: "Password-protected PDFs cannot be split without entering the password first. Remove the password protection before splitting." },
+  { q: "What format are the split pages saved in?", a: "Each extracted page or page range is saved as a separate PDF file, downloaded automatically to your device." },
+];
 
 export default function SplitPDF() {
   const [file, setFile] = useState(null);
@@ -148,6 +157,7 @@ export default function SplitPDF() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

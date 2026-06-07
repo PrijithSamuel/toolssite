@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What is title case?", a: "Title case capitalises the first letter of each word. For example 'the quick brown fox' becomes 'The Quick Brown Fox'." },
+  { q: "What is sentence case?", a: "Sentence case capitalises only the first letter of each sentence. The rest of the text is lowercase." },
+  { q: "What is alternating case?", a: "Alternating case switches between lowercase and uppercase for each character: 'hElLo WoRlD'." },
+  { q: "Is there a text length limit?", a: "No limit. You can paste any amount of text and convert it instantly." },
+  { q: "Does conversion work for non-English languages?", a: "The converter works best with English and Latin-based languages. Accented characters are preserved during conversion." },
+];
 
 export default function CaseConverter() {
   const [text, setText] = useState("");
@@ -86,6 +95,7 @@ export default function CaseConverter() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

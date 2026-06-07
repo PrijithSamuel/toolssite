@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What counts as a duplicate line?", a: "Any two lines with identical text are duplicates. The first occurrence is kept and subsequent duplicates are removed." },
+  { q: "Does case matter when detecting duplicates?", a: "By default yes. 'Apple' and 'apple' are treated as different lines. Toggle case-sensitive off to treat them as duplicates." },
+  { q: "What does the trim whitespace option do?", a: "Trimming removes leading and trailing spaces before comparison. Lines like '  apple  ' and 'apple' are treated as duplicates when trimming is enabled." },
+  { q: "Is there a line count limit?", a: "No limit. Paste any number of lines and duplicates are removed instantly." },
+  { q: "Will the output preserve the original order?", a: "Yes. Lines appear in their original order with duplicates removed. The first occurrence of each line is always kept." },
+];
 
 export default function RemoveDuplicates() {
   const [text, setText] = useState("");
@@ -94,6 +103,7 @@ export default function RemoveDuplicates() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

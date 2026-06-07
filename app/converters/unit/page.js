@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Which unit categories are supported?", a: "Length, weight, temperature, speed, area and volume are all supported with dozens of units in each category." },
+  { q: "How accurate are the conversions?", a: "Conversions use standard internationally accepted conversion factors and are accurate to 6 decimal places." },
+  { q: "Why is temperature conversion different from other units?", a: "Temperature uses offset formulas rather than simple multiplication. Celsius to Fahrenheit requires the formula F = C × 1.8 + 32, not just a multiplier." },
+  { q: "Can I convert between metric and imperial units?", a: "Yes. All categories include both metric and imperial units. For example length includes meters, kilometers, miles, feet, inches and yards." },
+  { q: "Is the currency converter included here?", a: "Currency conversion is a separate tool available in the Converters category." },
+];
 
 const categories = {
   Length: {
@@ -117,6 +126,7 @@ export default function UnitConverter() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

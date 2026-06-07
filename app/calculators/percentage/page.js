@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "How do I calculate what percentage one number is of another?", a: "Use the second calculator on this page: enter both numbers and it shows what percentage the first number is of the second." },
+  { q: "How do I calculate a percentage increase?", a: "Use the third calculator: enter the original value and the new value to see the percentage increase or decrease." },
+  { q: "What is 20% of 50?", a: "20% of 50 is 10. Use the first calculator: enter 20 as the percentage and 50 as the number." },
+  { q: "How do I calculate a discount?", a: "Enter the original price and the discount percentage in the first calculator to find the discount amount." },
+  { q: "What is the formula for percentage change?", a: "Percentage change = ((New Value - Original Value) / Original Value) × 100. A positive result means an increase, negative means a decrease." },
+];
 
 export default function PercentageCalculator() {
   const [mode, setMode] = useState("basic");
@@ -99,6 +108,7 @@ export default function PercentageCalculator() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

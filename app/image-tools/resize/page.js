@@ -4,6 +4,15 @@ import { useState, useRef, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What is aspect ratio lock?", a: "Aspect ratio lock keeps the proportional relationship between width and height. When enabled, changing one dimension automatically adjusts the other to prevent distortion." },
+  { q: "What image formats can I resize?", a: "JPG, PNG and WebP images can all be resized. The output is saved as PNG to preserve quality." },
+  { q: "What is the maximum resolution I can resize to?", a: "Since processing happens in your browser, very large dimensions like 10000×10000 pixels may be slow. Most common resolutions work instantly." },
+  { q: "Will resizing reduce image quality?", a: "Resizing to a smaller dimension reduces the pixel count which can soften fine details. Resizing larger can cause pixelation. For best quality, avoid resizing more than 2× in either direction." },
+  { q: "Are my images uploaded anywhere?", a: "No. All resizing happens locally in your browser. Your images never leave your device." },
+];
 
 export default function ImageResizer() {
   const [original, setOriginal] = useState(null);
@@ -140,6 +149,7 @@ export default function ImageResizer() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

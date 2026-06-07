@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "Are generated passwords stored anywhere?", a: "No. Passwords are generated entirely in your browser and are never transmitted or stored anywhere." },
+  { q: "What makes a strong password?", a: "A strong password has at least 16 characters and includes uppercase, lowercase, numbers and special characters with no dictionary words or patterns." },
+  { q: "How random are the generated passwords?", a: "Passwords use the browser's built-in cryptographic random number generator, which is suitable for security applications." },
+  { q: "Can I customise which character types to include?", a: "Yes. Use the checkboxes to include or exclude uppercase letters, lowercase letters, numbers and special characters." },
+  { q: "How many passwords can I generate?", a: "You can generate as many passwords as you need. Click Generate repeatedly for new passwords or adjust settings between generations." },
+];
 
 export default function PasswordGenerator() {
   const [length, setLength] = useState(16);
@@ -119,6 +128,7 @@ export default function PasswordGenerator() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

@@ -3,6 +3,15 @@
 import { useState, useMemo } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What regex syntax does this tester support?", a: "JavaScript regex syntax is used. This supports most standard regex patterns including character classes, quantifiers, groups, lookaheads and lookbehinds." },
+  { q: "What do the flags mean?", a: "g means global (find all matches), i means case-insensitive, m means multiline (^ and $ match line starts/ends), s means dot matches newlines." },
+  { q: "Why are my matches highlighted in yellow?", a: "Yellow highlighting shows each match found in the test string. This makes it easy to visually verify your pattern is matching the right text." },
+  { q: "Can I test common patterns like email or URL?", a: "Yes. Use the preset buttons at the top to load common patterns for email, URL, phone number, IP address, date and hex colour." },
+  { q: "Why does my regex show an error?", a: "An error means the regex syntax is invalid. Check for unclosed brackets, invalid escape sequences or unsupported features." },
+];
 
 export default function RegexTester() {
   const [pattern, setPattern] = useState("");
@@ -143,6 +152,7 @@ export default function RegexTester() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

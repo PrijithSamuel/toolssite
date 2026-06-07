@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "How current are the exchange rates?", a: "The rates shown are approximate reference rates and may differ from live bank or market rates. For financial transactions always use your bank or a live rate service." },
+  { q: "Which currencies are supported?", a: "20 major world currencies including USD, EUR, GBP, INR, AUD, CAD, SGD, AED, JPY, CHF, CNY, MYR, NZD, HKD, SAR, KWD, QAR, THB, ZAR and MXN." },
+  { q: "How do I swap the currencies?", a: "Click the swap button between the two currency dropdowns to instantly reverse the conversion direction." },
+  { q: "Can I convert between any two currencies?", a: "Yes. Select any currency in the From dropdown and any currency in the To dropdown." },
+  { q: "Why might the rate differ from my bank?", a: "Banks and exchange services add a margin to the mid-market rate. Our calculator shows the mid-market reference rate without any margin." },
+];
 
 const rates = {
   USD: 1, EUR: 0.92, GBP: 0.79, INR: 83.12, AUD: 1.53,
@@ -90,6 +99,7 @@ export default function CurrencyConverter() {
           <p style={{ fontSize: "12px", color: "#713F12" }}>⚠️ Rates are approximate and for reference only. Check your bank for live rates.</p>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

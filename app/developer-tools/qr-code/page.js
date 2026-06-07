@@ -4,6 +4,15 @@ import { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import QRCode from "qrcode";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What can I encode in a QR code?", a: "Any text including URLs, phone numbers, email addresses, plain text, SMS messages and Wi-Fi credentials." },
+  { q: "What is the maximum text length for a QR code?", a: "QR codes can hold up to about 3,000 characters of text, though shorter content produces simpler, more scannable codes." },
+  { q: "Can I change the QR code colours?", a: "Yes. Use the colour pickers to change both the QR code foreground colour and the background colour." },
+  { q: "How do I download the QR code?", a: "Click the Download PNG button to save the QR code as a PNG image to your device." },
+  { q: "Will the QR code work forever?", a: "The QR code itself has no expiry. However if the URL it points to changes or goes offline the code will stop working." },
+];
 
 export default function QRCodeGenerator() {
   const [text, setText] = useState("");
@@ -92,6 +101,7 @@ export default function QRCodeGenerator() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

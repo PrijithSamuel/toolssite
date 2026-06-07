@@ -4,6 +4,15 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "How many images can I convert to one PDF?", a: "You can add as many images as you need. Each image becomes one page in the PDF." },
+  { q: "Can I change the order of images in the PDF?", a: "Yes. Use the up and down arrows next to each image to reorder them before converting." },
+  { q: "What image formats are supported?", a: "JPG, PNG and WebP images are all supported." },
+  { q: "What page sizes are available?", a: "A4, A3, Letter and Legal page sizes are available in both portrait and landscape orientation." },
+  { q: "Are my images uploaded to a server?", a: "No. All conversion happens locally in your browser. Your images never leave your device." },
+];
 
 export default function ImageToPDF() {
   const [images, setImages] = useState([]);
@@ -126,6 +135,7 @@ export default function ImageToPDF() {
           </ul>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );

@@ -3,6 +3,15 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
+
+const FAQS = [
+  { q: "What does JSON formatting do?", a: "Formatting adds proper indentation and line breaks to make compressed JSON readable. Minifying removes all whitespace to make JSON compact for transmission." },
+  { q: "How do I validate my JSON?", a: "Click the Validate button. If your JSON is valid you will see a green confirmation. If invalid, the error message shows the exact location of the syntax error." },
+  { q: "Is there a size limit for JSON input?", a: "No hard limit. Very large JSON files over 1MB may be slightly slow to format but will work correctly." },
+  { q: "Can I format JSON with comments?", a: "Standard JSON does not support comments. If your JSON contains comments it is not valid JSON and the formatter will show an error." },
+  { q: "Is my JSON data sent to a server?", a: "No. All formatting and validation happens in your browser. Your JSON data is never transmitted anywhere." },
+];
 
 export default function JSONFormatter() {
   const [input, setInput] = useState("");
@@ -71,6 +80,7 @@ export default function JSONFormatter() {
           </div>
         </div>
       </div>
+      <FAQ faqs={FAQS} />
       <Footer />
     </main>
   );
