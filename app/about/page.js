@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export const metadata = {
   title: "About QuikToolkit — Free Online Tools for Everyone",
-  description: "QuikToolkit is a free collection of 50+ online tools including PDF tools, calculators, converters, text tools, image tools and developer tools. No signup required.",
+  description: "QuikToolkit is a free collection of 100+ online tools including PDF tools, calculators, converters, text tools, image tools and developer tools. No signup required.",
 };
 
 const categories = [
@@ -26,10 +26,10 @@ const categories = [
 ];
 
 const stats = [
-  { num: "50+", label: "Free Tools" },
+  { num: "100+", label: "Free Tools" },
+  { num: "10+", label: "Countries Supported" },
   { num: "0", label: "Signups Required" },
   { num: "100%", label: "Browser Based" },
-  { num: "10+", label: "Countries Supported" },
 ];
 
 export default function AboutPage() {
@@ -55,7 +55,7 @@ export default function AboutPage() {
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "14px", padding: "28px", marginBottom: "20px" }}>
           <h2 style={{ fontSize: "18px", fontWeight: "600", color: "#1E1B4B", marginBottom: "12px" }}>What is QuikToolkit?</h2>
           <p style={{ fontSize: "15px", color: "#4B5563", lineHeight: "1.7" }}>
-            QuikToolkit is a free collection of 50+ online tools including PDF tools, calculators, converters, text tools, image tools and developer tools. No signup required. No limits. Works entirely in your browser.
+            QuikToolkit is a free collection of 100+ online tools including PDF tools, calculators, converters, text tools, image tools and developer tools. No signup required. No limits. Works entirely in your browser.
           </p>
         </div>
 
@@ -65,6 +65,25 @@ export default function AboutPage() {
           <p style={{ fontSize: "15px", color: "#4B5563", lineHeight: "1.7" }}>
             We believe powerful tools should be free and accessible to everyone. Every tool on QuikToolkit works instantly in your browser — your files and data never leave your device.
           </p>
+        </div>
+
+        {/* How It Works */}
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "14px", padding: "28px", marginBottom: "20px" }}>
+          <h2 style={{ fontSize: "18px", fontWeight: "600", color: "#1E1B4B", marginBottom: "20px" }}>How It Works</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+            {[
+              { step: "1", icon: "🔗", title: "Visit a Tool", desc: "Pick any tool from the homepage or category pages. No account, no download, no waiting." },
+              { step: "2", icon: "⚡", title: "Use It Instantly", desc: "Everything runs directly in your browser. Paste text, upload a file, or enter numbers — results appear immediately." },
+              { step: "3", icon: "✅", title: "Done", desc: "Copy, download, or share your result. Your data never leaves your device." },
+            ].map(({ step, icon, title, desc }) => (
+              <div key={step} style={{ background: "#F5F3FF", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textAlign: "center" }}>
+                <div style={{ fontSize: "28px", marginBottom: "8px" }}>{icon}</div>
+                <div style={{ fontSize: "11px", fontWeight: "600", color: "#6366F1", marginBottom: "6px", letterSpacing: "0.05em" }}>STEP {step}</div>
+                <div style={{ fontSize: "14px", fontWeight: "600", color: "#1E1B4B", marginBottom: "8px" }}>{title}</div>
+                <p style={{ fontSize: "13px", color: "#6B7280", lineHeight: "1.6" }}>{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Privacy First */}
