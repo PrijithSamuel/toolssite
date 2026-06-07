@@ -72,6 +72,15 @@ body {
   border-radius: 6px;
 }
 
+details summary span[aria-hidden] {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+details[open] summary span[aria-hidden] {
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
 @media (max-width: 768px) {
   nav a {
     min-height: 44px;
@@ -90,4 +99,13 @@ body {
   .cat-card {
     padding: 16px !important;
   }
+
+  .nav-links-row { display: none !important; }
+  .hamburger-btn { display: flex !important; align-items: center; justify-content: center; min-height: 44px; }
+  .mobile-menu { display: flex; flex-direction: column; }
+}
+
+@media (min-width: 769px) {
+  .hamburger-btn { display: none !important; }
+  .mobile-menu { display: none !important; }
 }

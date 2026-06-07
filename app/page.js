@@ -197,7 +197,7 @@ export default function Home() {
               { icon: "🌍", text: "Used in 10+ countries" },
             ].map(({ icon, text }) => (
               <div key={text} style={{ display: "inline-flex", alignItems: "center", gap: "5px", background: "rgba(255,255,255,0.15)", border: "0.5px solid rgba(255,255,255,0.3)", borderRadius: "20px", padding: "4px 12px", fontSize: "12px", color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
-                <span>{icon}</span><span>{text}</span>
+                <span aria-hidden="true">{icon}</span><span>{text}</span>
               </div>
             ))}
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "10px", marginBottom: "36px" }}>
           {popularTools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "16px", textAlign: "center", textDecoration: "none", display: "block" }}>
-              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: tool.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", margin: "0 auto 10px" }}>
+              <div aria-hidden="true" style={{ width: "44px", height: "44px", borderRadius: "10px", background: tool.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", margin: "0 auto 10px" }}>
                 {tool.icon}
               </div>
               <div style={{ fontSize: "12px", fontWeight: "500", color: "#1E1B4B", marginBottom: "4px" }}>{tool.name}</div>
@@ -233,7 +233,7 @@ export default function Home() {
           {categories.map((cat) => (
             <Link key={cat.slug} href={`/${cat.slug}`} className="cat-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "18px", textDecoration: "none", display: "block" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: cat.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}>
+                <div aria-hidden="true" style={{ width: "36px", height: "36px", borderRadius: "8px", background: cat.iconBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px" }}>
                   {cat.icon}
                 </div>
                 <div>
