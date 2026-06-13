@@ -186,7 +186,6 @@ export default function sitemap() {
     "/developer-tools/css-gradient",
     "/developer-tools/password-strength",
     // SEO Tools
-    "/seo-tools",
     "/seo-tools/meta-tag-generator",
     "/seo-tools/word-density",
     // Timer Tools

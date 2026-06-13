@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Finance */}
           <div>
             <h3 style={{ fontSize: "13px", fontWeight: "500", color: "white", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Finance</h3>
-            {[["India Tax", "/finance/india-income-tax"], ["Germany Brutto-Netto", "/finance/brutto-netto"], ["Ireland Tax", "/finance/ireland-tax"], ["Netherlands Tax", "/finance/netherlands-tax"], ["Canada Tax", "/finance/canada-income-tax"], ["USA Paycheck", "/finance/usa-paycheck"]].map(([label, href]) => (
+            {[["India Tax", "/finance/india-income-tax"], ["Germany Brutto-Netto", "/finance/brutto-netto"], ["Ireland Tax", "/finance/ireland-tax"], ["Netherlands Tax", "/finance/netherlands-tax"], ["Canada Tax", "/finance/canada-income-tax"], ["Singapore Income Tax", "/finance/singapore-income-tax"]].map(([label, href]) => (
               <Link key={href} href={href} aria-label={label} style={{ display: "block", fontSize: "13px", color: "rgba(255,255,255,0.75)", textDecoration: "none", marginBottom: "6px" }}>{label}</Link>
             ))}
           </div>
