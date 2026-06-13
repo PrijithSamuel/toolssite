@@ -17,6 +17,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function CompressPDF() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -129,6 +135,19 @@ export default function CompressPDF() {
             <li>• Click Compress — works best on text-heavy PDFs</li>
             <li>• Download the compressed version</li>
           </ul>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>How PDF Compression Works</h2>
+          <p style={ps}>PDF files grow large when they contain high-resolution embedded images, duplicate font data, or unnecessary metadata added by the software that created them. This compressor removes redundant data and optimises the internal structure of the file without modifying the visible content.</p>
+          <p style={psL}>Compression is most effective on PDFs exported from Microsoft Word, Adobe InDesign, or scanning software — these often embed full uncompressed fonts and image data. Text-only PDFs are already small and will see less reduction. Image-heavy PDFs like photo portfolios typically reduce by 30-60%.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>When to Compress a PDF</h2>
+          <p style={ps}><strong>Email attachments:</strong> Most email providers cap attachments at 10-25MB. Compressing a large scanned document before sending prevents delivery failures.</p>
+          <p style={ps}><strong>Online form uploads:</strong> Government portals, university application systems, and recruitment platforms often impose strict file size limits of 2-5MB. Compression ensures your document uploads successfully.</p>
+          <p style={psL}><strong>Cloud storage:</strong> Reducing PDF size saves storage space and makes documents faster to open when accessed from slower connections.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />

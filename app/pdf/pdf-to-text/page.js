@@ -7,6 +7,12 @@ import PrivacyBanner from "../../components/PrivacyBanner";
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function PDFToText() {
   const [file, setFile] = useState(null);
   const [text, setText] = useState("");
@@ -120,6 +126,13 @@ export default function PDFToText() {
             <li>• Copy or download as .txt file</li>
             <li>• Note: scanned image PDFs need OCR software</li>
           </ul>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>How PDF to Text Extraction Works</h2>
+          <p style={ps}>This tool works on text-based PDFs — files where the text was generated digitally, such as exported Word documents, financial reports, and contracts. Scanned documents that are images of text require optical character recognition software and cannot be processed by this tool.</p>
+          <p style={psL}>The extracted text preserves paragraph structure and is separated by page markers so you can navigate the content easily. Download the result as a plain text file or copy it directly to your clipboard. All extraction happens in your browser — your PDF is never uploaded to any server.</p>
         </div>
       </div>
       <Footer />

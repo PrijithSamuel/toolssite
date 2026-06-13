@@ -16,6 +16,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function SplitPDF() {
   const [file, setFile] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -161,6 +167,19 @@ export default function SplitPDF() {
             <li>• Choose to split all pages or extract specific ones</li>
             <li>• For specific pages use format: 1,3,5-8</li>
           </ul>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>How to Split a PDF</h2>
+          <p style={ps}>This tool gives you two ways to split a PDF. You can extract every page as a separate individual PDF file — useful when you have a scanned multi-page document and need each page as its own file. Or you can specify a page range such as 1,3,5-8 to extract only the pages you need into a single output file.</p>
+          <p style={psL}>The original PDF is never modified. A new file is created from your selected pages and downloaded to your device. All processing uses the pdf-lib library running entirely in your browser — no files are uploaded to any server.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>Common Reasons to Split a PDF</h2>
+          <p style={ps}><strong>Extract a single contract page:</strong> When a large document bundle contains one specific agreement you need to sign separately.</p>
+          <p style={ps}><strong>Separate invoices:</strong> A monthly statement PDF containing multiple invoices can be split so each invoice goes to the relevant department.</p>
+          <p style={psL}><strong>Share only relevant sections:</strong> Send a client only the pages of a proposal relevant to their project without sharing the full document.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />

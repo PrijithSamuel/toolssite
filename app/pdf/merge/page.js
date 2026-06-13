@@ -19,6 +19,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function MergePDF() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -136,6 +142,21 @@ export default function MergePDF() {
             <li>• Reorder using ↑ ↓ arrows</li>
             <li>• Click Merge — combined PDF downloads instantly</li>
           </ul>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Key Features of Our PDF Merger</h2>
+          <p style={ps}>QuikToolkit's PDF merge tool combines multiple PDF documents into a single file entirely within your browser. Unlike other tools that require you to upload sensitive files to a remote server, all processing is handled locally using the pdf-lib JavaScript library. Your documents are never transmitted anywhere.</p>
+          <p style={psL}>You can merge unlimited files with no restrictions on page count or file size. Drag to reorder files before merging to control the final page sequence. The output is a clean PDF with no watermark, no metadata from this tool added, and no quality reduction.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>Common Uses for Merging PDFs</h2>
+          <p style={ps}><strong>Job applications:</strong> Combine your CV, cover letter, and certificates into one clean PDF submission.</p>
+          <p style={ps}><strong>Mortgage documents:</strong> Merge payslips, bank statements, and tax documents into a single file for your lender.</p>
+          <p style={ps}><strong>Academic submissions:</strong> Join assignment pages, appendices, and bibliography into one document for upload.</p>
+          <p style={ps}><strong>Business proposals:</strong> Combine individual sections written by different team members into a complete proposal document.</p>
+          <p style={psL}><strong>Legal documents:</strong> Merge contracts, exhibits, and signatures into one organised file for signing or archiving.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />
