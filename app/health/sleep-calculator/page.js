@@ -56,6 +56,12 @@ function hoursLabel(mins) {
   return m === 0 ? `${h}h` : `${h}h ${m}m`;
 }
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function SleepCalculator() {
   const [mode, setMode] = useState("wakeup");
   const [wakeTime, setWakeTime] = useState("07:00");
@@ -154,6 +160,13 @@ export default function SleepCalculator() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Why Sleep Cycles Matter</h2>
+          <p style={ps}>Human sleep consists of repeating 90-minute cycles, each containing stages of light sleep, deep sleep, and REM sleep. Waking up at the end of a complete cycle — rather than mid-cycle during deep sleep — dramatically reduces sleep inertia, the grogginess that makes mornings difficult.</p>
+          <p style={psL}>This calculator adds 14 minutes to account for average time to fall asleep, then calculates wake times that align with the end of complete 90-minute cycles. Five to six complete cycles (7.5 to 9 hours) are recommended for most adults.</p>
         </div>
       </div>
       <Footer />

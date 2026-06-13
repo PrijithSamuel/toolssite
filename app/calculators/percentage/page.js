@@ -15,6 +15,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function PercentageCalculator() {
   const [mode, setMode] = useState("basic");
   const [basicVal, setBasicVal] = useState({ percent: "", number: "" });
@@ -112,6 +118,14 @@ export default function PercentageCalculator() {
             <li>• Choose the type of percentage calculation above</li>
             <li>• Enter your numbers and the result appears instantly</li>
           </ul>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Three Types of Percentage Calculation</h2>
+          <p style={ps}><strong>Type 1 — Finding a percentage of a number:</strong> Used for calculating discounts, tips, commission, and tax. A 20% discount on a 5,000 item saves 1,000.</p>
+          <p style={ps}><strong>Type 2 — Expressing one number as a percentage of another:</strong> Used in academic scoring and performance metrics. Scoring 68 out of 80 on an exam represents 85%.</p>
+          <p style={psL}><strong>Type 3 — Percentage change between two values:</strong> Used in finance and data analysis. A price increase from 200 to 240 is a 20% increase. A drop from 500 to 375 is a 25% decrease.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />

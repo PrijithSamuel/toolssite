@@ -28,6 +28,12 @@ const FOOD_EQUIVALENTS = [
   { name: "Burger", cal: 500, icon: "🍔" },
 ];
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function CaloriesBurned() {
   const [activityIdx, setActivityIdx] = useState(0);
   const [duration, setDuration] = useState("30");
@@ -137,6 +143,13 @@ export default function CaloriesBurned() {
         {/* Info */}
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px 20px", marginTop: "16px", fontSize: "13px", color: "#374151" }}>
           <strong style={{ color: "#4F46E5" }}>Formula:</strong> Calories = MET × weight (kg) × duration (hours) &nbsp;·&nbsp; MET = metabolic equivalent of task, measured relative to resting metabolic rate.
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>How Calorie Burn Is Calculated</h2>
+          <p style={ps}>This calculator uses MET (Metabolic Equivalent of Task) values — a standardised measure of exercise intensity developed by exercise physiologists. A MET of 1 represents the energy used at rest. Running at 8km/h has a MET of 8.3, meaning it burns 8.3 times more calories per minute than sitting still.</p>
+          <p style={psL}>The formula is: Calories = MET x weight in kg x duration in hours. A heavier person burns more calories performing the same activity for the same duration because moving greater mass requires more energy.</p>
         </div>
       </div>
       <Footer />

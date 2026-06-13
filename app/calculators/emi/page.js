@@ -17,6 +17,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function EMICalculator() {
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
@@ -123,6 +129,23 @@ export default function EMICalculator() {
             </div>
           </div>
         )}
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>The EMI Formula Explained</h2>
+          <p style={ps}>EMI stands for Equated Monthly Instalment — the fixed amount you pay every month to repay a loan. It covers both the interest charged on the outstanding balance and a portion of the principal. In the early months of a loan, a larger share of your EMI goes toward interest. As the principal reduces, more of each payment goes toward repaying the loan itself.</p>
+          <div style={{ background:"#EEF2FF", border:"0.5px solid #C7D2FE", borderRadius:"8px", padding:"14px", marginBottom:"10px" }}>
+            <p style={{ fontSize:"13px", color:"#4F46E5", fontWeight:"500", margin:"0 0 6px", fontFamily:"monospace" }}>EMI = P x r x (1 + r)n divided by ((1 + r)n minus 1)</p>
+            <p style={{ fontSize:"12px", color:"#6B7280", margin:0 }}>P = Principal | r = Monthly interest rate (annual rate divided by 12 divided by 100) | n = Number of monthly instalments</p>
+          </div>
+          <p style={psL}>Example: A 10 lakh loan at 9% annual interest for 5 years gives a monthly EMI of 20,758 rupees. Total interest paid over the full tenure is 2,45,480 rupees — nearly 25% of the original loan amount.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>How to Reduce Your EMI</h2>
+          <p style={ps}><strong>Make a larger down payment:</strong> Reducing the principal directly reduces the EMI. On a 50 lakh home loan, increasing your down payment by 5 lakh reduces the EMI by approximately 3,900 per month.</p>
+          <p style={ps}><strong>Extend the loan tenure:</strong> A 20-year term gives a lower monthly EMI than a 15-year term for the same principal, though total interest paid will be higher.</p>
+          <p style={psL}><strong>Negotiate the interest rate:</strong> Even a 0.25% reduction in interest rate on a 30 lakh home loan saves approximately 1,700 per month over a 20-year tenure.</p>
+        </div>
       </div>
       <FAQ faqs={FAQS} />
       <Footer />

@@ -16,6 +16,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function BMICalculator() {
   const [unit, setUnit] = useState("metric");
   const [height, setHeight] = useState("");
@@ -118,6 +124,21 @@ export default function BMICalculator() {
 
         <div style={{ marginTop: "16px", background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px" }}>
           <p style={{ fontSize: "13px", color: "#4338CA" }}>BMI is a general indicator and does not account for muscle mass, age, or other health factors. Consult a doctor for a full health assessment.</p>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Understanding Your BMI Result</h2>
+          <p style={ps}>BMI is calculated by dividing your weight in kilograms by the square of your height in metres. It is used globally as a quick screening tool for weight-related health risks.</p>
+          <p style={ps}><strong>Under 18.5 — Underweight:</strong> May indicate nutritional deficiency. A doctor can assess whether weight gain is advisable.</p>
+          <p style={ps}><strong>18.5 to 24.9 — Normal weight:</strong> Associated with the lowest risk of weight-related conditions for most adults.</p>
+          <p style={ps}><strong>25.0 to 29.9 — Overweight:</strong> Elevated risk for type 2 diabetes, high blood pressure, and cardiovascular disease.</p>
+          <p style={psL}><strong>30.0 and above — Obese:</strong> Significantly elevated health risk. Medical guidance alongside dietary and activity changes is recommended.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>Limitations of BMI</h2>
+          <p style={ps}>BMI does not distinguish between muscle and fat. A professional athlete may register as overweight despite having very low body fat. Conversely, an elderly person with low muscle mass may have a normal BMI but unhealthy body composition.</p>
+          <p style={psL}>BMI also does not account for how fat is distributed in the body. Abdominal fat carries higher cardiovascular risks than fat stored around the hips. Use BMI alongside waist circumference measurements and consult a healthcare professional for a complete assessment.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />

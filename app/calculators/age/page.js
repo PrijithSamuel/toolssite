@@ -15,6 +15,12 @@ const FAQS = [
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function AgeCalculator() {
   const [dob, setDob] = useState("");
 
@@ -92,6 +98,20 @@ export default function AgeCalculator() {
             </div>
           </div>
         )}
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Why Exact Age Calculation Is Harder Than It Looks</h2>
+          <p style={ps}>Calculating your exact age sounds simple but becomes surprisingly complex when you account for months with different numbers of days, leap years, and whether your birthday has passed yet this calendar year. This calculator computes the precise difference between your date of birth and today in years, months, and days simultaneously.</p>
+          <p style={psL}>The result also shows your total age in alternative units — total months lived, total weeks lived, and total days — which can be useful for medical forms, insurance documents, and legal age verification that requires precision beyond just the year.</p>
+        </div>
+        <div style={card}>
+          <h2 style={h2s}>When Do You Need to Know Your Exact Age?</h2>
+          <p style={ps}><strong>Medical and health:</strong> Doctors calculate medication dosages and vaccination schedules based on exact age in years and months.</p>
+          <p style={ps}><strong>Legal and financial:</strong> Pension eligibility and retirement fund access are governed by precise age thresholds.</p>
+          <p style={ps}><strong>Visa and immigration:</strong> Many visa categories have strict upper age limits. Knowing your exact remaining eligibility period helps you plan correctly.</p>
+          <p style={psL}><strong>School enrollment:</strong> Enrollment cutoff dates are based on exact age on a specific date. This calculator helps parents determine which academic year their child qualifies for.</p>
+        </div>
       </div>
       <FAQ faqs={FAQS} />
       <Footer />

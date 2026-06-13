@@ -35,6 +35,12 @@ function calcBodyFat(gender, height, neck, waist, hip) {
   return bf;
 }
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function BodyFat() {
   const [gender, setGender] = useState("male");
   const [height, setHeight] = useState("178");
@@ -147,6 +153,13 @@ export default function BodyFat() {
             </div>
           </>
         )}
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>About the US Navy Body Fat Method</h2>
+          <p style={ps}>The US Navy method estimates body fat percentage from body circumference measurements rather than requiring underwater weighing or DEXA scanning — making it practical for self-measurement at home. The method was developed by the US Navy as a field-ready assessment that correlates well with more accurate laboratory methods.</p>
+          <p style={psL}>Men require neck and waist measurements. Women additionally require a hip measurement. The formula uses logarithmic calculations based on these measurements to estimate the percentage of body weight that is fat tissue rather than lean mass including muscle, bone, and organs.</p>
+        </div>
       </div>
       <Footer />
     </main>

@@ -36,6 +36,12 @@ function fmtDist(km, unit) {
 
 const KM_TO_MI = 1 / 1.60934;
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px" };
+const h2s = { fontSize:"16px", fontWeight:"500", color:"#1E1B4B", marginBottom:"12px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" };
+const psL = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function RunningPace() {
   const [tab, setTab] = useState("pace"); // pace | time | distance
   const [unit, setUnit] = useState("km");
@@ -275,6 +281,13 @@ export default function RunningPace() {
             </div>
           </div>
         )}
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <h2 style={h2s}>Understanding Running Pace</h2>
+          <p style={ps}>Running pace is expressed as time per kilometre or time per mile — for example, 6:00 per kilometre means you run 1 kilometre in exactly 6 minutes. This is the most useful metric for training because it tells you how fast you are going regardless of the distance covered.</p>
+          <p style={psL}>Elite marathon runners maintain a pace below 3:00 per kilometre. Recreational runners typically train at 5:00-7:00 per kilometre. A beginner completing a 5K race at 7:00 per kilometre finishes in 35 minutes. Use this calculator to plan your target race pace and predict your finish time.</p>
+        </div>
       </div>
       <Footer />
     </main>
