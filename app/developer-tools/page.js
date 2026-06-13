@@ -23,6 +23,11 @@ const tools = [
   { name: "Password Strength Checker", description: "Analyse password strength with entropy estimate and improvement tips", href: "/developer-tools/password-strength", icon: "🔐" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function DeveloperTools() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -32,10 +37,11 @@ export default function DeveloperTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Developer Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online developer tools — no signup required.</p>
         </div>
-        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
-          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
-            Developer tools help programmers and web developers work faster and more accurately. Format and validate JSON data instantly, generate QR codes for any URL or text, test regular expressions with live highlighting, generate cryptographically strong passwords, encode and decode Base64 strings, encode and decode URL components, preview Markdown in real time and generate unique UUIDs. All tools run in the browser with no backend required and no data logging.
-          </p>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Developer Tools — JSON, Base64, Regex, QR Code and More</h2>
+          <p style={pStyle}>Developer utility tools are used dozens of times per day by software engineers, web developers, and technical analysts. Having these tools available instantly in a browser tab — without installing extensions, opening terminal windows, or navigating complex software interfaces — saves significant time in development and debugging workflows.</p>
+          <p style={pStyle}>The JSON formatter validates JSON syntax and shows the exact line and character position of any error — critical when debugging API responses that arrive as compressed single-line strings. The regex tester provides live match highlighting as you type your pattern, with preset patterns for the most commonly needed expressions including email, URL, phone number, IP address, date, and hex colour code validation.</p>
+          <p style={pLast}>The QR code generator, password generator, UUID generator, Base64 encoder, and URL encoder all generate output entirely within your browser using cryptographically secure random number generation where applicable. No inputs, generated values, or results are transmitted to any server or logged anywhere.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

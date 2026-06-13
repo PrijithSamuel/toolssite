@@ -22,7 +22,7 @@ export default function HeroSearch() {
       <input
         type="text"
         aria-label="Search for tools"
-        placeholder="Search 100+ free tools — PDF, calculators, converters..."
+        placeholder="Search 100+ free tools — try 'PDF merge', 'BMI', or 'EMI'..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKey}

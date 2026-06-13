@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Finance", href: "/finance" },
   { label: "Image", href: "/image-tools" },
   { label: "Text", href: "/text-tools" },
-  { label: "More ▾", href: "/search" },
+  { label: "All Tools", href: "/search" },
 ];
 
 export default function Header({ breadcrumbs = [] }) {

@@ -18,6 +18,11 @@ const tools = [
   { name: "Running Pace Calculator", description: "Calculate pace, finish time or distance with per-km splits", href: "/health/running-pace", icon: "🏃" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function Health() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -26,6 +31,12 @@ export default function Health() {
         <div style={{ marginBottom: "28px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Health Calculators</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free science-based health calculators — no signup required.</p>
+        </div>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Health Calculators — BMI, Calories, Sleep, Hydration and More</h2>
+          <p style={pStyle}>Health calculators provide reference values based on established medical and scientific formulas. They are useful for understanding your current health metrics, setting realistic targets, and having informed conversations with healthcare professionals. These tools are not a substitute for medical advice — they provide educational context based on population-level research.</p>
+          <p style={pStyle}>The BMI calculator follows the World Health Organization's classification system with an important caveat clearly explained: BMI does not distinguish between muscle and fat mass, and has known limitations for athletes, elderly individuals, and certain ethnic populations. The calorie calculator uses the Mifflin-St Jeor equation — the formula most widely validated in clinical research for estimating basal metabolic rate.</p>
+          <p style={pLast}>The sleep calculator uses 90-minute sleep cycle research to show the optimal wake times that align with the natural sleep architecture — the cycling between light sleep, deep sleep, and REM sleep that occurs throughout the night. Waking at the end of a complete cycle rather than mid-cycle significantly reduces the grogginess that makes waking up difficult.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

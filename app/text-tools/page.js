@@ -27,6 +27,11 @@ const tools = [
   { name: "Cyrillic to Latin", description: "Character-by-character Cyrillic → Latin for Ukrainian and Russian", href: "/text-tools/cyrillic-latin", icon: "🔤" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function TextTools() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -36,10 +41,11 @@ export default function TextTools() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Text Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online text tools — no signup required.</p>
         </div>
-        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
-          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
-            Text tools help writers, developers, students and content creators work with text more efficiently. Count words, characters, sentences and paragraphs in any text. Convert text between uppercase, lowercase, title case and sentence case. Generate lorem ipsum placeholder text for designs and prototypes. Sort lines alphabetically or randomly, remove duplicate lines, convert text to URL-friendly slugs and much more. All text tools work entirely in your browser with zero data storage.
-          </p>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Text Tools — Writers, Developers, Students and Content Creators</h2>
+          <p style={pStyle}>Text manipulation is one of the most frequent tasks in writing, coding, data processing, and content creation. These tools handle the repetitive text operations that would otherwise require manual effort or writing custom scripts: converting case, counting words, reversing text, removing duplicates from lists, sorting lines alphabetically, generating placeholder text, and converting numbers to words.</p>
+          <p style={pStyle}>The word counter tracks six metrics simultaneously in real time — words, characters with spaces, characters without spaces, sentences, paragraphs, and reading time based on 200 words per minute average reading speed. This makes it useful for checking academic word limits, social media character limits, and SEO content length guidelines simultaneously.</p>
+          <p style={pLast}>Text tools that convert between formats — such as text to binary, morse code encoder, number to words, and HTML encoder — are particularly useful for developers, educators, and puzzle creators who regularly need to transform content between different representational systems. All tools process text locally in the browser with no data sent to any server.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

@@ -20,6 +20,11 @@ const tools = [
   { name: "Percentage Calculator", description: "Three percentage calculators on one page: X% of Y, X is what % of Y, and % change", href: "/math-tools/percentage-calc", icon: "%" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function MathTools() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -28,6 +33,12 @@ export default function MathTools() {
         <div style={{ marginBottom: "28px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Math Tools</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online math tools — no signup required.</p>
+        </div>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Math Tools — Fractions, Statistics, Geometry and Number Systems</h2>
+          <p style={pStyle}>Mathematics tools bridge the gap between understanding a formula and applying it correctly to real numbers. These calculators show step-by-step working alongside results — not just the final answer — which makes them genuinely useful for learning, checking homework, and verifying calculations in professional contexts.</p>
+          <p style={pStyle}>The fraction calculator handles addition, subtraction, multiplication, and division of fractions, showing the full working including finding the lowest common denominator and simplifying the result. The quadratic equation solver computes both roots of any quadratic expression and shows the discriminant, helping students understand not just what the roots are but why they are real or complex.</p>
+          <p style={pLast}>The standard deviation calculator computes all major descriptive statistics simultaneously — mean, median, mode, range, variance, and both population and sample standard deviation — from a comma-separated list of numbers. The Roman numeral converter handles the full valid range from 1 to 3999 supporting both standard subtractive notation and validation of correctly formed Roman numeral strings.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

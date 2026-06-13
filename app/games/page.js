@@ -14,6 +14,11 @@ const tools = [
   { name: "Memory Game", description: "Match all 8 emoji pairs. Get 3 stars by finishing in under 15 moves", href: "/games/memory-game", icon: "🧠" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function Games() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -22,6 +27,12 @@ export default function Games() {
         <div style={{ marginBottom: "28px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Games & Fun</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free browser games — no signup, no download required.</p>
+        </div>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Online Games — Reaction Time, Typing Speed, Memory and More</h2>
+          <p style={pStyle}>The games and interactive tools in this section serve a genuine purpose beyond entertainment. The reaction time test measures your visual response time in milliseconds using precise browser timing via performance.now() — the same high-resolution timer used in scientific research. Average human reaction time to a visual stimulus is 200-250 milliseconds. Factors including caffeine, fatigue, age, and screen brightness all measurably affect reaction speed.</p>
+          <p style={pStyle}>The typing speed test measures words per minute and accuracy with a 60-second timed assessment. The average typing speed for adults is 40 WPM. Touch typists who do not look at the keyboard typically achieve 50-80 WPM. Professional transcriptionists often exceed 100 WPM. Regular practice with timed typing tests is one of the most effective ways to improve typing speed.</p>
+          <p style={pLast}>The memory card game exercises working memory and pattern recognition — cognitive skills with practical benefits beyond the game itself. Working memory capacity is positively correlated with reading comprehension, problem-solving ability, and resistance to distraction. All games run entirely in your browser with no data collected, no scores stored, and no account required.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

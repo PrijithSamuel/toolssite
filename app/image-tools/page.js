@@ -16,6 +16,11 @@ const tools = [
   { name: "Photo Print Size Calculator", description: "Check if your photo has enough resolution for print sizes from 10×15cm to 40×60cm", href: "/image-tools/photo-print-size", icon: "🖨️" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function ImageTools() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -31,6 +36,12 @@ export default function ImageTools() {
           </p>
         </div>
         <TrustBadges />
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Image Tools — Compress, Resize, Convert and Convert to PDF</h2>
+          <p style={pStyle}>Image file management is a constant need for website owners, social media managers, bloggers, and anyone who shares visual content online. Large image files slow down websites, fail email attachment size limits, and take excessive storage space. The image tools in this section address the four most common image tasks without requiring software installation, account creation, or file uploads to external servers.</p>
+          <p style={pStyle}>The image compressor uses the browser-image-compression library to reduce file sizes by 30-70% while preserving visual quality. Unlike online compression tools that upload your images to cloud servers, all compression happens locally using JavaScript — your photos are never transmitted anywhere. The quality slider gives you precise control over the balance between file size and visual clarity.</p>
+          <p style={pLast}>The image resizer supports both exact pixel dimensions and common social media presets including Instagram square 1080x1080px, Instagram story 1080x1920px, and YouTube thumbnail 1280x720px. The format converter handles JPG, PNG, and WebP — the three formats that cover virtually all web use cases. All image processing uses the browser's built-in Canvas API and never involves server-side processing.</p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

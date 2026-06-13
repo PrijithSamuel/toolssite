@@ -15,6 +15,11 @@ const tools = [
   { name: "PDF to Text", description: "Extract text content from any PDF file", href: "/pdf/pdf-to-text", icon: "📝" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function PDFTools() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -30,6 +35,12 @@ export default function PDFTools() {
           </p>
         </div>
         <TrustBadges />
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free PDF Tools — No Upload, No Signup Required</h2>
+          <p style={pStyle}>PDF (Portable Document Format) is the global standard for sharing documents that must look identical on every device, operating system, and printer. Created by Adobe in 1993, it is now maintained as an open standard by ISO. PDF files preserve fonts, images, layouts, and formatting precisely — making them essential for contracts, invoices, academic submissions, official government documents, and any file that must be presented consistently to its reader.</p>
+          <p style={pStyle}>Most free PDF tools available online require you to upload your documents to a remote server. This creates a significant privacy risk — your contracts, bank statements, payslips, and personal documents are transmitted to and temporarily stored on computers you have no control over. QuikToolkit's PDF tools work entirely differently: all processing happens in your browser using the pdf-lib JavaScript library. Your documents never leave your device at any point.</p>
+          <p style={pLast}>The four tools in this category cover the most common PDF tasks: merging multiple PDFs into one file, splitting a PDF into individual pages, reducing PDF file size without quality loss, and extracting readable text from PDF documents. Each tool is free with no file size limits, no watermarks added, and no account required.</p>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="tool-card" style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", textDecoration: "none", display: "flex", alignItems: "flex-start", gap: "14px" }}>

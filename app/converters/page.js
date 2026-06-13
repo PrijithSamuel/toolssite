@@ -18,6 +18,11 @@ const tools = [
   { name: "Cooking Measurement Converter", description: "Convert cups, tablespoons, ounces, pounds and oven temperatures", href: "/converters/cooking-units", icon: "🍳" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function Converters() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -27,10 +32,11 @@ export default function Converters() {
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Converters</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online converters — no signup required.</p>
         </div>
-        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
-          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
-            Unit converters are essential for students, engineers, travelers and anyone working with international measurements. Convert between metric and imperial units for length, weight, temperature, speed, area and volume. Convert between 20 world currencies with our currency converter. Transform color codes between HEX, RGB and HSL formats for web design. All converters update instantly as you type with no page reload required.
-          </p>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Unit and Currency Converters — Metric, Imperial and More</h2>
+          <p style={pStyle}>Unit conversion is a daily need for professionals, students, travellers, and home cooks working across different measurement systems. The metric system used by most of the world and the imperial system primary in the United States are incompatible in ways that cannot be solved by simple multiplication alone — temperature conversion between Celsius and Fahrenheit requires both multiplication and addition, making mental arithmetic unreliable.</p>
+          <p style={pStyle}>The colour converter handles the three major colour formats used in web design and digital art: HEX codes used in HTML and CSS, RGB values used in image editing software, and HSL used by modern CSS frameworks. Converting accurately between these formats is essential for maintaining consistent brand colours across different tools and platforms.</p>
+          <p style={pLast}>The currency converter covers 20 major world currencies and shows all conversions simultaneously when you enter an amount — useful for travellers comparing costs in multiple currencies, or businesses invoicing international clients. All conversions update instantly without page reloads.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (

@@ -65,6 +65,11 @@ const tools = [
   { name: "Property Tax Singapore 2025 🇸🇬", description: "Annual property tax — owner-occupied and non-owner-occupied rates", href: "/finance/singapore-property-tax", icon: "🏛️" },
 ];
 
+const sectionStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"24px", marginBottom:"28px" };
+const h2Style = { fontSize:"18px", fontWeight:"500", color:"#1E1B4B", marginBottom:"14px" };
+const pStyle = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", marginBottom:"12px" };
+const pLast = { fontSize:"14px", color:"#4B5563", lineHeight:"1.85", margin:0 };
+
 export default function Finance() {
   return (
     <main className="min-h-screen" style={{ background: "#F5F3FF" }}>
@@ -73,6 +78,12 @@ export default function Finance() {
         <div style={{ marginBottom: "28px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Finance Calculators</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Free online finance tools — no signup required.</p>
+        </div>
+        <div style={sectionStyle}>
+          <h2 style={h2Style}>Free Finance Calculators — Country-Specific Tax, Salary and Mortgage Tools</h2>
+          <p style={pStyle}>Financial calculations — particularly tax calculations — are among the most consequential calculations most people perform. An error in understanding your income tax, EMI obligation, or retirement contribution can have significant financial consequences. QuikToolkit's finance tools are built to provide accurate, formula-transparent calculations using current rates sourced from official government publications.</p>
+          <p style={pStyle}>The country-specific tools cover the tax systems of nine countries: India, Germany, Ireland, the Netherlands, Canada, Singapore, the United States, Sri Lanka, and Ukraine. Each country's tax system has unique characteristics that make generic calculators inadequate — India's dual Old and New regime system, Germany's six Steuerklassen with church tax by state, Ireland's three-layer PAYE plus USC plus PRSI system, and the Netherlands Box 1 Box 2 Box 3 system with the unique 30% ruling for expats.</p>
+          <p style={pLast}>All finance tools display the source of tax rates used and a last-updated date. Tax rates are updated annually after each country's budget announcement. These are reference calculators for financial planning — always confirm important financial decisions with a qualified accountant or financial advisor.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
           {tools.map((tool) => (
