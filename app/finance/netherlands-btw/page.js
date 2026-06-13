@@ -26,6 +26,8 @@ const RATES = [
 
 const QUICK = [10, 50, 100, 500, 1000];
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function NetherlandsBTW() {
   const [amount, setAmount] = useState("100");
   const [selectedRate, setSelectedRate] = useState(21);
@@ -49,6 +51,10 @@ export default function NetherlandsBTW() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>BTW Calculator Nederland 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Dutch VAT calculator — bereken BTW bedrag, excl. en incl. BTW prijs.</p>
+        </div>
+
+        <div style={introStyle}>
+          BTW (Belasting over de Toegevoegde Waarde) is the Dutch equivalent of VAT, charged on the supply of most goods and services in the Netherlands. The standard rate of 21% applies to most commercial transactions. The reduced rate of 9% applies to categories considered essential: food and non-alcoholic beverages, medicines, books and newspapers, art performances, hotel accommodation, and public transport. The zero rate applies to exports and intra-EU business transactions. The distinction between 9% and 21% is frequently misunderstood — restaurant food is taxed at 9% but the same food purchased as a luxury hamper may be taxed at 21%. This calculator handles both adding BTW to a net price and extracting the BTW component from a gross price, which is needed for expense reporting and invoicing verification.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

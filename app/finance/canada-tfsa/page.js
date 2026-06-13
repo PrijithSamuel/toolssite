@@ -21,6 +21,8 @@ function compound(balance, annual, years, rate = 0.06) {
   return bal;
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function CanadaTFSA() {
   const [residentYear, setResidentYear] = useState("2009");
   const [totalContribs, setTotalContribs] = useState("50000");
@@ -51,6 +53,10 @@ export default function CanadaTFSA() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>TFSA Calculator Canada 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your TFSA contribution room, check for over-contributions and project tax-free growth.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Tax-Free Savings Account (TFSA) is a uniquely Canadian savings vehicle that provides tax-free investment growth and tax-free withdrawals at any time for any purpose. Unlike the RRSP, TFSA contributions are not tax-deductible — you contribute after-tax dollars. The advantage is that all growth and withdrawals are completely tax-free. Every Canadian resident aged 18 or older accumulates TFSA contribution room each year. Withdrawals in any calendar year are added back to your contribution room the following January, allowing you to re-contribute withdrawn amounts without penalty. Over-contributing to a TFSA results in a 1% per month penalty tax on the excess amount.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

@@ -9,6 +9,8 @@ const PPF_RATE = 0.071;
 const MIN_INVEST = 500;
 const MAX_INVEST = 150000;
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IndiaPPF() {
   const [annualInvest, setAnnualInvest] = useState("150000");
   const [period, setPeriod] = useState("15");
@@ -38,6 +40,10 @@ export default function IndiaPPF() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>PPF Calculator India 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Public Provident Fund — 7.1% p.a., EEE tax status, ₹500 to ₹1.5 Lakh annually.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Public Provident Fund (PPF) is a government-backed long-term savings scheme that offers one of the most attractive risk-free investment options available to Indian investors. It carries a sovereign guarantee — meaning the Indian government guarantees both the principal and the interest, making it completely safe. The current interest rate of 7.1% per annum, compounded annually, is set quarterly by the government. PPF enjoys the unique EEE (Exempt-Exempt-Exempt) tax status: contributions up to 1.5 lakh qualify for Section 80C deduction, the annual interest credited is tax-free, and the maturity amount is completely tax-free. This triple tax benefit makes PPF particularly valuable for investors in the 30% tax bracket.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "10px", padding: "12px 16px", marginBottom: "16px", fontSize: "12px", color: "#374151" }}>

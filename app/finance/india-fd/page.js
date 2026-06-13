@@ -27,6 +27,8 @@ function calcFD(P, annualRate, months, compFreq) {
   return maturity;
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IndiaFD() {
   const [principal, setPrincipal] = useState("500000");
   const [rate, setRate] = useState("7.0");
@@ -58,6 +60,10 @@ export default function IndiaFD() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>FD Calculator India 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Fixed Deposit returns with TDS, compounding options and bank rate comparison.</p>
+        </div>
+
+        <div style={introStyle}>
+          Fixed Deposits remain the most popular investment vehicle for conservative Indian investors, offering guaranteed returns with full principal protection. Unlike market-linked investments, the interest rate on a Fixed Deposit is locked at the time of opening — market rate changes after that point do not affect your return. Most Indian banks compound FD interest quarterly, meaning the effective annual yield is higher than the stated nominal rate. For a 7% FD compounded quarterly, the effective annual yield is 7.19%. Senior citizens receive an additional 0.25-0.50% interest rate over the standard rate at most banks. The calculator accounts for Tax Deducted at Source (TDS): banks deduct 10% TDS on interest above 40,000 per year (50,000 for senior citizens) if your PAN is registered, or 20% TDS without PAN.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

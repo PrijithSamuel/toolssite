@@ -33,6 +33,8 @@ const BUYER_TYPES = [
 
 const QUICK = [500000, 800000, 1000000, 1500000, 2000000, 3000000];
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function SingaporeStampDuty() {
   const [price, setPrice] = useState("1000000");
   const [buyerType, setBuyerType] = useState("sc");
@@ -68,6 +70,10 @@ export default function SingaporeStampDuty() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Stamp Duty Calculator Singapore 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>BSD and ABSD for residential and non-residential properties — all buyer categories.</p>
+        </div>
+
+        <div style={introStyle}>
+          Singapore&apos;s property stamp duty system has two components that apply to most residential purchases. Buyer Stamp Duty (BSD) is paid by all buyers and is calculated on a progressive scale based on the purchase price. Additional Buyer Stamp Duty (ABSD) is an additional charge that varies dramatically by buyer profile — Singapore Citizens buying their first property pay 0% ABSD, while foreigners pay 60% ABSD on any residential purchase. This dramatic difference makes Singapore one of the most expensive markets in the world for foreign property buyers, and ABSD calculation is essential before committing to any property transaction. Both duties must be paid within 14 days of signing the Option to Purchase.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

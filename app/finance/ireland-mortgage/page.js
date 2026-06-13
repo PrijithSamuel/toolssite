@@ -18,6 +18,8 @@ function calcStampDuty(price) {
   return 1000000 * 0.01 + (price - 1000000) * 0.02;
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IrelandMortgage() {
   const [price, setPrice] = useState("350000");
   const [deposit, setDeposit] = useState("35000");
@@ -56,6 +58,10 @@ export default function IrelandMortgage() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Mortgage Calculator Ireland 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Estimate monthly repayments with Central Bank LTV rules and stamp duty.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Irish mortgage market is regulated by the Central Bank of Ireland, which sets Loan-to-Value (LTV) limits that determine the minimum deposit required. First-time buyers can borrow up to 90% of the property value, requiring a minimum 10% deposit. Second and subsequent buyers face a stricter 80% LTV limit, requiring a 20% deposit. Stamp Duty is a significant additional cost in Irish property transactions: 1% on residential properties up to 1 million euros and 2% on the value above that threshold. This calculator includes Stamp Duty in the total cost of purchase, which many mortgage calculators omit — giving you a more accurate picture of the total cash needed to complete a property purchase in Ireland.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

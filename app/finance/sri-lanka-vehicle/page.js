@@ -17,6 +17,8 @@ const ENGINE_BANDS = [
 
 const VEHICLE_TYPES = ["Car", "SUV", "Van", "Motorcycle", "Electric Vehicle"];
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function SriLankaVehicle() {
   const [vehicleType, setVehicleType] = useState("Car");
   const [engineBand, setEngineBand] = useState(1);
@@ -50,6 +52,10 @@ export default function SriLankaVehicle() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Vehicle Import Duty Calculator Sri Lanka 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate customs duty, excise, VAT and total landed cost for importing a vehicle.</p>
+        </div>
+
+        <div style={introStyle}>
+          Importing a vehicle to Sri Lanka involves multiple tax layers that together often exceed the CIF value of the vehicle itself. The total tax burden includes Customs Import Duty, Excise Duty, Value Added Tax at 18%, the Social Security Contribution Levy at 2.5%, and the Ports and Airports Levy at 10% of CIF value. The applicable rates depend on the engine capacity — vehicles above 1,800cc attract significantly higher excise duty than smaller engines. Japanese-manufactured vehicles from auction houses are the most commonly imported category in Sri Lanka, and calculating the total cost before bidding at auction is essential to avoid unexpected expenses at the port of entry.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

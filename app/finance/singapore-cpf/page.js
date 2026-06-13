@@ -35,6 +35,8 @@ function getAlloc(age) {
   return ALLOC.find((a) => age <= a.maxAge) || ALLOC[ALLOC.length - 1];
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function SingaporeCPF() {
   const [salary, setSalary] = useState("5000");
   const [age, setAge] = useState("30");
@@ -74,6 +76,10 @@ export default function SingaporeCPF() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>CPF Calculator Singapore 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate CPF contributions, OA/SA/MA allocation and take-home pay for all age groups.</p>
+        </div>
+
+        <div style={introStyle}>
+          Singapore&apos;s Central Provident Fund (CPF) is one of the most comprehensive mandatory savings systems in the world. Every Singapore Citizen and Permanent Resident contributes a percentage of their monthly wages to three separate CPF accounts: the Ordinary Account for housing, education, and investment; the Special Account for retirement savings earning higher interest; and the MediSave Account for healthcare expenses. The contribution rates and allocation between these accounts change at five different age thresholds, making calculation without a tool both tedious and error-prone. This calculator applies the correct 2025 rates for all age groups, distinguishing between Singapore Citizens and Permanent Residents in their first, second, and third year of residency.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

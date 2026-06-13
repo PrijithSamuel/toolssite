@@ -5,6 +5,8 @@ import Footer from "../../components/Footer";
 
 function fmt(n) { return Math.round(Math.abs(n)).toLocaleString("en-IN"); }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IndiaHRA() {
   const [basic, setBasic] = useState("50000");
   const [hraReceived, setHraReceived] = useState("25000");
@@ -42,6 +44,10 @@ export default function IndiaHRA() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>HRA Calculator India 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your HRA exemption — the minimum of 3 conditions under Section 10(13A).</p>
+        </div>
+
+        <div style={introStyle}>
+          House Rent Allowance (HRA) is a component of salary provided by employers to employees living in rented accommodation. Under the Indian Income Tax Act, a portion of HRA received from an employer is exempt from income tax — but the exempt amount is not simply the full HRA. It is the minimum of three separately calculated values: the actual HRA received, a percentage of basic salary (50% for metro cities, 40% for non-metro), and actual rent paid minus 10% of basic salary. This three-way minimum calculation means many salaried employees claim less HRA exemption than they are entitled to, or incorrectly calculate their taxable HRA. This calculator automates all three calculations simultaneously and shows which of the three limits applies in your specific situation, along with the resulting annual tax saving at each applicable tax slab rate.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

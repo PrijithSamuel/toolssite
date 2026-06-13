@@ -19,6 +19,8 @@ function calcCPP(avgEarnings, yearsContrib) {
   return Math.min(MAX_ANNUAL_BENEFIT_65 / 12, estimatedMonthly);
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function CanadaCPP() {
   const [age, setAge] = useState("50");
   const [yearsContrib, setYearsContrib] = useState("20");
@@ -67,6 +69,10 @@ export default function CanadaCPP() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>CPP Calculator Canada 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Estimate your Canada Pension Plan retirement benefit — compare early, standard and delayed CPP.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Canada Pension Plan (CPP) is a mandatory contributory earnings-related social insurance program that provides retirement, disability, and survivor benefits to working Canadians. Unlike Old Age Security which is universal, CPP benefits are directly tied to your contribution history. The 2025 contribution rate is 5.95% on earnings between the basic exemption of 3,500 dollars and the Year&apos;s Maximum Pensionable Earnings of 71,300 dollars. The timing of when you begin receiving CPP has a dramatic impact on your monthly benefit: claiming at 60 reduces your monthly payment by up to 36% compared to the standard age of 65, while delaying until 70 increases it by up to 42%. The break-even age where delaying CPP generates more lifetime income than claiming early is typically around 74-75.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

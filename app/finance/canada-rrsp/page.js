@@ -36,6 +36,8 @@ function compound(annual, years, rate = 0.06) {
   return bal;
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function CanadaRRSP() {
   const [income, setIncome] = useState("100000");
   const [province, setProvince] = useState("ON");
@@ -68,6 +70,10 @@ export default function CanadaRRSP() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>RRSP Calculator Canada 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your RRSP tax refund, contribution room and projected retirement savings.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Registered Retirement Savings Plan (RRSP) is Canada&apos;s primary tax-advantaged retirement savings vehicle. Contributions to an RRSP are deducted from your taxable income in the year they are made, reducing your income tax payable immediately. The investment grows tax-sheltered inside the RRSP until withdrawal — typically at retirement when your income and therefore your marginal tax rate is lower. The 2025 RRSP contribution limit is 32,490 Canadian dollars or 18% of your previous year&apos;s earned income, whichever is lower. Unused contribution room carries forward indefinitely, meaning Canadians who contributed less than the maximum in previous years can make larger contributions in future years to catch up.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

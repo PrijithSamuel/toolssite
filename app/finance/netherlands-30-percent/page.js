@@ -30,6 +30,8 @@ function calcNet(gross, use30) {
   return { net: gross - tax, tax, taxable };
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function Netherlands30Percent() {
   const [salaryInput, setSalaryInput] = useState("80000");
   const [isYoungMaster, setIsYoungMaster] = useState(false);
@@ -52,6 +54,10 @@ export default function Netherlands30Percent() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>30% Ruling Calculator Netherlands 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Calculate your tax saving under the Dutch 30%-regeling for highly skilled migrants.</p>
+        </div>
+
+        <div style={introStyle}>
+          The 30% ruling (30%-regeling) is a Dutch tax facility designed to attract highly skilled international workers to the Netherlands by partially compensating for the costs of relocating from abroad. Under this ruling, an employee can receive up to 30% of their gross salary as a tax-free allowance, effectively reducing their taxable income to 70% of their actual salary. To qualify, the employee must be recruited from abroad (having lived more than 150km from the Dutch border for at least 16 of the 24 months before employment) and must meet the minimum salary threshold of 46,107 euros gross in 2025, or 35,048 euros for employees under 30 with a master&apos;s degree. The ruling applies for a maximum of 10 years and tapers from 30% in years 1-5 to 20% in years 6-7 and 10% in years 8-10.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "16px 20px", marginBottom: "16px", fontSize: "13px", color: "#374151" }}>

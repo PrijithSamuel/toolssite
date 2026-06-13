@@ -6,6 +6,8 @@ import Footer from "../../components/Footer";
 function fmt(n) { return Math.round(n).toLocaleString("en-IE"); }
 function fmtDec(n) { return n.toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IrelandRentTaxCredit() {
   const [rentInput, setRentInput] = useState("15000");
   const [taxStatus, setTaxStatus] = useState("single");
@@ -25,6 +27,10 @@ export default function IrelandRentTaxCredit() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>Rent Tax Credit Calculator Ireland 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Introduced in Budget 2023 — claim 20% of your rent as a tax credit via Revenue myAccount.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Rent Tax Credit was introduced in Ireland in Budget 2023 in response to the housing crisis and has been renewed and extended in subsequent Budgets. It provides direct tax relief to private renters who do not receive other housing supports — it cannot be claimed if you receive Housing Assistance Payment, Rent Supplement, or similar supports. The credit is worth 20% of your annual rent paid, up to a maximum credit of 1,000 euros for a single person or 2,000 euros for a jointly assessed couple. Unlike a tax deduction which reduces your taxable income, this is a tax credit — it directly reduces your final tax liability euro for euro, making it more valuable than a deduction of equivalent size.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

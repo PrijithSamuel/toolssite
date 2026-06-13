@@ -24,6 +24,8 @@ function calcSIP(monthly, annualRate, years, stepUp = 0) {
   return { maturity: balance, totalInvested, returns: balance - totalInvested, yearRows };
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function IndiaSIP() {
   const [monthly, setMonthly] = useState("10000");
   const [returnRate, setReturnRate] = useState("12");
@@ -45,6 +47,10 @@ export default function IndiaSIP() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>SIP Calculator India 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Mutual fund SIP returns calculator with step-up SIP and year-wise growth projection.</p>
+        </div>
+
+        <div style={introStyle}>
+          A Systematic Investment Plan (SIP) is a method of investing a fixed amount in a mutual fund at regular intervals — typically monthly. It is the most popular investment vehicle for retail investors in India, with over 89 million active SIP accounts as of 2025. The core principle behind SIP investing is rupee cost averaging: by investing the same amount each month regardless of market conditions, you automatically buy more units when prices are low and fewer when prices are high, reducing the average cost per unit over time. This calculator uses the compound interest formula with monthly compounding to project the future value of your SIP investment. The expected return rate input is based on historical average returns — Indian large-cap equity funds have delivered approximately 12% CAGR over long periods, though past performance does not guarantee future results.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>

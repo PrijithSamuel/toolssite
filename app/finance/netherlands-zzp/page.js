@@ -28,6 +28,8 @@ function calcArbeidskorting(income) {
   return Math.max(0, ak);
 }
 
+const introStyle = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"20px", marginBottom:"20px", fontSize:"14px", color:"#4B5563", lineHeight:"1.85" };
+
 export default function NetherlandsZZP() {
   const [revenueInput, setRevenueInput] = useState("80000");
   const [expensesInput, setExpensesInput] = useState("10000");
@@ -64,6 +66,10 @@ export default function NetherlandsZZP() {
         <div style={{ marginBottom: "20px" }}>
           <h1 style={{ fontSize: "26px", fontWeight: "600", color: "#1E1B4B", marginBottom: "4px" }}>ZZP Belasting Calculator 2025</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Dutch freelancer tax — bereken inkomstenbelasting, MKB-winstvrijstelling en BTW voor ZZP&apos;ers.</p>
+        </div>
+
+        <div style={introStyle}>
+          The Netherlands has one of Europe&apos;s largest freelance workforces with over 1.2 million ZZP&apos;ers — Zelfstandigen Zonder Personeel, meaning self-employed without staff. ZZP workers are fully responsible for calculating and paying their own income tax. Key tax benefits available to ZZP&apos;ers include the zelfstandigenaftrek (self-employed deduction of 3,750 euros in 2025) and the MKB-winstvrijstelling (SME profit exemption of 13.31% of profit). These deductions require you to meet the urencriterium — working at least 1,225 hours per year in your business. This calculator accounts for all applicable deductions and computes your quarterly BTW obligation alongside your annual income tax liability.
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "16px" }}>
