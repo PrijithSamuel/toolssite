@@ -119,7 +119,6 @@ export default function sitemap() {
     "/finance/ireland-stamp-duty",
     "/finance/ireland-usc",
     "/finance/ireland-pension",
-    "/finance/usa-paycheck",
     // Health
     "/health",
     "/health/calorie-calculator",

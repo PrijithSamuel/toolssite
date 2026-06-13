@@ -69,6 +69,20 @@ export default function AboutPage() {
           </p>
         </div>
 
+        {/* Our Story */}
+        <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "24px", marginBottom: "20px" }}>
+          <h2 style={{ fontSize: "16px", fontWeight: "500", color: "#1E1B4B", marginBottom: "12px" }}>Our Story</h2>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8", marginBottom: "12px" }}>
+            QuikToolkit was built out of a simple frustration: most free online tools either require you to create an account, upload your files to a remote server, limit your usage to a few free actions per day, or bombard you with pop-ups asking you to upgrade to a paid plan.
+          </p>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8", marginBottom: "12px" }}>
+            Every tool on QuikToolkit runs entirely in your browser using JavaScript. When you merge PDFs, compress images, or process any file, the data never leaves your device. No servers receive your files, no database stores your data, and no account is needed to access any feature. This architecture is a deliberate privacy-first choice, not an afterthought.
+          </p>
+          <p style={{ fontSize: "14px", color: "#4B5563", lineHeight: "1.8" }}>
+            We also recognised that many tool sites are built for English-speaking Western audiences. QuikToolkit includes country-specific financial calculators for India, Germany, Ireland, Netherlands, Canada, Singapore, USA, Sri Lanka, and Ukraine — each using accurate local tax rates, contribution rules, and financial regulations updated annually.
+          </p>
+        </div>
+
         {/* How It Works */}
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "14px", padding: "28px", marginBottom: "20px" }}>
           <h2 style={{ fontSize: "18px", fontWeight: "600", color: "#1E1B4B", marginBottom: "20px" }}>How It Works</h2>
