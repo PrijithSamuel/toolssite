@@ -136,8 +136,8 @@ export default function UnitConverter() {
       </div>
       <div style={wrap}>
         <div style={card}>
-          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" }}>The metric system is the international standard used by scientists, engineers, and most countries worldwide. It is based entirely on powers of ten: 1 kilometre is exactly 1,000 metres, 1 kilogram is exactly 1,000 grams, and 1 litre is exactly 1,000 millilitres. The imperial system, still widely used in the United States and for some measurements in the United Kingdom, uses less intuitive conversion factors — 12 inches to a foot, 3 feet to a yard, and 5,280 feet to a mile.</p>
-          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 }}>Temperature is a special case because Celsius, Fahrenheit and Kelvin each use different zero points and different scale sizes. To convert Celsius to Fahrenheit multiply by 1.8 and add 32. To convert to Kelvin — the scale used in physics and chemistry — add 273.15 to the Celsius value. Kelvin starts at absolute zero, the lowest theoretically possible temperature, which equals −273.15°C or −459.67°F.</p>
+          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" }}>The metric system used by most of the world and the imperial system primary in the United States are incompatible in ways that cannot be solved by simple multiplication alone. Temperature conversion between Celsius and Fahrenheit requires both multiplication and addition — Fahrenheit equals Celsius times 1.8 plus 32 — making mental arithmetic unreliable.</p>
+          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 }}><strong>Key conversions:</strong> 1 kilometre equals 0.621 miles. 1 kilogram equals 2.205 pounds. Water freezes at 0°C (32°F) and boils at 100°C (212°F). 1 US gallon equals 3.785 litres — note that 1 UK gallon equals 4.546 litres, a different measurement.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />
