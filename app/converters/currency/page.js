@@ -38,6 +38,8 @@ const names = {
 };
 
 const introStyle = { background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "20px", marginBottom: "24px", fontSize: "14px", color: "#4B5563", lineHeight: "1.8" };
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"18px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px 20px" };
 
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState("");
@@ -66,6 +68,10 @@ export default function CurrencyConverter() {
 
         <div style={introStyle}>
           Currency conversion is needed for international travel, online shopping from foreign retailers, freelance invoicing in different currencies, and investment tracking. This converter supports 20 major world currencies including US Dollar, Euro, British Pound, Indian Rupee, Australian Dollar, Canadian Dollar, Singapore Dollar, UAE Dirham, Japanese Yen, and Swiss Franc. The rates shown are approximate mid-market reference rates — real exchange rates from banks and currency exchange services include a margin on top of these rates. For financial transactions, always verify the current rate with your bank or payment provider before converting.
+        </div>
+
+        <div style={{ background:"#FFFBEB", border:"0.5px solid #FDE68A", borderRadius:"10px", padding:"12px 16px", marginBottom:"16px", fontSize:"13px", color:"#92400E" }}>
+          These are approximate mid-market reference rates. Bank and exchange rates will differ. For financial transactions always confirm the current rate with your bank or payment provider.
         </div>
 
         <div style={{ background: "#EEF2FF", border: "0.5px solid #C7D2FE", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -103,6 +109,12 @@ export default function CurrencyConverter() {
 
         <div style={{ marginTop: "12px", background: "#FEF9C3", border: "0.5px solid #FDE68A", borderRadius: "10px", padding: "12px 16px" }}>
           <p style={{ fontSize: "12px", color: "#713F12" }}>⚠️ Rates are approximate and for reference only. Check your bank for live rates.</p>
+        </div>
+      </div>
+      <div style={wrap}>
+        <div style={card}>
+          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", marginBottom:"10px" }}>An exchange rate tells you how much of one currency you receive in exchange for one unit of another. The mid-market rate is the midpoint between buy and sell prices that banks trade at with each other. When you exchange money at a bank or airport you will receive a worse rate because the service provider keeps a margin on top of the mid-market rate.</p>
+          <p style={{ fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 }}>Exchange rates fluctuate continuously based on international trade flows, interest rate decisions by central banks, inflation expectations, and investor sentiment. Major currency pairs such as EUR/USD and GBP/USD are among the most actively traded instruments in the world. For everyday purposes such as travel budgeting or international online shopping, the mid-market reference rate is a useful guide — always confirm the live rate with your bank before completing a financial transaction.</p>
         </div>
       </div>
       <FAQ faqs={FAQS} />

@@ -39,6 +39,10 @@ const PRESETS = [
   { label: "30 min", seconds: 1800 },
 ];
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"18px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px 20px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function CountdownTimer() {
   const [hours, setHours] = useState("0");
   const [minutes, setMinutes] = useState("5");
@@ -119,6 +123,12 @@ export default function CountdownTimer() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Countdown Timer</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Set a countdown — beeps when it reaches zero.</p>
+        </div>
+
+        <div style={wrap}>
+          <div style={card}>
+            <p style={ps}>Set a countdown for any duration and receive an audible alert when time expires. The 25-minute Pomodoro preset supports the Pomodoro Technique — a time management method developed by Francesco Cirillo in the late 1980s that uses 25-minute focused work intervals separated by 5-minute breaks. Research on sustained attention and mental fatigue supports timed work sessions: cognitive performance typically declines after 25-50 minutes of continuous focus on a demanding task, making regular short breaks measurably more productive than uninterrupted long sessions.</p>
+          </div>
         </div>
 
         {/* Presets */}

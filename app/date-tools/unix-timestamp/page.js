@@ -28,6 +28,10 @@ function toLocalInputValue(d) {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"18px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px 20px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function UnixTimestamp() {
   const [currentTs, setCurrentTs] = useState(0);
   const [tsInput, setTsInput] = useState("");
@@ -68,6 +72,12 @@ export default function UnixTimestamp() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Unix Timestamp Converter</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Convert between Unix timestamps and human-readable dates.</p>
+        </div>
+
+        <div style={wrap}>
+          <div style={card}>
+            <p style={ps}>A Unix timestamp is the number of seconds elapsed since January 1, 1970 at 00:00:00 UTC — a reference point known as the Unix Epoch. It is the standard way computers store and compare dates and times internally because a single integer is simpler to store, compare, and calculate with than a formatted date string. The current Unix timestamp displayed on this page updates every second in real time. Converting between Unix timestamps and human-readable dates is a frequent need for developers working with APIs, database records, log files, and authentication tokens — JWT tokens store their expiry time as a Unix timestamp in the payload.</p>
+          </div>
         </div>
 
         {/* Current timestamp */}

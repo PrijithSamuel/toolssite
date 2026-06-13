@@ -3,6 +3,10 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"18px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px 20px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function CoinFlip() {
   const [result, setResult] = useState(null);
   const [flipping, setFlipping] = useState(false);
@@ -38,6 +42,12 @@ export default function CoinFlip() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Coin Flip</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Flip a fair coin and track your results.</p>
+        </div>
+
+        <div style={wrap}>
+          <div style={card}>
+            <p style={ps}>This digital coin flip uses the browser's cryptographically secure random number generator — window.crypto.getRandomValues() — to produce a genuinely random result with exactly 50% probability for each outcome. Unlike physical coin flips, which can be influenced by technique, starting position, and air resistance, a cryptographic random function has no such bias. The flip history tracks your last 20 results and shows the running percentage of heads versus tails — useful for demonstrating that even with a fair 50/50 outcome, short sequences frequently show apparent streaks that correct themselves over longer runs.</p>
+          </div>
         </div>
 
         {/* Coin display */}

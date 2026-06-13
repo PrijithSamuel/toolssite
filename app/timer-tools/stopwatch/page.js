@@ -14,6 +14,10 @@ function fmtTime(ms) {
   return `${pad(m)}:${pad(s)}.${pad(cs)}`;
 }
 
+const card = { background:"white", border:"0.5px solid #E0E7FF", borderRadius:"12px", padding:"18px", marginBottom:"16px" };
+const wrap = { maxWidth:"600px", margin:"0 auto", padding:"0 24px 20px" };
+const ps = { fontSize:"13px", color:"#4B5563", lineHeight:"1.8", margin:0 };
+
 export default function Stopwatch() {
   const [display, setDisplay] = useState(0);
   const [running, setRunning] = useState(false);
@@ -70,6 +74,12 @@ export default function Stopwatch() {
         <div style={{ marginBottom: "24px" }}>
           <h1 style={{ fontSize: "28px", fontWeight: "500", color: "#1E1B4B", marginBottom: "6px" }}>Stopwatch</h1>
           <p style={{ fontSize: "14px", color: "#6B7280" }}>Precise stopwatch with lap times.</p>
+        </div>
+
+        <div style={wrap}>
+          <div style={card}>
+            <p style={ps}>This online stopwatch measures elapsed time with millisecond precision using the browser's high-resolution performance timer. It supports lap recording — tap Lap during a run to record split times without stopping the overall timer. Common uses include timing athletic training intervals, measuring task completion time for productivity analysis, conducting timed presentations or speeches, running classroom exercises with time limits, and timing cooking or science experiments that require precise elapsed time measurement.</p>
+          </div>
         </div>
 
         <div style={{ background: "white", border: "0.5px solid #E0E7FF", borderRadius: "12px", padding: "32px 24px", textAlign: "center", marginBottom: "16px" }}>
