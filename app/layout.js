@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import BackToTop from "./components/BackToTop";
+import CookieBanner from "./components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
         />
         {children}
         <BackToTop />
+        <CookieBanner />
       </body>
     </html>
   );
